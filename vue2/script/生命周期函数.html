@@ -1,0 +1,60 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: hanyudeye
+ * @Date: 2022-03-09 07:10:59
+ * @LastEditTime: 2022-03-09 07:41:37
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <title>vue对象生命周期函数的执行顺序</title>
+</head>
+
+<body>
+    <div id="app">{{mes}}</div>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                mes: "你爱后"
+            },
+            //在实例化初始之后，数据观察（data observer) 和 event/watcher 事件配置之前被调用
+            beforeCreate: function () {
+                console.log('beforecreate...');
+            },
+            //在实例创建之后立即被调用
+            // 挂载阶段还没开始， $el 属性目前不可见
+            create: function () {
+                console.log('create...');
+            },
+            //在挂载之前被调用，相关的渲染函数首次被调用
+            beforeMount: function () {
+                console.log('beforeMount...');
+            },
+            //el 被新创建的 vm.$el 替换，挂载成功
+            mounted: function () {
+                console.log('Mounted...');
+            },
+            //数据更新时被调用
+            beforeUpdate: function () {
+                console.log('beforeUpdate...');
+            },
+            updated: function () {
+                console.log('updated...');
+            }
+
+        });
+
+        setTimeout(function () {
+            vm.$data.mes = "你好"
+        }, 3000);
+    </script>
+</body>
+
+</html>

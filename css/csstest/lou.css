@@ -1,0 +1,38 @@
+.content {
+    width: 400px;
+    margin: 0 auto;
+    border: 1px solid black;
+}
+
+.head {
+    padding: 10px;
+}
+
+.mei {
+    padding-top: 20px;
+    margin-left: 60px;
+    border-top: 2px solid black;
+    width: 100px;
+    display: flex;
+    float: left;
+}
+
+.yan {
+
+    background-color: aqua;
+    margin-left: 60px;
+    width: 100px;
+    height: 85px;
+    border: 2px solid black;
+    border-radius: 15px;
+    display: flex;
+    float: left;
+}
+
+.zui {
+    margin-top: 150px;
+    margin-left: 40px;
+    display: flex;
+    width: 300px;
+    border-top: 5px solid black;
+}

@@ -1,0 +1,32 @@
+html{
+  font-size: 20px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body  section{
+  width:15rem;
+  height: 12rem;
+  background: skyblue;
+  text-align: center;
+  border: dashed red;
+  border-radius: 10%; 
+  margin-top:15px;
+}
+
+section header{
+  font-size: 20px;
+}
+
+p {
+  text-align:center;
+  color:red;
+}
+
+section::first-line{
+color:aquamarine;
+}
+
+section::after{
+  content: "狗屁b不同";
+  color:blueviolet;
+}
