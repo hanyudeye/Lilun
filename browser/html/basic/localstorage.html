@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="box">
+        <div class="contentk">
+            <div>名字：</div>
+            <input type="text" class="name" placeholder="请输入你的名称" />
+        </div>
+        <div class="contentk">
+            <div>备注：</div>
+            <input type="text" class="note" placeholder="请输入你要备注的内容" />
+        </div>
+        <div class="aging">
+            <div>请选择保存时长：</div>
+            <div>
+                <label><span>1分钟</span><input type="radio" name="storage" value="1分钟" /></label>
+                <label><span>1小时</span><input type="radio" name="storage" value="1小时" /></label>
+                <label><span>24小时</span><input type="radio" name="storage" value="24小时" /></label>
+                <label><span>1周</span><input type="radio" name="storage" value="1周" /></label>
+            </div>
+        </div>
+        <input type="button" class="btn" value="保存" />
+        <input type="button" class="btn1" value="获取保存数据" />
+    </div>
+
+    <script>
+        $(function () {
+            $(".btn").click(function () {
+                var name = $(".name").val();
+                var note = $(".note").val();
+                var radioValue = $("input[name='storage']:checked").val();
+                if (radioValue == undefined) {
+                    return alert("请选择保存时长");
+                }
+                var data = {
+                    name: name,
+                    note: note,
+                    radioValue: radioValue
+                }
+                set('test', data);
+                alert("保存成功");
+            })
+
+            function set(key, value) {
+                var curTime = new Date().getTime();
+                var dateee = new Date().toJSON(curTime);
+                var date = new Date(+new Date(dateee) + 8 * 3600 * 1000).toISOString().replace(/T/g, ' ').replace(/\.[\d]{3}Z/, '');
+                localStorage.setItem(key, JSON.stringify({ data: value, time: curTime, "保存时间": date }));
+            }
+
+            //获取数据
+            $(".btn1").click(function () {
+                var data = JSON.parse(localStorage.getItem('test'));
+                if (data == null) {
+                    return alert("保存信息已过期或未保存数据");
+                }
+                var time = data.time;
+                var radioValue = data.data.radioValue;
+                var st = "";
+                if (radioValue == "1分钟") {
+                    st = 1000 * 60;
+                } else if (radioValue == "1小时") {
+                    st = 1000 * 60 * 60;
+                } else if (radioValue == "24小时") {
+                    st = 1000 * 60 * 24;
+                } else if (radioValue == "1周") {
+                    st = 1000 * 60 * 24 * 7;
+                }
+                if (new Date().getTime() - time > st) {
+                    alert('保存信息已过期');
+                    localStorage.removeItem("test");
+                } else {
+                    var curTime = new Date().getTime();
+                    var dateee = new Date().toJSON(curTime);
+                    var date = new Date(+new Date(dateee) + 8 * 3600 * 1000).toISOString().replace(/T/g, ' ').replace(/\.[\d]{3}Z/, '');
+                    $(".box").after(`<div>名字：${data.data.name}</div>
+                <div>备注：${data.data.note}</div><div>保存时长：${data.data.radioValue}</div>
+                <div>保存时间：${data.保存时间}</div>
+                <div>现在时间：${date}</div>`)
+                }
+            })
+        });
+    </script>
+</body>
+
+</html>
