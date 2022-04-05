@@ -1,0 +1,81 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: hanyudeye
+ * @Date: 2022-03-28 19:18:29
+ * @LastEditTime: 2022-03-28 19:38:17
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动画 animate</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.0.7/swiper-bundle.css"
+        integrity="sha512-g0BdMh4zEp4DuzHdoenUitpFx195QZfSFq5sd04kXZLwz5F9pUlGqwk+1jlvBBFGOnTCt0b5FsmQyl+5v2fxWw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.0.7/swiper-bundle.min.js"
+        integrity="sha512-WlN87oHzYKO5YOmINf1+pSkbt4gm+lOro4fiSTCjII4ykJe/ycHKIaa9b2l9OMkbqEA4NxwTXAGFjSXgqEh19w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@cycjimmy/swiper-animation@6/dist/swiper-animation.umd.min.js"></script>
+
+    <style>
+        .swiper,
+        .swiper1 {
+            width: 400px;
+            height: 300px;
+            background-color: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+
+        <h2>动画样式</h2>
+        <div class="animate__animated animate__bounce animate__delay-2s">Example</div>
+
+    </div>
+
+    <h2>普通模式</h2>
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div data-swiper-animation="animate__fadeIn">Slider1</div>
+            </div>
+            <div class="swiper-slide">
+                <div data-swiper-animation="animate__fadeIn" data-duration=".5s">Slider2</div>
+            </div>
+            <div class="swiper-slide">
+                <div data-swiper-animation="animate__fadeIn" data-duration=".5s" data-delay="1s">Slider3</div>
+            </div>
+
+        </div>
+    </div>
+    <script>
+        var swiperAnimation = new SwiperAnimation();
+
+        let mySwiper = new Swiper('.swiper', {
+            loop: true,
+            on: {
+                init: function () {
+                    swiperAnimation.init(this).animate();
+                },
+                slideChange: function () {
+                    swiperAnimation.init(this).animate();
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
