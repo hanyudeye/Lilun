@@ -1,5 +1,7 @@
 {
   "pages": [
+
+    "pages/view/view",
     "pages/main/index",
     "pages/index/index"
   ],
