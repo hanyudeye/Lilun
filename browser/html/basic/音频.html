@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h3>音频自动播放</h3>
+    <!-- <audio src=""></audio> -->
+
+    <script>
+
+        function f() {
+            var $audio = new Audio();
+            $audio.src = "https://sis-sample-audio.obs.cn-north-1.myhuaweicloud.com/16k16bit.mp3"
+
+            $audio.play();
+            return;
+
+            //针对Safari 从不预加载的情况，使用下面的语句
+            $audio.load()
+            $audio.addEventListener('canplay', () => {
+                $audio.play();
+            })
+
+        }
+
+        window.onload = function () {
+            f();
+        }
+
+    </script>
+
+</body>
+
+</html>

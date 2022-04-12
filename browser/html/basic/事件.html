@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件</title>
+</head>
+
+<body>
+
+    <h2>标题点击事件</h2>
+
+    <form action="">
+        <label for="">请输入名字</label>
+        <input type="text" name="name" placeholder="onchange事件">
+
+        <label for="">请输入字符</label>
+        <input type="text" name="key" placeholder="onkeydown事件">
+
+    </form>
+
+    <script>
+        $h2 = document.getElementsByTagName('h2')[0];
+        $h2.onclick = function () {
+            console.log("click")
+        }
+
+        $name = document.getElementsByName("name")[0];
+        $name.onchange = function (e, f) {
+            console.log(e);
+            console.log(f); //undefined
+        }
+
+        $key = document.getElementsByName("key")[0];
+        $key.onkeydown = function (e, f) {
+            console.log(e);
+            console.log(f); //undefined
+        }
+
+
+        let mydog = {
+
+            name: "旺旺",
+            pao: () => {
+                console.log("喜欢跑")
+            },
+            tiao() {
+                console.log("喜欢跳");
+            },
+            jiao: function () {
+                console.log("喜欢叫");
+            }
+        };
+
+        mydog.pao();
+        mydog.tiao();
+
+    </script>
+</body>
+
+</html>

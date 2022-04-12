@@ -23,3 +23,10 @@ echo empty($b);
 echo  '---';
 
 echo doubleval("323.21");
+echo  '---';
+
+echo gettype("hello");
+echo  '---';
+
+echo gettype($b);
+echo  '---';

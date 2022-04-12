@@ -35,3 +35,15 @@ function add1($v){
 //映射
 // print_r(array_map('add1',$c));
 
+$e=[3,2,'1',"9"];
+//升序
+sort($e);
+// print_r($e);
+
+//降序
+rsort($e);
+// print_r($e);
+
+$f=["name"=>"a","age"=>99];
+print_r(current($f));
+print_r(next($f));

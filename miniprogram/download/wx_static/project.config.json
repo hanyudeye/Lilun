@@ -37,11 +37,16 @@
         "packNpmRelationList": [],
         "minifyWXSS": true,
         "disableUseStrict": false,
+        "minifyWXML": true,
         "showES6CompileOption": false,
         "useCompilerPlugins": false,
+<<<<<<< HEAD
         "ignoreUploadUnusedFiles": true,
         "minifyWXML": true,
         "useStaticServer": true
+=======
+        "ignoreUploadUnusedFiles": true
+>>>>>>> f72e3a8f4c316eaa09372fdbca8c66ee0511f2dd
     },
     "compileType": "miniprogram",
     "libVersion": "2.7.0",
