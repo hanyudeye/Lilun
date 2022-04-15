@@ -1,17 +1,28 @@
-<!--index.wxml-->
+<!-- index.wxml -->
 <view class="container">
-<scroll-view  scroll-x="{{true}}" scroll-y="{{true}}" style="width:100%;background-color:#ccc;white-space: nowrap;">
-  <view style="">hello Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel deleniti sed labore, et amet ut eligendi dicta doloremque aut fugit quis dolorem iure ipsa eius maxime provident esse eos id.</view>
-  <view >hello Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel deleniti sed labore, et amet ut eligendi dicta doloremque aut fugit quis dolorem iure ipsa eius maxime provident esse eos id.</view>
-  <view >world</view>
-  <view >hello Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel deleniti sed labore, et amet ut eligendi dicta doloremque aut fugit quis dolorem iure ipsa eius maxime provident esse eos id.</view>
-  <view >ince</view>
-</scroll-view>
-<scroll-view  scroll-x="{{true}}" scroll-y="{{true}}" style="width:100%">
-  <view style="display: inline-flex;">hello Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel deleniti sed labore, et amet ut eligendi dicta doloremque aut fugit quis dolorem iure ipsa eius maxime provident esse eos id.</view>
-</scroll-view>
-
- <progress percent="40" active stroke-width="3" />
-
+  <scroll-view scroll-x="{{true}}" scroll-y="{{true}}" style="width:100%;background-color:#ccc;white-space: nowrap;">
+    <view style="">
+      hello Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel deleniti sed labore, et amet ut eligendi dicta doloremque aut fugit quis dolorem iure ipsa eius maxime provident esse eos id.
+    </view>
+    <view>
+      hello Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel deleniti sed labore, et amet ut eligendi dicta doloremque aut fugit quis dolorem iure ipsa eius maxime provident esse eos id.
+    </view>
+    <view>world</view>
+    <view>
+      hello Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel deleniti sed labore, et amet ut eligendi dicta doloremque aut fugit quis dolorem iure ipsa eius maxime provident esse eos id.
+    </view>
+    <view>ince</view>
+  </scroll-view>
+  <scroll-view scroll-x="{{true}}" scroll-y="{{true}}" style="width:100%">
+    <view style="display: inline-flex;">
+      hello Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel deleniti sed labore, et amet ut eligendi dicta doloremque aut fugit quis dolorem iure ipsa eius maxime provident esse eos id.
+    </view>
+  </scroll-view>
+  <icon type="success" size="50" />
+  <text selectable="{{false}}">你好, world</text>
 </view>
+
+<progress color="#09BB07" show-info="{{true}}" percent="30" active="{{true}}" stroke-width="6" />
+<progress percent="20" show-info stroke-width="3" />
+<progress color="red" percent="30" active="{{true}}" stroke-width="60" />
 

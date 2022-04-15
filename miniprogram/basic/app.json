@@ -1,5 +1,8 @@
 {
   "pages":[
+    "pages/view/media",
+    "pages/view/form",
+    "pages/view/button",
     "pages/view/index",
     "pages/basic/icon",
     "pages/index/index",
