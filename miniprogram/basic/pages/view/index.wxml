@@ -1,0 +1,17 @@
+<!--index.wxml-->
+<view class="container">
+<scroll-view  scroll-x="{{true}}" scroll-y="{{true}}" style="width:100%;background-color:#ccc;white-space: nowrap;">
+  <view style="">hello Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel deleniti sed labore, et amet ut eligendi dicta doloremque aut fugit quis dolorem iure ipsa eius maxime provident esse eos id.</view>
+  <view >hello Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel deleniti sed labore, et amet ut eligendi dicta doloremque aut fugit quis dolorem iure ipsa eius maxime provident esse eos id.</view>
+  <view >world</view>
+  <view >hello Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel deleniti sed labore, et amet ut eligendi dicta doloremque aut fugit quis dolorem iure ipsa eius maxime provident esse eos id.</view>
+  <view >ince</view>
+</scroll-view>
+<scroll-view  scroll-x="{{true}}" scroll-y="{{true}}" style="width:100%">
+  <view style="display: inline-flex;">hello Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel deleniti sed labore, et amet ut eligendi dicta doloremque aut fugit quis dolorem iure ipsa eius maxime provident esse eos id.</view>
+</scroll-view>
+
+ <progress percent="40" active stroke-width="3" />
+
+</view>
+
