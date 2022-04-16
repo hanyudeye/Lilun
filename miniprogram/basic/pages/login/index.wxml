@@ -1,0 +1,3 @@
+<view >
+   hello ,id:  {{id}}
+</view>

@@ -1,0 +1,12 @@
+<view>
+    <form class="" report-submit="false" bindsubmit="formSubmit" bindreset="">
+        <view class="main" hover-class="none" hover-stop-propagation="false">
+            <text class="" selectable="false" space="false" decode="false">用户登录</text>
+            <view>
+                <input name="username" type="text" placeholder="用户名" />
+                <input type="text" name="password" password="{{true}}" placeholder="密码" />
+            </view>
+            <button form-type="submit" size="mini">提交</button>
+        </view>
+    </form>
+</view>
