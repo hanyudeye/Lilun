@@ -1,3 +1,5 @@
+const app = getApp();
+const serviceurl = app.globalData.serviceurl;
 // pages/network/fileupload.js
 Page({
 
@@ -14,53 +16,39 @@ Page({
   onLoad: function (options) {
 
   },
+  uploadfile() {
+    wx.chooseImage({
+      count: 9,
+      sizeType: ['original', 'compressed'],
+      sourceType: ['album', 'camera'],
+      success: (result) => {
+        var tempFilePath = result.tempFilePaths;
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
+        // console.log(tempFilePath);
+        //上传多个文件
+        tempFilePath.forEach(element => {
 
-  },
+          wx.uploadFile({
+            url: serviceurl + '/api/file/uploadImage',
+            filePath: element,
+            name: 'image',
+            success: (result) => {
+              // console.log(result)
+              if (result.statusCode == 200) {
+                // console.log(result.data)
+               let res = JSON.parse(result.data);
+                console.log(res.path);
+              }
+            }
+          });
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
+        });
 
-  },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
+      },
+    });
 
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
 
   },
 
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
 })

@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/network/fileupload",
     "pages/login/login",
     "pages/login/index",
     "pages/view/media",
@@ -8,8 +9,7 @@
     "pages/view/index",
     "pages/basic/icon",
     "pages/index/index",
-    "pages/logs/logs",
-    "pages/network/fileupload"
+    "pages/logs/logs"
   ],
   "window": {
     "backgroundTextStyle": "light",

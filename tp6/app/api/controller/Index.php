@@ -1,5 +1,5 @@
 <?php
-namespace app\controller;
+namespace app\api\controller;
 
 use app\BaseController;
 
@@ -13,5 +13,10 @@ class Index extends BaseController
     public function hello($name = 'ThinkPHP6')
     {
         return 'hello,' . $name;
+    }
+
+    //json 测试
+    public function json(){
+        return json_encode(["msg"=>"hello,world","name"=>"aming"]);
     }
 }
