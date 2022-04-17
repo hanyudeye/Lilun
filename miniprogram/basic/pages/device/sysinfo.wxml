@@ -1,0 +1,4 @@
+<button bindtap="getsysteminfo">getsysteminfo</button>
+<button bindtap="getnetworktype">getnetworktype</button>
+<button bindtap="makephone">拨打电话</button>
+<button bindtap="scan">扫码</button>

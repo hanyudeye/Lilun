@@ -1,0 +1,11 @@
+<view>
+    <video id="myvideo" src="http://vjs.zencdn.net/v/oceans.mp4"></video>
+    <view class="" hover-class="none" hover-stop-propagation="false">
+        <input type="text" bindblur="inputblur"  placeholder="我按合同"/>
+        <button bindtap="send">发送弹幕</button>
+        <button bindtap="play">开始播放</button>
+        <button bindtap="stop">停止播放</button>
+        <button bindtap="jump">跳转到第5s</button>
+
+    </view>
+</view>

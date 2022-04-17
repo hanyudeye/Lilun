@@ -1,0 +1,7 @@
+<button bindtap="getlocation">
+   获取位置 
+</button>
+
+<button bindtap="chooselocation">
+   选择位置 
+</button>

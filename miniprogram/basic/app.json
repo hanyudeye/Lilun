@@ -1,5 +1,15 @@
 {
   "pages": [
+    "pages/openinteface/login",
+    "pages/basic/pulldownrefresh",
+    "pages/device/sysinfo",
+    "pages/location/getlocation",
+    "pages/storage/getstorage",
+    "pages/file/savedfilelist",
+    "pages/media/danmu",
+    "pages/media/video",
+    "pages/media/record",
+    "pages/media/image",
     "pages/network/fileupload",
     "pages/login/login",
     "pages/login/index",
@@ -19,5 +29,5 @@
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json",
-  "debug": true
+  "debug": false
 }
