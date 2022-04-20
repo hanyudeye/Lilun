@@ -1,5 +1,7 @@
 {
   "pages": [
+
+    "weuipages/form/input",
     "pages/openinteface/login",
     "pages/basic/icon",
     "pages/basic/pulldownrefresh",

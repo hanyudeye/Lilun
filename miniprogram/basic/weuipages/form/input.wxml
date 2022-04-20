@@ -1,0 +1,56 @@
+<view class="weui-cells weui-cells_radio">
+    <label class="weui_cell">
+        <view class="weui-cell_bd" hover-class="none" hover-stop-propagation="false">但选项文字</view>
+    </label>
+</view>
+
+<div class="weui-cells weui-cells_radio">
+    <label class="weui-cell weui-check__label" for="x11">
+        <div class="weui-cell__bd">
+            <p>单选项文字</p>
+        </div>
+        <div class="weui-cell__ft">
+            <input type="radio" name="radio1" class="weui-check" id="x11" />
+            <span class="weui-icon-checked"></span>
+        </div>
+    </label>
+    <label class="weui-cell weui-check__label" for="x12">
+        <div class="weui-cell__bd">
+            <p>单选项文字</p>
+        </div>
+        <div class="weui-cell__ft">
+            <input type="radio" name="radio1" class="weui-check" id="x12" checked="checked"/>
+            <span class="weui-icon-checked"></span>
+        </div>
+    </label>
+    <a href="#" class="weui-cell weui-cell_link">
+        <div class="weui-cell__bd">添加更多</div>
+    </a>
+</div>
+<!-- 多选 -->
+<div class="weui-cells weui-cells_checkbox">
+    <label class="weui-cell weui-check__label" for="s11">
+        <div class="weui-cell__hd">
+            <input type="checkbox" class="weui-check" name="checkbox1" id="s11" checked="checked"/>
+            <i class="weui-icon-checked"></i>
+        </div>
+        <div class="weui-cell__bd">
+            <p>多选项文字</p>
+        </div>
+    </label>
+    <label class="weui-cell weui-check__label" for="s12">
+        <div class="weui-cell__hd">
+            <input type="checkbox" name="checkbox1" class="weui-check" id="s12"/>
+            <i class="weui-icon-checked"></i>
+        </div>
+        <div class="weui-cell__bd">
+            <p>多选项文字</p>
+        </div>
+    </label>
+    <a href="#" class="weui-cell weui-cell_link">
+        <div class="weui-cell__bd">添加更多</div>
+    </a>
+</div>
+
+<input type="tel" required pattern="[0-9]{11}" placeholder="输入你现在的手机号" emptyTips="请输入手机号" notMatchTips="请输入正确的手机号"/>
+<input type="text" required pattern="REG_IDNUM" placeholder="输入你的身份证号码" emptyTips="请输入身份证号码" notMatchTips="请输入正确的身份证号码"/>
