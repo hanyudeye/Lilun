@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>弹性布局</title>
+    <style>
+        html{
+            box-sizing: border-box;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            /* flex-wrap: wrap; */
+            /* flex-wrap: wrap-reverse; */
+            justify-content: center;
+            /* justify-content: flex-start; */
+
+            align-items: flex-end;
+
+        }
+
+        .container div {
+            width: 200px;
+            height: 100px;
+            padding: 0 20px;
+        }
+
+        .c1 {
+            background-color: #f00;
+        }
+
+        .c2 {
+            background-color: #0f0;
+        }
+
+        .c3 {
+            background-color: #00f;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="c1">1 Lorem ipsum </div>
+        <div class="c2">l2 Lorem ipsum </div>
+        <div class="c3">3 Lorem ipsum</div>
+
+    </div>
+</body>
+
+</html>

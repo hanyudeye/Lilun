@@ -1,0 +1,6 @@
+<view class="Infocontainer">
+    <image wx:if="{{userInfo.avatarUrl}}" src="{{userInfo.avatarUrl}}" />
+    <text wx:if="{{userInfo.avatarUrl}}">{{userInfo.nickName}}</text>
+    <button wx:else="" class="getbutton" open-type="getUserInfo" bindgetuserinfo="handleUserinfo">获取用户信息</button>
+    <button class="msg">Hello world</button>
+</view>

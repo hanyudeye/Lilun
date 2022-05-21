@@ -1,6 +1,7 @@
 {
   "pages": [
 
+    "pages/userinfo/userinfo",
     "weuipages/form/input",
     "pages/openinteface/login",
     "pages/basic/icon",

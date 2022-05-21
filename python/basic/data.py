@@ -1,16 +1,6 @@
-'''
-Descripttion: 数据类型的使用
-version: 
-Author: hanyudeye
-Date: 2022-03-11 06:57:59
-LastEditTime: 2022-03-11 18:40:32
-'''
-# 不同数据类型的存在
-print(1+int("2"))
+for i in range(1,10):
 
-print( "hello" in ("you","me","hello"))
-print( "hello" not in ("you","me","hello"))
+    print(i)
 
-print("hello" == "hello")
-
-
+shuzi=[n*n  for n in range(1,9)]
+print(shuzi)
