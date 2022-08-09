@@ -1,0 +1,51 @@
+{
+  "pages": [
+
+    "pages/userinfo/userinfo",
+    "weuipages/form/input",
+    "pages/openinteface/login",
+    "pages/basic/icon",
+    "pages/basic/pulldownrefresh",
+    "pages/device/sysinfo",
+    "pages/location/getlocation",
+    "pages/storage/getstorage",
+    "pages/file/savedfilelist",
+    "pages/media/danmu",
+    "pages/media/video",
+    "pages/media/record",
+    "pages/media/image",
+    "pages/network/fileupload",
+    "pages/login/login",
+    "pages/login/index",
+    "pages/view/media",
+    "pages/view/form",
+    "pages/view/button",
+    "pages/view/index",
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "selectedColor": "#e64340",
+    "list": [
+      {
+        "pagePath": "pages/openinteface/login",
+        "text": "首页",
+        "iconPath":"public/images/home-32.png"
+      },
+      {
+        "pagePath": "pages/view/index",
+        "text": "末页",
+        "iconPath":"public/images/shopping.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "debug": false
+}

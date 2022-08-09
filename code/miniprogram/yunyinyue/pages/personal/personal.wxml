@@ -1,0 +1,14 @@
+<view class="personalContainer">
+    <view class="user-section">
+        <image class="bg" src="/static/images/personal/bgImg2.jpg"></image>
+        <view class="user-content">
+            <image class="avatar" src="/static/images/default-face.png"></image>
+            <text class="">游客</text>
+        </view>
+    </view>
+    <view class="cover-container">
+        <image src="/static/images/personal/arc.png"></image>
+        <view class="nav-section">导航</view>
+        <view class="personalContent">中心</view>
+    </view>
+</view>

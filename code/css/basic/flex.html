@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex 教程</title>
+    <style>
+        .left {
+            display: inline-block;
+
+        }
+
+        .right {
+            display: inline-block;
+            position: relative;
+            text-align: center;
+        }
+
+        .contain {
+            display: flex;
+            /* flex-wrap: wrap-reverse; */
+
+            /* justify-content: space-around; */
+            align-items: flex-start;
+        }
+
+        .menu {
+            display: flex;
+            flex-direction: column;
+            /* flex-grow: 2; */
+            /* flex-basis: 10%; */
+        }
+
+        .menu:nth-child(1) {
+            flex-grow: 3;
+        }
+
+        .content {
+            display: flex;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>传统布局，左右并列</h2>
+    <div class="row">
+        <div class="left">left</div>
+        <div class="right">right</div>
+    </div>
+
+    <h2>弹性布局</h2>
+    <div class="contain">
+        <div class="menu">
+            <div>左边</div>
+            <div>居中</div>
+            <div>right</div>
+        </div>
+        <div class="menu">
+            <div>左边</div>
+            <div>居中</div>
+            <div>right</div>
+        </div>
+
+        <div class="content">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur modi pariatur cupiditate, sed rem et!
+            </p>
+        </div>
+        <div class="menu">
+            <div>左边</div>
+            <div>居中</div>
+            <div>right</div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

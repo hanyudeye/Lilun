@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>盒子模型</title>
+    <style>
+        .default-box{
+            width: 100px;
+            height: 100px;
+            padding: 50px;
+            background-color: aqua;
+            border: 5px solid #000;
+        }
+
+        .new-box{
+            box-sizing: border-box;
+            width: 100px;
+            height: 100px;
+            padding: 50px;
+            background-color: aqua;
+            border: 5px solid #000;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>默认的width和 height是内容区的大小，这是不合适的</h1>
+
+    <div class="default-box">你好</div>
+
+    <h2>通用设置，把盒子模型设为边框宽高, 取消 外边距大小 margin</h2>
+    <div class="new-box">你好</div>
+</body>
+</html>
