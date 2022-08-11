@@ -1,11 +1,3 @@
-/*
- * @Descripttion:
- * @version:
- * @Author: hanyudeye
- * @Date: 2022-03-12 21:25:47
- * @LastEditTime: 2022-03-12 21:42:35
- */
-
 //对象的创建的 ： 方式1 
 var person = {
   name: "阿明",
