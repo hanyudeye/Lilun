@@ -1,13 +1,5 @@
 * 开发流程
   https://blog.csdn.net/qq_41662696/article/details/89555634
-** 配置开发服务器
-
-   交互方式
-   #+begin_example
-   公众号用户 <==>  微信服务器 <==> 开发服务器 
-   #+end_example
-   交互格式 : xml
-
 *** 本地调试  
     使用内网穿透工具
    
