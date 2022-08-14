@@ -1,3 +1,63 @@
+
+## MySQL
+
+![alt](../images/SQL_joins.png)
+
+   mysql -h hostname -u username -p
+
+   
+## 性能
+
+- 显示性能(语句执行时间)  show profiles;
+- 如果没有，要打开开关  set profiling =1;
+- 查看操作行数  explain select * from event(表名);
+
+## datetime 报错
+原因:在命令行窗口查看当前的sql_mode配置:
+
+select @@sql_mode;
+
+结果如下:
+ONLY_FULL_GROUP_BY, STRICT_TRANS_TABLES, NO_ZERO_IN_DATE, NO_ZERO_DATE,
+ERROR_FOR_DIVISION_BY_ZERO, NO_AUTO_CREATE_USER, and NO_ENGINE_SUBSTITUTION
+其中NO_ZERO_IN_DATE, NO_ZERO_DATE两个选项禁止了0000这样的日期和时间。因此在mysql的配置文件中，重新设置sql_mode，去掉这两项就可以了。
+
+```
+ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION
+```
+Linux系统下:
+
+修改my.cnf文件，在[mysqld]中添加
+
+sql-mode=ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION 
+1
+修改完成一定重启MySQL
+
+
+1.windows系统下:
+使用 SET [SESSION|GLOBAL] sql_mode='modes'
+注意:SESSION(默认选项):表示当前回话中生效;GLOBAL(需重启):表示全局生效
+
+也可以修改my.ini配置文件
+
+演示: 
+    SET GLOBAL sql_mode='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES, 
+    ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION'
+
+case
+
+SELECT counterType, CASE counterType
+WHEN 1 THEN 'CTP'
+WHEN 2 THEN 'NULL'
+WHEN 3 THEN '飞鼠'
+WHEN 4 THEN '飞鼠 FIX'
+WHEN 5 THEN 'CTP FIX'
+WHEN 6 THEN 'QuantHub'
+ELSE 'default'
+END AS counterName
+FROM urls
+
+
 # 高级教程
 * [WHERE](#WHERE)
 * [JOIN](#JOIN)
@@ -9,8 +69,6 @@
 * [视图](#视图)
 * [数据类型](#数据类型)
 
-
-
 ## WHERE
 
 WHERE 子句用于提取那些满足指定标准的记录。
@@ -18,8 +76,6 @@ WHERE 子句用于提取那些满足指定标准的记录。
 ```sql
 SELECT column_name,column_name FROM table_name WHERE column_name operator value; #value使用单引号来环绕文本值,如果是数值字段，不使用引号。
 ```
-
-
 operator可以在 WHERE 子句中使用：
 
 运算符 | 描述
@@ -38,9 +94,7 @@ IN | 指定针对某个列的多个可能值 例如: in (5000,3000,1500);
 ### AND&OR
 
 如果第一个条件和第二个条件都成立，则 AND 运算符显示一条记录。
-
 如果第一个条件和第二个条件中只要有一个成立，则 OR 运算符显示一条记录。
-
 
 ### LIKE
 
@@ -79,13 +133,9 @@ BETWEEN 操作符选取介于两个值之间的数据范围内的值。这些值
 ```sql
 SELECT column_name(s) FROM table_name WHERE column_name BETWEEN value1 AND value2;
 ```
-
-
 **在某些数据库中，BETWEEN 选取介于两个值之间但不包括两个测试值的字段。
 在某些数据库中，BETWEEN 选取介于两个值之间且包括两个测试值的字段。
 在某些数据库中，BETWEEN 选取介于两个值之间且包括第一个测试值但不包括最后一个测试值的字段**
-
-
 
 ### NULL
 
@@ -108,28 +158,20 @@ SELECT ProductName,UnitPrice*(UnitsInStock+IFNULL(UnitsOnOrder,0)) FROM Products
 
 
 ## JOIN
-
 SQL JOIN 子句用于把来自两个或多个表的行结合起来，基于这些表之间的共同字段。
-
 
 * [INNER JOIN：如果表中有至少一个匹配，则返回行](#INNER)
 * [LEFT JOIN：即使右表中没有匹配，也从左表返回所有的行](#LEFT)
 * [RIGHT JOIN：即使左表中没有匹配，也从右表返回所有的行](#RIGHT)
 * [FULL JOIN：只要其中一个表中存在匹配，则返回行](#FULL)
 
-
-
 ### INNER
-
-
 INNER JOIN 关键字在表中存在至少一个匹配时返回左表（table1）的行信息。
 
 ```sql
 SELECT column_name(s) FROM table1 INNER JOIN table2 ON table1.column_name=table2.column_name;
 SELECT column_name(s) FROM table1 JOIN table2 ON table1.column_name=table2.column_name;
 ```
-
-
 ### LEFT 
 
 LEFT JOIN 关键字从左表（table1）返回所有的行，即使右表（table2）中没有匹配。如果右表中没有匹配，则结果为 NULL。
@@ -150,9 +192,6 @@ RIGHT JOIN 关键字从右表（table2）返回所有的行，即使左表（tab
 SELECT column_name(s) FROM table1 RIGHT JOIN table2 ON table1.column_name=table2.column_name;
 SELECT column_name(s) FROM table1 RIGHT OUTER JOIN table2 ON table1.column_name=table2.column_name;
 ```
-
-
-
 ### FULL 
 
 FULL OUTER JOIN 关键字只要左表（table1）和右表（table2）其中一个表中存在匹配，则返回行.
@@ -177,9 +216,6 @@ UNION 操作符用于合并两个或多个 SELECT 语句的结果集。
 SELECT column_name(s) FROM table1 UNION SELECT column_name(s) FROM table2;
 SELECT column_name(s) FROM table1 UNION ALL SELECT column_name(s) FROM table2;
 ```
-
-
-
 ## Constraints
 
 SQL 约束用于规定表中的数据规则。
