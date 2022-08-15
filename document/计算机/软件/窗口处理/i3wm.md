@@ -1,29 +1,3 @@
-## 什么是窗口程序?
-
-在图形系统中，每个进程都有一个窗口界面
-
-## 为什么要整理窗口程序？
-
-因为窗口程序多了，会变的杂乱，要旨就是尽量少打开很多窗口，少点好，容易查找。
-
-
-# 为什么是 i3wm ? 
-i3 窗口处理，可以更多使用键盘 来切换窗口，而不用鼠标。
-
-> https://i3wm.org/
-> improved tilling wm (窗口管理工具)
-
-- 窗口的有四种形态： 平铺在同一个平面里(till)，窗口堆栈在不同的层面(stacks)，窗口在不同标签(table)显示，浮动(float)在最上层
-
-## 配置i3
-i3 的配置 文件是 *~/.config/i3/config*
-
-### 包含指令
-包含其他配置文件
-```
-include ~/.config/i3/xxx.conf
-```
-
 ### 键盘绑定
 ``` 
 bindsym [--release] [<Group>+][<Modifiers>+]<keysym> command
@@ -38,7 +12,6 @@ bindsym $mod+Shift+r restart
 bindcode 214 exec --no-startup-id /home/michael/toggle_beamer.sh
 
 ```
-
 ### 鼠标快捷键
 
 i3支持在容器里按下特定的鼠标按钮时执行命令。 和键盘的绑定一样，使用bindsym命令。
