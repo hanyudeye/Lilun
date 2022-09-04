@@ -1,24 +1,6 @@
-#+TITLE: Python3 
-#+DATE: 2021-08-29T05:56:47+08:00
-
-
-* 语言
   
 ** 基础数据类型
    
-   语言中的数据类型就像 生物世界中 动植物分类一样，构成了面向对象编程的基础。
-   
-*** Number
-    
-   - int
-   - long
-   - float
-   - complex
-#+begin_src python
-   print(complex(12,3))
-   print(12+3j)
-#+end_src
-
 *** String
     
     - len()
@@ -48,7 +30,7 @@
     - D.keys()
     - sorted(D) 返回排好序的键组
 *** set
-    集合 ('abc'),{'a','c'}
+    ('abc'),{'a','c'}
 *** 生成器
     #+begin_src py
     nums=[1,2,4,9]
@@ -70,6 +52,7 @@
 - ord(x) 将一个字符转换为它的整数值
 - hex(x) 将一个整数转换为一个十六进制字符串
 - oct(x) 将一个整数转换为一个八进制字符串
+
 *** 运算符
 **** 成员运算符 
      - in
