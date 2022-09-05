@@ -3,9 +3,7 @@ title: PHP 程序设计
 ---
 
 
-## 为什么要设计命名空间？
-因为计算机中的内容太多，就像命令太多一样，需要更多不同的名字约束。
-
+## 命名空间
 namespace Symfony\Component\HttpFoundation; 
 
 >自动导入命名对象
@@ -17,7 +15,7 @@ require_once "库文件";
 use Symfony\Component\HttpFoundation\Response as Res;
 
 
-## 为什么要有类？
+## 类
 
 类的作用和文件作用一样，是为了编程时，相关东西放一起，好找，为了减少杂乱
 
