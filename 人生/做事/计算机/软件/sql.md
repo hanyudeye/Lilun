@@ -133,9 +133,6 @@ BETWEEN 操作符选取介于两个值之间的数据范围内的值。这些值
 ```sql
 SELECT column_name(s) FROM table_name WHERE column_name BETWEEN value1 AND value2;
 ```
-**在某些数据库中，BETWEEN 选取介于两个值之间但不包括两个测试值的字段。
-在某些数据库中，BETWEEN 选取介于两个值之间且包括两个测试值的字段。
-在某些数据库中，BETWEEN 选取介于两个值之间且包括第一个测试值但不包括最后一个测试值的字段**
 
 ### NULL
 
@@ -305,7 +302,6 @@ PRIMARY KEY 约束唯一标识数据库表中的每条记录。
 * 每个表都应该有一个主键，并且每个表只能有一个主键。
 
 
-
 ```sql
 # 创建主键
 CREATE TABLE Persons
@@ -326,7 +322,6 @@ ALTER TABLE Persons ADD CONSTRAINT pk_PersonID PRIMARY KEY (P_Id,LastName)
 ALTER TABLE Persons DROP PRIMARY KEY # mysql
 ALTER TABLE Persons DROP CONSTRAINT pk_PersonID # SQL Server / Oracle / MS Access
 ```
-
 
 ### FOREIGN_KEY
 

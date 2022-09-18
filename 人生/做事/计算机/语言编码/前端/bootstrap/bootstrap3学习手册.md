@@ -7,18 +7,7 @@ theme: jekyll-theme-cayman
 Bootstrap 是一个用于快速开发 Web 应用程序和网站的前端框架
 
 bootstrap3 手册 https://v3.bootcss.com/css/
-## 样式
-Bootstrap 设置的全局CSS样式,Html 的基本元素均可以通过class 设置样式并得到增强效果，还有先进的栅格系统。
 
-### 概览
-#### HTML文档类型
-Bootstrap 使用到的 某些 html 元素和 css 属性需要将页面设置为 HTML5文档类型。所以,文档格式需进行如下设置:
-``` html
-<!doctype html>
-<html lang="en">
-  ...
-</html>
-```
 #### 移动设备优先
 为了保持对移动设备的友好，需要加上以下代码:
 ```html
