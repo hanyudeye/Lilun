@@ -5,15 +5,6 @@ title: vue.js2 学习手册
 
 文档 https://cn.vuejs.org/v2/guide/
 
-## 项目
-https://github.com/hardphp/tp6-vue-admin.git
-
-vue 绑定 link
-
-https://github.com/icarusion/vue-book
-
-
-
 ## Vuejs 环境的搭建
 ### 使用 script 标签
 

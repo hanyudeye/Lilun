@@ -1,9 +1,5 @@
-
-
-  
 * 开发流程
   https://blog.csdn.net/qq_41662696/article/details/89555634
-** 配置开发服务器
 *** 本地调试  
     使用内网穿透工具
    
@@ -36,14 +32,13 @@
 ** 模板消息
 ** 授权回调
 
-* 公众号开发教程
+* 微信开发教程
 ** 配置  
 - 获取 appid 秘钥， 白名单
 - 设置授权域名 公众号设置>功能设置
 - 绑定开发者  开发者工具>web开发者工具
-- 安全中心 -> ip白名单设置
+- ip白名单设置
 - 清除缓存 debugx5.qq.com
-- 
 ** 系统错误，错误码：63002,invalid signature
    1.确认签名算法正确，可用http://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=jsapisign 页面工具进行校验。
 
