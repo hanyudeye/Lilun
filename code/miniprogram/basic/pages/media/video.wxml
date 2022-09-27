@@ -1,4 +1,0 @@
-<view  class="container">
-    <video class="" src="{{src}}" > </video>
-    <button bindtap="getvideo">获取视频</button>
-</view>

@@ -1,5 +1,2 @@
-国庆来临，御龙水都 发福利啦
-足道60分钟+洗浴+小吃+包厢
-视频下单只需79
-乘着国庆多团几张
-到时和好兄弟，好姐妹好好放松放松吧
+https://github.com/wistbean/learn_python3_spider
+https://github.com/aosabook/500lines

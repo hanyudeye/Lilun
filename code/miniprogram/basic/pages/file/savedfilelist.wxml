@@ -1,4 +1,0 @@
-<button  bindtap="show">
-   显示文件列表 
-</button>
-<button bindtap="openfile">打开文件</button>

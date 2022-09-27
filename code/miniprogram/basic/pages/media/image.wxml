@@ -1,2 +1,0 @@
-<button type="primary"  bindtap="viewPic">浏览图片</button>
-<image src="{{imageurl}}" />

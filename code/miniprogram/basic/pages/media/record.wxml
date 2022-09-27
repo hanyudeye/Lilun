@@ -1,3 +1,0 @@
-<button bind:tap="record">录音开始</button>
-<button bind:tap="stoprecord">录音结束</button>
-<button bind:tap="playvoice">播放录音</button>
