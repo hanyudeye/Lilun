@@ -1,48 +1,15 @@
-  
-** 基础数据类型
-   
-*** String
-    
-    - len()
-    - s[:-1]
-    - s[0:3]
-    - s.find(x)
-    - s.replace(x,y)
-    - s.split(',')
-    - s.upper()
-    - s.isalpha()
-    - s.rstrip()
+ 当我们创造语言的时候，我们是为了表达。当然图画，动画都能表达。但计算机中，还在发展。 
 
-*** List
-    
-    - L.append(x)
-    - L.pop(x) 移除某一项
-    - L.sort()
-    - L.reverse() 倒序
-    
-      
-*** Tuple
-    
-    - T.index(x)
-    - T.count(x) 统计
-    - 
-*** Dictionary
-    - D.keys()
-    - sorted(D) 返回排好序的键组
-*** set
-    ('abc'),{'a','c'}
-*** 生成器
-    #+begin_src py
-    nums=[1,2,4,9]
-    print([ n+1 for n in nums])
-    #+end_src
-*** 类型转换
+语言中的名词 表示 具体对象，然后 动词用来 使名词状态发生改变
 
-- int(x [,base])
-- long(x [,base])
-- float(x)
-- str(x)
-- tuple(s)
+比如，我想表达我的状态。 语言可以为:
+
+今天我起床，穿好了衣服，洗澡了，🎤️了。
+妈妈早上就在念佛了。
+
+** 类型转换
+飞机经过改装，顶上装上螺旋桨就可以改为直升飞机。
+
 - list(s)
 - set(s)
 - dict(d) d 必须是一个序列 (key,value)元组。
@@ -53,61 +20,6 @@
 - hex(x) 将一个整数转换为一个十六进制字符串
 - oct(x) 将一个整数转换为一个八进制字符串
 
-*** 运算符
-**** 成员运算符 
-     - in
-     - not in
-**** 身份运算符
-     引用同一对象
-     - is  x is y ,类似 id(x) == id(y)
-     - is not  类似 id(x) != id(y)
-** 类型与对象 
-*** 类型 
-    #+begin_src python
-      class ClassName:
-          '类的帮助信息'   #类文档字符串
-          class_suite  #类体
-    #+end_src
-
-    #+begin_src python
-      "创建 Employee 类的第一个对象"
-      emp1 = Employee("Zara", 2000)
-    #+end_src
-**** 对象销毁
-     Python 使用了引用计数这一简单技术来跟踪和回收垃圾。
-     当对象被创建时， 就创建了一个引用计数
-**** 继承
-     #+begin_src python
-              class 派生类名(基类名)
-              class SubClassName (ParentClass1[, ParentClass2, ...]):
-     #+end_src
-**** 类属性与方法
-***** 类的私有属性 
-      __private_attrs：两个下划线开头，声明该属性为私有，不能在类的外部被使用或直接访问。在类内部的方法中使用时 self.__private_attrs。
-***** 类的私有方法
-      __private_method：两个下划线开头，声明该方法为私有方法，不能在类的外部调用。在类的内部调用 self.__private_methods
-*** 引用与复制
-*** 表示数据的内置类型
-*** 表示程序结构的内置类型
-*** 解释器内部使用的内置类型
-*** 对象行为与特殊方法
-** 函数，模块，包与分发
-*** 函数
-#+begin_src python
-    def fun():
-        # statement...
-        [return ]
-#+end_src
-    
-*** 模块
-    一个 python 文件就是一个模块  
-    一个包含模块的文件夹也是一个模块
-
-    import ${module_name} # module_name 就是模块文件的名称,不加后缀 .py
-    from ${module_namespace} import ${module_name} #从模块空间导入某个模块
-** 测试、调试
-** 查看物的信息
-  > 查看物的信息 type
 * 库
 ** 内置函数 
 ** 运行时服务
