@@ -1,3 +1,11 @@
+## 事件
+### 鼠标事件
+| 名称                | 含义 |
+|---------------------+------|
+| window.onmousewheel | 滚轮 |
+
+
+
 ### 键盘事件
 ## 表单重复提交
 - 1、js禁掉提交按钮
@@ -50,9 +58,9 @@
  将该段代码贴到所要应用的脚本顶部即可。
 
 ## div+css实现简单的弹出窗（背景变灰色）
-自己做了一个网站，需要用到弹出框的功能，以前没做过这个，就去网上查了下资料，然后试着写了一个最简单的弹出框效果。
-需求：点击弹出框按钮，在原页面基础上弹出一个弹出框，并且背景要变成灰色，原页面不能被编辑知道关闭弹出框。
-原理：在原页面的基础上添加两个div，一个是弹出框，一个是弹出框后面的背景层（页面变灰）。首先这两个div是跟原页面的代码在一起存放的，只不过使用了 =display：none=这个css属性先将其隐藏不显示，在触发弹出框效果时再使用 =display：block=让这两个div显示出来即可。
+自己做了一个网站，需要用到弹出框的功能，以前没做过这个，就去网上查了下资料，然后试着写了一个最简单的弹出框效果。\\
+需求：点击弹出框按钮，在原页面基础上弹出一个弹出框，并且背景要变成灰色，原页面不能被编辑知道关闭弹出框。\\
+原理：在原页面的基础上添加两个div，一个是弹出框，一个是弹出框后面的背景层（页面变灰）。首先这两个div是跟原页面的代码在一起存放的，只不过使用了 =display：none=这个css属性先将其隐藏不显示，在触发弹出框效果时再使用 =display：block=让这两个div显示出来即可。\\
 完整代码如下：
 
 ``` html
@@ -127,8 +135,8 @@
 ```
 
 其他需要注意事项：1、两个弹出层的上下位置；2、弹出的背景层的透明设置；\\
-首先，两个div都要使用 =position: absolute;=这个属性，然后使用z-index这个属性可以设置层的上下顺序，值越大越靠上显示；
-其次，背景透明需要使用滤镜等功能，具体代码如下
+首先，两个div都要使用 =position: absolute;=这个属性，然后使用z-index这个属性可以设置层的上下顺序，值越大越靠上显示；\\
+其次，背景透明需要使用滤镜等功能，具体代码如下：\\
 =-moz-opacity: 0.8;   opacity:.80;   filter: alpha(opacity=80);/* 只支持IE6、7、8、9 */=\\
 3、如果页面高度超过屏幕高度，弹出的背景层只有屏幕大小，这是因为使用了position:absolute;的话高度width:100%;就无效了。解决办法，使用js获取页面的宽度和高度进行设置。
 
@@ -336,61 +344,3 @@
     });
 #+END_EXAMPLE
 
-# 代码片段
-
-## FormData使用方法详解
-
-FormData的主要用途有两个：
-1、将form表单元素的name与value进行组合，实现表单数据的序列化，从而减少表单元素的拼接，提高工作效率。
-2、异步上传文件
-
-### 一、创建formData对象
-1、创建一个空对象：
-``` js
-//通过FormData构造函数创建一个空对象
-var formdata=new FormData();
-//可以通过append()方法来追加数据
-formdata.append("name","laotie");
-//通过get方法对值进行读取
-console.log(formdata.get("name"));//laotie
-//通过set方法对值进行设置
-formdata.set("name","laoliu");
-console.log(formdata.get("name"));//laoliu
-```
-
-2、通过表单对formData进行初始化
-创建表单：
-``` html
-<form id="advForm">
-    <p>广告名称：<input type="text" name="advName"  value="xixi"></p>
-    <p>广告类别：<select name="advType">
-        <option value="1">轮播图</option>
-        <option value="2">轮播图底部广告</option>
-        <option value="3">热门回收广告</option>
-        <option value="4">优品精选广告</option>
-    </select></p>
-    <p><input type="button" id="btn" value="添加"></p>
-</form>
-```
-通过表单元素作为参数，实现对formData的初始化：
-
-``` js
-//获得表单按钮元素
-var btn=document.querySelector("#btn");
-//为按钮添加点击事件
-btn.onclick=function(){
-    //根据ID获得页面当中的form表单元素
-    var form=document.querySelector("#advForm");
-    //将获得的表单元素作为参数，对formData进行初始化
-    var formdata=new FormData(form);
-    //通过get方法获得name为advName元素的value值
-    console.log(formdata.get("advName"));//xixi
-    //通过get方法获得name为advType元素的value值
-    console.log(formdata.get("advType"));//1 
-}
-```
-
-## 置顶
-``` html
-<a href="javascript:;" onclick="$('html,body').animate({scrollTop: '0px'}, 800)" class="btn_top">TOP ↑</a>
-```

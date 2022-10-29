@@ -1,21 +1,11 @@
 
-# DOM 命令 (js解析器命令)
-## 获取节点元素
-### getElementById 
-```js
-document.getElementById 
-``` 
-> 是 document特有的属性
-
-### getElemetnsByTagName / getElementsByClassName 
-
-``` js
-element.getElemetnsByTagName(tag)
-element.getElementsByClassName(classname)
-```
-### childNodes
-### nodeValue
-### firstChild lastChild属性
+# DOM 命令 
+## 定位节点
+- getElementById 
+- getElemetnsByTagName / getElementsByClassName 
+- childNodes
+- nodeValue
+- firstChild /lastChild
 ## 获取/设置属性 getAttribute /setAttribute
 object.getAttribute(attribute)
 object.setAttribute(attribute,value)
