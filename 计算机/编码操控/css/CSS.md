@@ -12,8 +12,8 @@ theme: jekyll-theme-cayman
 ### 盒子模型
 > 默认的width ,height 不包含 内边距 (padding) ，所以为了包含内边距 ，需要定义 border-size:border-box;
 
-### 文档流
-> 每种元素默认的文档流，切换文档流的方式是使用  display:block 或 inline
+### 显示方式 display
+> 切换文档流的方式是使用  display:block 或 inline
 
 ### 定位 vs 布局
 > 定位 关注的是 元素本身的位置
