@@ -52,25 +52,7 @@ think\facade\Config;
  Config::has('route.route_rule_merge');
 ```
       
-### system-config-files
-
-| 文件           | 配置                     |
-| -------------- | ------------------------ |
-| app.php        | 'show_error_msg' => true |
-| cache.php      |                          |
-| console.php    |                          |
-| cookie.php     |                          |
-| database.php   |                          |
-| filesystem.php |                          |
-| lang.php       |                          |
-| log.php        |                          |
-| middleware.php | 中间件配置               |
-| route.php      |                          |
-| session.php    |                          |
-| trace.php      |                          |
-| view.php       | 视图配置                 |
-
-  
+ 
 ### 多应用
 > 每个应用相对保持独立，并且可以支持多个入口文件，应用下面还可以通过多级控制器来维护控制器分组。
 
@@ -128,14 +110,16 @@ Route::view('hello/:name', 'index/hello');
 ```
 
 ### 资源路由
-![](../image/computer/language/php/Snipaste_2021-05-27_16-59-46.png)
+
 ### 路由绑定
   可以使用路由绑定简化 URL 或者路由规则的定义
 #### 绑定到控制器/操作
 
 
 #### 绑定到命名空间
+
 ## 控制器
+
 ### 控制器定义
 
 渲染输出
@@ -144,9 +128,11 @@ Route::view('hello/:name', 'index/hello');
 ### 资源控制器
 
 资源控制器可以让你轻松的创建RESTFul资源控制器，可以通过命令行生成需要的资源控制器，例如生成index应用的Blog资源控制器使用：
+
 php think make:controller index@Blog
 
 或者使用完整的命名空间生成
+
 php think make:controller app\index\controller\Blog
 
 如果只是用于接口开发，可以使用
@@ -157,6 +143,7 @@ Route::resource('blog', 'Blog');
 
 ## 请求
 ### 请求对象 
+
 ``` php
 <?php
 namespace app\index\controller;
