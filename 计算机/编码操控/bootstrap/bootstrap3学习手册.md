@@ -4,16 +4,15 @@ permalink: bootstrap3.html
 theme: jekyll-theme-cayman
 ---
 
-Bootstrap 是一个用于快速开发 Web 应用程序和网站的前端框架
-
-bootstrap3 手册 https://v3.bootcss.com/css/
+Bootstrap 是一个化妆品库，用来给页面 化妆
 
 #### 移动设备优先
-为了保持对移动设备的友好，需要加上以下代码:
+
 ```html
 <meta name="viewport" content="width=device-width, initial-scale=1">
 ```
-设置视口[窗口](viewport)对象的 user-scalable=no 属性,禁用缩放。用户只能滚动屏幕，不能双指缩放。 
+设置视口[窗口](viewport)对象的 user-scalable=no 属性,禁用缩放。
+用户只能滚动屏幕，不能双指缩放。 
 ```html
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 ```
