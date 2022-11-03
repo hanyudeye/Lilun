@@ -14,7 +14,9 @@
 
 * 库
 ** 运行时服务
+
 *** os and sys
+
     - 显示模块搜索路径  sys.path
     - 显示加载的模块 print(sys.modules)
     - 路径合理化 os.path.normpath
@@ -99,7 +101,6 @@
     #+begin_src python
       #!/usr/bin/env python3
       # -*- coding: UTF-8 -*-
-
       import multiprocessing
       import time
 
@@ -148,7 +149,6 @@
                   print("当前时间: {0}".format(time.ctime()))
                   time.sleep(self.interval)
                   n -= 1
-
 
       if __name__ == '__main__':
           p = ClockProcess(3)
@@ -261,7 +261,6 @@
 
     from multiprocessing import Pool
     import os, time, random
-
 
     def long_time_task(name):
     print('进程的名称：{0} ；进程的 PID: {1} '.format(name, os.getpid()))
@@ -525,5 +524,3 @@ This question should help you: How to globally modify the default PYTHONPATH (sy
 ** 包的安装路径
   pip show PACKAGENAME
  一般情况下，包总是被安装在 python 安装目录下的 lib\site-packages\包名\
-
- 

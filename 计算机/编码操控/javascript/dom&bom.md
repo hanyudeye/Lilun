@@ -6,9 +6,11 @@
 - childNodes
 - nodeValue
 - firstChild /lastChild
+
 ## 获取/设置属性 getAttribute /setAttribute
 object.getAttribute(attribute)
 object.setAttribute(attribute,value)
+
 ## 获取/设置样式 style
 object.style.stylename
 
@@ -16,12 +18,14 @@ object.style.stylename
 *.style.color=value
 
 更好的方法是修改 className 属性
+
 ``` js
 element.className=value
 ```
 
 ## 事件
 >在 html 中是 on属性 ，在 addEventListener 中去掉 on
+
 ### 事件类型
 #### Window事件
 | 属性     | 描述                         |

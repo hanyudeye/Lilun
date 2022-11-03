@@ -5,31 +5,11 @@ theme: jekyll-theme-cayman
 ---
 https://www.kancloud.cn/manual/thinkphp6_0/1037479
 
-> 轻量级PHP开发框架
-> 进行敏捷web应用开发、简化企业应用开发
-> 基于5.1基础优化
-
-web程序的特点: 要处理客户端和服务器端的交互（全栈）
+> 网站开发框架
 
 ## MVC架构
 
-控制器(控制流程)
--> 模型(处理业务逻辑)
--> 视图(处理外观)
-
-目录结构
-- 定义应用目录，来放置不同应用
-- 定义配置目录，来配置应用
-- 定义视图目录，来放置客户端文件
-- 定义路由目录，进行路由定义
-- 定义 public 目录，放置 web端其他文件
-- 定义运行时目录 runtime ，放置临时文件
-- 定义插件目录 vendor
-
-## 请求流程
-
-![](./images/request.png)
-
+控制器 -> 模型 -> 视图  (结构分离)
 
 ## 架构总览
 
@@ -56,35 +36,8 @@ $response = $http->name('api')->run();
  php think run -p 80 
 ```
 
-## 命名规范
-
-### 目录和文件
-
-- 目录使用小写+下划线；
-- 类库、函数文件统一以`.php`为后缀；
-- 类的文件名均以命名空间定义，并且命名空间的路径和类库文件所在路径一致；
-- 类（包含接口和Trait）文件采用驼峰法命名（首字母大写），其它文件采用小写+下划线命名；
-- 类名（包括接口和Trait）和文件名保持一致，统一采用驼峰法命名（首字母大写）；
-
-### 函数和类、属性命名
-
-- 类的命名采用驼峰法（首字母大写），例如 `User`、`UserType`；
-- 函数的命名使用小写字母和下划线（小写字母开头）的方式，例如 `get_client_ip`；
-- 方法的命名使用驼峰法（首字母小写），例如 `getUserName`；
-- 属性的命名使用驼峰法（首字母小写），例如 `tableName`、`instance`；
-- 特例：以双下划线`__`打头的函数或方法作为魔术方法，例如 `__call` 和 `__autoload`；
-
-### 常量和配置
-
-- 常量以大写字母和下划线命名，例如 `APP_PATH`；
-- 配置参数以小写字母和下划线命名，例如 `url_route_on` 和`url_convert`；
-- 环境变量定义使用大写字母和下划线命名，例如`APP_DEBUG`；
-
-### 数据表和字段
-
-- 数据表和字段采用小写加下划线方式命名，并注意字段名不要以下划线开头，例如 `think_user` 表和 `user_name`字段，不建议使用驼峰和中文作为数据表及字段命名。
-
 ## config (设置)
+
 ### environment-variables
 
 think\facade\Env
@@ -99,25 +52,7 @@ think\facade\Config;
  Config::has('route.route_rule_merge');
 ```
       
-### system-config-files
-
-| 文件           | 配置                     |
-| -------------- | ------------------------ |
-| app.php        | 'show_error_msg' => true |
-| cache.php      |                          |
-| console.php    |                          |
-| cookie.php     |                          |
-| database.php   |                          |
-| filesystem.php |                          |
-| lang.php       |                          |
-| log.php        |                          |
-| middleware.php | 中间件配置               |
-| route.php      |                          |
-| session.php    |                          |
-| trace.php      |                          |
-| view.php       | 视图配置                 |
-
-  
+ 
 ### 多应用
 > 每个应用相对保持独立，并且可以支持多个入口文件，应用下面还可以通过多级控制器来维护控制器分组。
 
@@ -175,14 +110,16 @@ Route::view('hello/:name', 'index/hello');
 ```
 
 ### 资源路由
-![](../image/computer/language/php/Snipaste_2021-05-27_16-59-46.png)
+
 ### 路由绑定
   可以使用路由绑定简化 URL 或者路由规则的定义
 #### 绑定到控制器/操作
 
 
 #### 绑定到命名空间
+
 ## 控制器
+
 ### 控制器定义
 
 渲染输出
@@ -191,9 +128,11 @@ Route::view('hello/:name', 'index/hello');
 ### 资源控制器
 
 资源控制器可以让你轻松的创建RESTFul资源控制器，可以通过命令行生成需要的资源控制器，例如生成index应用的Blog资源控制器使用：
+
 php think make:controller index@Blog
 
 或者使用完整的命名空间生成
+
 php think make:controller app\index\controller\Blog
 
 如果只是用于接口开发，可以使用
@@ -204,6 +143,7 @@ Route::resource('blog', 'Blog');
 
 ## 请求
 ### 请求对象 
+
 ``` php
 <?php
 namespace app\index\controller;
