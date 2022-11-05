@@ -51,7 +51,6 @@ think\facade\Config;
  Config::get('app.app_name');
  Config::has('route.route_rule_merge');
 ```
-      
  
 ### 多应用
 > 每个应用相对保持独立，并且可以支持多个入口文件，应用下面还可以通过多级控制器来维护控制器分组。
