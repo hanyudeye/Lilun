@@ -6,35 +6,23 @@ theme: jekyll-theme-cayman
 
 ## 1.布局
 
-## 2. 元素
+## 元素
 
 ## 基本概念
+
 ### 盒子模型
+在 HTML 中，对象（元素）的默认形状都是方块型的。然后边框都是隐藏，如果打开就都是方块了。
+
 > 默认的width ,height 不包含 内边距 (padding) ，所以为了包含内边距 ，需要定义 border-size:border-box;
 
+
+
 ### 显示方式 display
-> 切换文档流的方式是使用  display:block 或 inline
+对象（元素）分为两种显示方式，一种是平铺的，一种是垂直排列的。
 
-### 定位 vs 布局
-> 定位 关注的是 元素本身的位置
-> 布局 关注的是容器的区域设置
+>要切换对象的默认显示方式，使用  display:block 或 inline
 
-#### 定位
-##### 坐标定位
-
-- 静态坐标 static  (文档流坐标，默认) 设置了偏移，不影响元素所在位置
-- 相对坐标 relative   (相对文档流坐标，设置偏移后，元素会偏移，但其原有的文档流位置保留)
-- 绝对坐标 absolute (会脱离文档流，其它元素的位置会变化)
-- 固定坐标 fixed (同样会脱离文档流)
-
-> 需要： 确定坐标系和所在坐标的位置 
-
-
-##### 浮动定位 (用于图文混排)
-### 页面布局
-
-#### Flex 弹性布局
-> 容器与元素联动
+还有一种是弹性的，会自适应  
 
 1. 容器: display:flex;
 排列方向: flex-direction  : row , row-reverse , column ,column-reverse
@@ -49,21 +37,29 @@ theme: jekyll-theme-cayman
 收缩: flex-shrink
 基础长度: flex-basis
 
-#### Grid 网格布局
+### 定位
+对象如果想 突破 原来的显示方式，就要使用定位，确认自己相对（绝对）其它对象的位置。
+
+- 静态坐标 static  (文档流坐标，默认) 设置了偏移，不影响元素所在位置
+- 相对坐标 relative   (相对文档流坐标，设置偏移后，元素会偏移，但其原有的文档流位置保留)
+- 绝对坐标 absolute (会脱离文档流，其它元素的位置会变化)
+- 固定坐标 fixed (同样会脱离文档流)
+
 ## 选择器 
-声明权重 !important
+
+> 增强某样式的权重  !important
+
 ### 标签选择器
 ### 属性选择器 
 
 | 代码                                 | 说明                                                 |
 | ------------------------------------ | ---------------------------------------------------- |
-| [attribute]                          | 元素有attribute的属性。                              |
-| [attribute="value"]                  | 属性attribute里是value                               |
-| [attribute~="value"]                 | 属性attribute里使用空白分开的字符串里其中一个是value |
-| [attribute          &#124;= "value"] | 属性attribute里是value或者以value-开头的字符串       |
-| [attribute^="value"]                 | 属性attribute里最前的是value                         |
-| [attribute$="value"]                 | 属性attribute里最后的是value                         |
-| [attribute*="value"]                 | 属性attribute里有value出现过至少一次                 |
+| [attribute="value"]                  | attribute值是value                               |
+| [attribute~="value"]                 | 有一个是value |
+| [attribute          &#124;= "value"] | 是value或以value-开头的字符串       |
+| [attribute^="value"]                 | 最前是value                         |
+| [attribute$="value"]                 | 最后是value                         |
+| [attribute*="value"]                 | value出现过至少一次                 |
 
 ### 位置选择器 
 
@@ -105,7 +101,7 @@ theme: jekyll-theme-cayman
 
 ### 长度
 
-: CSS 中的长度单位是一定要写的，因为有多种 
+> CSS 中的长度单位是一定要写的，因为有多种 
 
 #### 绝对长度 (尺寸不固定，慎用) 
 
@@ -203,7 +199,6 @@ linear-gradient(0deg, blue, green 40%, red);
 
 ```
 
-
 ``` css
 body{
   width: 100%;
@@ -245,7 +240,6 @@ mask-image: linear-gradient(left, rgba(209, 36, 36, 0), rgba(33, 30, 30, 0) 30%)
         - border-top-right-radius:10px;
         - border-bottom-right-radius:10px;
         - border-bottom-left-radius:10px;
-
 
 盒倒影 box-reflect
 
@@ -525,8 +519,6 @@ overflow: hidden;
 text-overflow: ellipsis; 
 /* 以上3个步骤一个都不能少*/
 ``` 
-
-
 
 ### content
 ``` css
