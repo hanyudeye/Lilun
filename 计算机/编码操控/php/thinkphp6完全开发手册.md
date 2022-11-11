@@ -127,11 +127,9 @@ Route::view('hello/:name', 'index/hello');
 ### 资源控制器
 
 资源控制器可以让你轻松的创建RESTFul资源控制器，可以通过命令行生成需要的资源控制器，例如生成index应用的Blog资源控制器使用：
-
 php think make:controller index@Blog
 
 或者使用完整的命名空间生成
-
 php think make:controller app\index\controller\Blog
 
 如果只是用于接口开发，可以使用
@@ -142,7 +140,6 @@ Route::resource('blog', 'Blog');
 
 ## 请求
 ### 请求对象 
-
 ``` php
 <?php
 namespace app\index\controller;

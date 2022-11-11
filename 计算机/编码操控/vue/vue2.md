@@ -4,8 +4,8 @@ vue 绑定 link
 https://github.com/icarusion/vue-book
 
 # Vue2
+
  > 处理SPA(单页面富应用)  
- > 复杂应用  （单 Vue 文件 + webpack + [vuex 管理状态] +[vue-router 管理路由])   
 
 ## jQuery 与 Vue 区别
 jQuery
@@ -13,11 +13,8 @@ jQuery
 if(showBtn){
 var btn=$('<button>Click me</button>');
 btn.on('click',function(){});
-
 $('#app').append(btn);
-
 }
-
 ```
 
 Vue
@@ -33,9 +30,7 @@ data:{
 showBtn:true
 }
 });
-
 </script>
-
 ```
 
 
@@ -63,13 +58,12 @@ new Vue({
 	  }
   }
 });
-
 ```
 
-
-
 ## 模板
+
 ### 内容
+
 #### 文本节点
 ```
 {{datavar}}
@@ -120,11 +114,14 @@ new Vue({
 ```
 
 v-model与 input ,select ,textarea,checkbox,radio 等表单形成关联
+
 ### 与事件属性关联 v-on
+
 方法放在 methods 中
 ### 过滤filters  {{ a | b}}
 
 ### 条件 ###
+
 #### v-if  等价于后台模板的写法 {{#if }} {{/if}} ####
 
 #### v-else ####
