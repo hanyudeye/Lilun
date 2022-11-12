@@ -5,9 +5,12 @@ theme: jekyll-theme-cayman
 ---
 https://www.kancloud.cn/manual/thinkphp6_0/1037479
 
-网站程序 
+## 网站程序 
+![](images/2022-11-12-14-21-49.png)
+
 
 ## 架构总览
+![](images/2022-11-12-14-24-25.png)
 
 ### 进入不同应用
 
@@ -20,6 +23,7 @@ $response = $http->name('api')->run();
 ```
 
 ## 安装 
+![](images/2022-11-12-14-25-23.png)
 ```shell
  composer create-project topthink/think tp 
  cd tp  
@@ -33,7 +37,7 @@ $response = $http->name('api')->run();
 ```
 
 ## config (设置)
-
+![](images/2022-11-12-14-26-14.png)
 ### environment-variables
 
 think\facade\Env
@@ -66,7 +70,7 @@ $http->end($response);
 
 ## 路由
 ### 路由
-
+![](images/2022-11-12-14-32-29.png)
 路由地址不能跨 应用 (除非采用重定向路由) 
     
 ```
@@ -94,6 +98,7 @@ Route::rule('new/:year/:month/:day', 'News/read'); // 静态地址和动态地�
 Route::rule(':user/:blog_id', 'Blog/read'); // 全动态地址
 ```
 ### 路由地址
+![](images/2022-11-12-14-33-23.png)
 #### 重定向路由
 ```
 Route::redirect('blog/:id', 'http://blog.thinkphp.cn/read/:id', 302);
@@ -114,6 +119,7 @@ Route::view('hello/:name', 'index/hello');
 #### 绑定到命名空间
 
 ## 控制器
+![](images/2022-11-12-14-34-26.png)
 
 ### 控制器定义
 
@@ -135,6 +141,7 @@ php think make:controller index@Blog --api
 Route::resource('blog', 'Blog');
 
 ## 请求
+![](images/2022-11-12-14-35-59.png)
 ### 请求对象 
 ``` php
 <?php
@@ -209,11 +216,11 @@ Request::param('username','','strip_tags');
 input('post.name','','org\Filter::safeHtml');
 afeHtml方法过滤
 ```
-### 请求类型
 
-获取请求类型
+### 获取请求类型
+
 | 用途                | 方法      |
-|---------------------+-----------|
+| ------------------- | --------- |
 | 获取当前请求类型    | method    |
 | 判断是否GET请求     | isGet     |
 | 判断是否POST请求    | isPost    |
@@ -240,11 +247,13 @@ echo $info['user-agent'];
 ```
 
 ## 响应
+![](images/2022-11-12-14-50-43.png)
+
 大多数情况,我们不需要关注 Response 对象本身,只需要在控制器的操作方法中返回数据即可
 > 使用 return  返回响应类型的数据 return json($data);
 
 | 输出类型     | 快捷方法 | 对应Response类           |
-|--------------+----------+--------------------------|
+| ------------ | -------- | ------------------------ |
 | HTML输出     | response | \think\Response          |
 | 渲染模板输出 | view     | \think\response\View     |
 | JSON输出     | json     | \think\response\Json     |
@@ -273,6 +282,8 @@ response()->cookie('name', 'value', 600);
 ```
 
 文件下载
+
+![](images/2022-11-12-16-21-03.png)
 
 ``` php
 //如果需要设置文件下载的有效期,可以使用
