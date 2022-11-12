@@ -787,7 +787,7 @@ RewriteRule ^(.*)$ index.php?/$1 [QSA,PT,L]
 
 [Nginx]
 ``` c
-location / { // .....省略部分代码
+location / { 
 if (!-e $request_filename) {
 rewrite ^(.*)$ /index.php?s=/$1
  last;
@@ -796,7 +796,6 @@ break;
 }
 
 ```
-(/  3600 24)
 
 ### 设置session 时间
 > ROOT\application\config.php
@@ -804,7 +803,6 @@ break;
 添加个字段  expire
 
 ``` php
-
  'session'                => [
         'id'             => '',
         // SESSION_ID的提交变量,解决flash上传跨域
@@ -817,7 +815,6 @@ break;
         'auto_start'     => true,
         //设置session 时间
         'expire'             => 86400,  
-        
         //3600 1小时
     ],
 ```

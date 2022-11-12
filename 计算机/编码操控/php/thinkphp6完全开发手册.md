@@ -5,15 +5,11 @@ theme: jekyll-theme-cayman
 ---
 https://www.kancloud.cn/manual/thinkphp6_0/1037479
 
-> 网站开发框架
-
-## MVC架构
-
-控制器 -> 模型 -> 视图  (结构分离)
+网站程序 
 
 ## 架构总览
 
-### 定义入口文件，进入不同应用
+### 进入不同应用
 
 - public/index.php (前台)
 - public/admin.php (后台)
