@@ -295,6 +295,8 @@ return download('image.jpg', 'my')->expire(300);
 ```
 
 ## 数据库
+![](images/2022-11-14-11-41-35.png)
+
 ### 删除数据
 ``` php
 // 软删除数据 使用delete_time字段标记删除
@@ -309,7 +311,7 @@ UPDATE `think_user` SET `delete_time` = '1515745214' WHERE `id` = 1
 ```
 
 ## 模型
-
+![](images/2022-11-14-11-42-06.png)
 ``` php
 //指定主键
 protected $pk = 'uid';
@@ -329,7 +331,7 @@ protected $schema = [
 ];
 ```
 ## 视图
-
+![](images/2022-11-14-11-42-34.png)
 ``` php
 // 模板变量赋值
 View::assign('name','ThinkPHP');
@@ -352,13 +354,13 @@ return view('index', [
 ```
 
 ## 上传文件
-
+![](images/2022-11-14-11-43-10.png)
 如果是多应用的话，上传根目录默认是runtime/index/storage，如果你希望上传的文件是可以直接访问或者下载的话，可以使用public存储方式。
 
 $savename = \think\facade\Filesystem::disk('public')->putFile( 'topic', $file);
 
 你可以在config/filesystem.php配置文件中配置上传根目录及上传规则，例如：
-
+``` php
 return [
     'default' =>  'local',
     'disks'   => [
@@ -375,10 +377,11 @@ return [
         // 更多的磁盘配置信息
     ],
 ];
+```
 我们可以指定上传文件的命名规则，例如：
-
+``` php
 $savename = \think\facade\Filesystem::putFile( 'topic', $file, 'md5');
-
+```
 
 系统默认提供了几种上传命名规则，包括：
 
