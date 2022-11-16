@@ -12,3 +12,18 @@
 - 方法2
 直接使用命令 code.cmd 打开
 
+## 插件 settings Sync
+![](images/2022-11-15-18-58-35.png)
+- 通过GitHub生成你的gist Id 和 token
+- 两台电脑的VSCode中都需要安装settings Sync插件并配置 gistId 和 token
+- 原电脑上传配置
+- 新电脑下载同步配置
+
+![](images/2022-11-15-18-57-33.png)
+
+![](images/2022-11-15-18-59-40.png)
+
+![](images/2022-11-15-19-00-20.png)
+
+![](images/2022-11-15-19-00-58.png)
+![](images/2022-11-15-19-01-30.png)

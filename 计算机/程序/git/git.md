@@ -2,7 +2,7 @@
 ![](images/2022-11-12-06-00-34.png)
 
 ## 分支操作
-
+![](images/2022-11-15-21-14-54.png)
 1、git branch 创建分支
 
 2、git branch -b 创建并切换到新建的分支上
@@ -30,7 +30,7 @@
 13、git merge 分支名 合并分支到当前分支上
 
 ## 暂存操作
-
+![](images/2022-11-15-21-15-33.png)
 1、git stash 暂存当前修改
 
 2、git stash apply 恢复最近的一次暂存
@@ -43,8 +43,8 @@
 
 6、git stash clear 清除暂存
 
-回退操作
-
+## 回退操作
+![](images/2022-11-15-21-17-55.png)
 1、git reset --hard HEAD^ 回退到上一个版本
 
 2、git reset --hard ahdhs1(commit_id) 回退到某个版本
@@ -53,7 +53,7 @@
 
 4、git reset HEAD file 撤回暂存区的文件修改到工作区
 
-标签操作
+## 标签操作
 
 1、git tag 标签名 添加标签(默认对当前版本)
 
@@ -73,9 +73,9 @@
 
 9、git push origin :refs/tags/标签名 从远程仓库中删除标签
 
-其它操作
+## 其它操作
 
-常规操作
+### 常规操作
 
 1、git push origin test 推送本地分支到远程仓库
 
@@ -91,22 +91,22 @@
 
 7、git add -f 文件名 强制将文件提交
 
-git创建项目仓库
+### git创建项目仓库
 
 1、git init 初始化
 2、git remote add origin url 关联远程仓库
 3、git pull
 4、git fetch 获取远程仓库中所有的分支到本地
 
-忽略已加入到版本库中的文件
-
+### 忽略已加入到版本库中的文件
+![](images/2022-11-15-21-16-57.png)
 1、git update-index --assume-unchanged file 忽略单个文件
 2、git rm -r --cached 文件/文件夹名字 (. 忽略全部文件)
 
-取消忽略文件
+### 取消忽略文件
 
 git update-index --no-assume-unchanged file
 
-拉取、上传免密码
+### 拉取、上传免密码
 
 git config --global credential.helper store

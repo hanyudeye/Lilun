@@ -1,7 +1,7 @@
 
 ## 类型转换
-不同对象，属性也不同
 ![](images/2022-11-11-19-57-37.png)
+
 - list(s)  转列表
 - set(s)  转集合(无重复，排序随机)
 - dict(d) d 必须是一个序列 (key,value)元组。
@@ -12,10 +12,10 @@
 - hex(x) 将一个整数转换为一个十六进制字符串
 - oct(x) 将一个整数转换为一个八进制字符串
 
-* 库
-** 运行时服务
+# 库
+## 运行时服务
 
-*** os and sys
+### os and sys
 
     - 显示模块搜索路径  sys.path
     - 显示加载的模块 print(sys.modules)
@@ -32,64 +32,64 @@
     - 移植工具 os.sep, os.pathsep, os.curdir, os.path.split, os.path.join  
     - 路径名称工具 os.path.exists('path'), os.path.isdir('path'), os.path.getsize('path')     
 
-** 数学运算
-*** math
+## 数学运算
+### math
     - pi
     - floor 地板
     - trunc 截断
-*** random
+### random
     - random
-** 字符串和文本处理 
-*** odecs 
-*** re
+## 字符串和文本处理 
+### odecs 
+### re
     - match 从起始位置开始匹配
     - search 查找第一个
     - fullmath 完全一样
     - split 用 pattern 截断
     - findall
 
-    #+begin_src py
-    match=re.match('/(.*)/(.*)/(.*)','/user/var/hello')
+    ``` python
+    match=re.match('/(.#)/(.#)/(.#)','/user/var/hello')
     print(match.groups())
-    #+end_src
+    ```
 
     #+begin_example
     返回 ('user', 'var', 'hello')
     #+end_example
-*** string
-** 数据库
-** 文件和目录处理
-*** bz2 
-*** filecmp
-*** fnmatch
-*** glob
-*** gzip
-*** shutil
-*** tarfile
-*** tempfile
-*** zipfile
-*** zlib
-** 操作系统服务
-*** commands 
-*** ConfigParser 、configparser
-*** datetime
-**** date
-**** time
-**** datetime
-**** timedelta
-*** errno
-*** fcntl
-*** io
-*** logging
-*** mmap
-*** msvcrt
-*** optparse
-*** signal
-*** subprocess
-*** time
-*** winreg
-** 进程  
-*** 创建进程
+### string
+## 数据库
+## 文件和目录处理
+### bz2 
+### filecmp
+### fnmatch
+### glob
+### gzip
+### shutil
+### tarfile
+### tempfile
+### zipfile
+### zlib
+## 操作系统服务
+### commands 
+### ConfigParser 、configparser
+### datetime
+#### date
+#### time
+#### datetime
+#### timedelta
+### errno
+### fcntl
+### io
+### logging
+### mmap
+### msvcrt
+### optparse
+### signal
+### subprocess
+### time
+### winreg
+## 进程  
+### 创建进程
     Process([group [, target [, name [, args [, kwargs]]]]])
     target 表示调用对象
     args 表示调用对象的位置参数元组
@@ -98,9 +98,8 @@
     group 实质上不使用
 
     下面看一个创建函数并将其作为多个进程的例子：
-    #+begin_src python
+    ``` python
       #!/usr/bin/env python3
-      # -*- coding: UTF-8 -*-
       import multiprocessing
       import time
 
@@ -125,15 +124,12 @@
               print("child   p.name:" + p.name + "\tp.id" + str(p.pid))
               print("END!!!!!!!!!!!!!!!!!")
 
-    #+end_src
-*** 把进程创建成类
+    ```
+### 把进程创建成类
     当然我们也可以把进程创建成一个类，如下面的例子，当进程 p 调用 start() 时，自
     动调用 run() 方法。
 
-    #+begin_src python
-
-      # -*- coding: UTF-8 -*-
-
+    ``` python
       import multiprocessing
       import time
 
@@ -154,15 +150,14 @@
           p = ClockProcess(3)
           p.start()
 
-    #+end_src
-*** daemon 属性
+    ```
+### daemon 属性
 
     想知道 daemon 属性有什么用，看下下面两个例子吧，一个加了 daemon 属性，一个没有加，对比输出的结果：
 
     没有加 deamon 属性的例子：
 
-    #+begin_src python
-      # -*- coding: UTF-8 -*-
+    ``` python
       import multiprocessing
       import time
 
@@ -178,7 +173,7 @@
           p.start()
           print('【EMD】')
 
-    #+end_src
+    ```
     输出结果：
 
     ```txt
@@ -190,7 +185,6 @@
     在上面示例中，进程 p 添加 daemon 属性：
 
     ```python
-    # -*- coding: UTF-8 -*-
 
     import multiprocessing
     import time
@@ -218,12 +212,12 @@
 
     根据输出结果可见，如果在子进程中添加了 daemon 属性，那么当主进程结束的时候，子
     进程也会跟着结束。所以没有打印子进程的信息。
-*** join 方法
+### join 方法
     结合上面的例子继续，如果我们想要让子线程执行完该怎么做呢？
     那么我们可以用到 join 方法，join 方法的主要作用是：阻塞当前进程，直到调用 join 方法的那个进程执行完，再继续执行当前进程。
     因此看下加了 join 方法的例子：
 
-    #+begin_src python
+    ``` python
       import multiprocessing
       import time
 
@@ -240,7 +234,7 @@
           p.start()
           p.join()
           print('【EMD】')
-    #+end_src
+    ```
     输出的结果：
 
     ```txt
@@ -248,7 +242,7 @@
     工作结果时间：Tue Oct 10 11:30:11 2017
     【EMD】
     ```
-*** Pool
+### Pool
 
     如果需要很多的子进程，难道我们需要一个一个的去创建吗？
 
@@ -257,7 +251,6 @@
     例子如下：
 
     ```python
-    # -*- coding: UTF-8 -*-
 
     from multiprocessing import Pool
     import os, time, random
@@ -265,7 +258,7 @@
     def long_time_task(name):
     print('进程的名称：{0} ；进程的 PID: {1} '.format(name, os.getpid()))
     start = time.time()
-    time.sleep(random.random() * 3)
+    time.sleep(random.random() # 3)
     end = time.time()
     print('进程 {0} 运行了 {1} 秒'.format(name, (end - start)))
 
@@ -313,7 +306,7 @@
     ```
 
     就可以同时跑 5 个进程。
-*** 进程间通信
+### 进程间通信
 
     Process 之间肯定是需要通信的，操作系统提供了很多机制来实现进程间的通信。Python
     的 multiprocessing 模块包装了底层的机制，提供了 Queue、Pipes 等多种方式来交换
@@ -323,7 +316,6 @@
 
     ```python
     #!/usr/bin/env python3
-    # -*- coding: UTF-8 -*-
 
     from multiprocessing import Process, Queue
     import os, time, random
@@ -371,75 +363,75 @@
     写进 Queue 的值为：四点水
     从 Queue 读取的值为：四点水
     ```
-** 线程与并发性
-*** multiprocessing
-**** 进程 
-**** 进程间通信
-**** 进程池
-**** 共享数据与同步
-**** 托管对象
-**** 连接
-*** threading
-**** Thread
-**** Timer
-**** Lock
-**** RLock
-**** 信号量与有边界的信号量
-**** 事件
-**** 条件变量
-**** 使用 Lock
-**** 线程终止与挂起
-*** queue、Queue
-*** 协程与微线程
-** 网络编程与套接字
-*** 网路编程基础 
-*** asynchat
-*** asynncore
-*** select
-*** socket
-**** 地址族
-**** 套接字类型
-**** 寻址
-**** 函数
-**** 异常
-**** 示例
-*** ssl
-*** SocketServer
-** Internet 编程
-*** ftplib
-*** http
-**** http.client 
-**** http.server
-**** http.cookie
-**** http.cookiejar
-*** smtplib
-*** urllib
-*** xmlrpc
-** Web 编程
-*** cgi
-*** cgitb
-*** wsgiref
-*** webbrowser
-** Internet 数据处理与编码
-*** base64
-*** binascii
-*** csv
-*** email
-*** hashlib
-*** hmac
-*** HtMLParser
-*** json
-*** mimetypes
-*** quopri
-*** xml
-** 其它库
-*** Python 服务
-*** 国际化
-*** 多媒体
-** 扩展与嵌入
-*** 扩展模块
-*** 嵌入 Python 解释器
-* python 项目的通用创建方法     
+## 线程与并发性
+### multiprocessing
+#### 进程 
+#### 进程间通信
+#### 进程池
+#### 共享数据与同步
+#### 托管对象
+#### 连接
+### threading
+#### Thread
+#### Timer
+#### Lock
+#### RLock
+#### 信号量与有边界的信号量
+#### 事件
+#### 条件变量
+#### 使用 Lock
+#### 线程终止与挂起
+### queue、Queue
+### 协程与微线程
+## 网络编程与套接字
+### 网路编程基础 
+### asynchat
+### asynncore
+### select
+### socket
+#### 地址族
+#### 套接字类型
+#### 寻址
+#### 函数
+#### 异常
+#### 示例
+### ssl
+### SocketServer
+## Internet 编程
+### ftplib
+### http
+#### http.client 
+#### http.server
+#### http.cookie
+#### http.cookiejar
+### smtplib
+### urllib
+### xmlrpc
+## Web 编程
+### cgi
+### cgitb
+### wsgiref
+### webbrowser
+## Internet 数据处理与编码
+### base64
+### binascii
+### csv
+### email
+### hashlib
+### hmac
+### HtMLParser
+### json
+### mimetypes
+### quopri
+### xml
+## 其它库
+### Python 服务
+### 国际化
+### 多媒体
+## 扩展与嵌入
+### 扩展模块
+### 嵌入 Python 解释器
+# python 项目的通用创建方法     
   1 .Create and configure virtualenv for your project, before using pip. This is
   the most Pythonic way (创建一个虚拟环境)
   
@@ -453,24 +445,24 @@ This command should install packages into site-packages directory.
 
 This question should help you: How to globally modify the default PYTHONPATH (sys.path)? (这个是其他方法)
 
-* 工具
-** 虚拟环境 virtualenv 管理包
+# 工具
+## 虚拟环境 virtualenv 管理包
    环境，就是用某个环境的工具执行代码喽，激活了环境记得关闭此环境哦
     
-*** 创建虚拟环境
+### 创建虚拟环境
     创建 env 环境目录   virtualenv env
     创建目录，并选用 python3 的解释器 virtualenv -p /usr/local/bin/python3 venv
-*** 启动虚拟环境 source ./bin/activate
+### 启动虚拟环境 source ./bin/activate
     Virtualenv 附带有 pip 安装工具，因此需要安装的 packages 可以直接运行：
-*** 退出虚拟环境 deactivate
-*** 删除虚拟环境 rm -rf 
-*** 虚拟环境管理工具 Virtualenvwrapper 
-**** 创建虚拟机 mkvirtualenv env
-**** 列出虚拟环境列表 workon 或者 lsvirtualenv
-**** 启动/切换虚拟环境 workon [virtual-name]
-**** 删除虚拟环境 rmvirtualenv  [virtual-name]
-**** 离开虚拟环境 deactivate
-** 版本管理 pyenv,管理 python 版本
+### 退出虚拟环境 deactivate
+### 删除虚拟环境 rm -rf 
+### 虚拟环境管理工具 Virtualenvwrapper 
+#### 创建虚拟机 mkvirtualenv env
+#### 列出虚拟环境列表 workon 或者 lsvirtualenv
+#### 启动/切换虚拟环境 workon [virtual-name]
+#### 删除虚拟环境 rmvirtualenv  [virtual-name]
+#### 离开虚拟环境 deactivate
+## 版本管理 pyenv,管理 python 版本
 
    常用命令 
    pyenv versions – 查看系统当前安装的 python 列表
@@ -500,7 +492,7 @@ This question should help you: How to globally modify the default PYTHONPATH (sy
    可以实现自动激活虚拟环境，这个特性非常有用建议都加上。
 
    创建虚拟环境: pyenv virtualenv 2.7.13 virtual-env-2.7.13，默认使用当前环境 python 版本。 在文件夹$(pyenv root)/versions/my-virtual-env-2.7.13 中创建一个基于 Python 2.7.13 的虚拟环境。
-   列出虚拟环境: pyenv virtualenvs，对每个 virtualenv 显示 2 个, 短的只是个链接，那个*表示当前激活的。
+   列出虚拟环境: pyenv virtualenvs，对每个 virtualenv 显示 2 个, 短的只是个链接，那个#表示当前激活的。
    激活虚拟环境: pyenv activate virtual-env-2.7.13
    退出虚拟环境: pyenv deactivate
    删除虚拟环境: pyenv uninstall virtual-env-2.7.13
@@ -520,7 +512,7 @@ This question should help you: How to globally modify the default PYTHONPATH (sy
    使用 pyenv 来管理多版本的 python 命令，使用 pyenv-virtualenv 插件来管理多版本
    python 包环境。爽歪歪~
 
-* pip
-** 包的安装路径
+# pip
+## 包的安装路径
   pip show PACKAGENAME
  一般情况下，包总是被安装在 python 安装目录下的 lib\site-packages\包名\
