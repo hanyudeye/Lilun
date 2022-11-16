@@ -4,20 +4,19 @@ permalink: css2learn.html
 theme: jekyll-theme-cayman
 ---
 
-## 1.布局
-
-## 元素
-
 ## 基本概念
 
 ### 盒子模型
-在 HTML 中，对象（元素）的默认形状都是方块型的。然后边框都是隐藏，如果打开就都是方块了。
+![](images/2022-11-16-10-20-17.png)
 
 > 默认的width ,height 不包含 内边距 (padding) ，所以为了包含内边距 ，需要定义 border-size:border-box;
 
-
-
 ### 显示方式 display
+> 纵向对齐
+![纵向对齐](images/纵向对齐.png)
+> 横向对齐
+![横向对齐](images/横向对齐.png)
+
 对象（元素）分为两种显示方式，一种是平铺的，一种是垂直排列的。
 
 >要切换对象的默认显示方式，使用  display:block 或 inline
@@ -29,8 +28,6 @@ theme: jekyll-theme-cayman
 溢出处理: flex-wrap : nowrap(会溢出)， wrap (溢出部分会换行)， wrap-reverse
 对齐方式: align-items (纵向对齐) , justify-content (横向对齐，单行) ， align-content( 多行 )
 
-![纵向对齐](纵向对齐.png)
-![横向对齐](横向对齐.png)
 
 2. 元素
 扩展: flex-grow
@@ -38,6 +35,8 @@ theme: jekyll-theme-cayman
 基础长度: flex-basis
 
 ### 定位
+![](images/2022-11-16-16-16-28.png)
+
 对象如果想 突破 原来的显示方式，就要使用定位，确认自己相对（绝对）其它对象的位置。
 
 - 静态坐标 static  (文档流坐标，默认) 设置了偏移，不影响元素所在位置
@@ -46,20 +45,20 @@ theme: jekyll-theme-cayman
 - 固定坐标 fixed (同样会脱离文档流)
 
 ## 选择器 
-
+![](images/2022-11-16-16-17-41.png)
 > 增强某样式的权重  !important
 
 ### 标签选择器
 ### 属性选择器 
 
-| 代码                                 | 说明                                                 |
-| ------------------------------------ | ---------------------------------------------------- |
-| [attribute="value"]                  | attribute值是value                               |
-| [attribute~="value"]                 | 有一个是value |
-| [attribute          &#124;= "value"] | 是value或以value-开头的字符串       |
-| [attribute^="value"]                 | 最前是value                         |
-| [attribute$="value"]                 | 最后是value                         |
-| [attribute*="value"]                 | value出现过至少一次                 |
+| 代码                                 | 说明                          |
+| ------------------------------------ | ----------------------------- |
+| [attribute="value"]                  | attribute值是value            |
+| [attribute~="value"]                 | 有一个是value                 |
+| [attribute          &#124;= "value"] | 是value或以value-开头的字符串 |
+| [attribute^="value"]                 | 最前是value                   |
+| [attribute$="value"]                 | 最后是value                   |
+| [attribute*="value"]                 | value出现过至少一次           |
 
 ### 位置选择器 
 
@@ -92,7 +91,7 @@ theme: jekyll-theme-cayman
 ## 单位
 
 ### 颜色
-
+![](images/2022-11-16-16-18-24.png)
 1.  使用颜色的名字表示特定颜色  red , yellow  
 2.  rgb(0,100,100) 用十进制的 rgb 混色模式 (255的色值)
 3.  \#ffffff 用十六进制的 rgb 混色模式
@@ -100,18 +99,18 @@ theme: jekyll-theme-cayman
 5.  设置透明 [图片(opacity:0.8)] [文字rgba(100,0,0,0)]  (0-1) 0是全透明
 
 ### 长度
-
+![](images/2022-11-16-16-18-57.png)
 > CSS 中的长度单位是一定要写的，因为有多种 
 
 #### 绝对长度 (尺寸不固定，慎用) 
 
-| 单位 | 描述                       |
-|------+----------------------------|
-| cm   | 厘米                       |
-| mm   | 毫米                       |
+| 单位 | 描述                             |
+| ---- | -------------------------------- |
+| cm   | 厘米                             |
+| mm   | 毫米                             |
 | in   | 英寸(inch) (1in = 96px = 2.54cm) |
-| pt   | 点 (1pt = 1/72 of 1in)     |
-| pc   | 派卡 (1pc = 12 pt)         |
+| pt   | 点 (1pt = 1/72 of 1in)           |
+| pc   | 派卡 (1pc = 12 pt)               |
 
 像素（px）是相对于观看设备的。对于低 dpi 的设备，1px 是显示器的一个设备像素（点）。对于打印机和高分辨率屏幕，1px 表示多个设备像素。
 
@@ -137,13 +136,17 @@ theme: jekyll-theme-cayman
 * 视口（Viewport）= 浏览器窗口的尺寸。如果视口宽 50 里面，则 1vw = 0.5cm。
 
 ## 样式 
-
+![](images/2022-11-16-16-27-46.png)
 ### 浏览器特殊前缀 
 - -o- Opera 
 - -webkit- safari 和 chrome
 - -moz- mozilla
 
 ### 背景色
+
+
+![](images/2022-11-16-16-28-26.png)
+
 background-color
 ### 背景图像 
 background-image:url('')
@@ -171,7 +174,7 @@ box-shadow: 10px 10px 5px #888888;
 box-shadow: h-shadow v-shadow blur spread color inset;
 
 | 值       | 描述                                     |
-|----------+------------------------------------------|
+| -------- | ---------------------------------------- |
 | h-shadow | 必需。水平阴影的位置。允许负值。         |
 | v-shadow | 必需。垂直阴影的位置。允许负值。         |
 | blur     | 可选。模糊距离。                         |
@@ -184,7 +187,7 @@ box-shadow: h-shadow v-shadow blur spread color inset;
 ### 背景
 
 #### 渐变背景
-
+![](images/2022-11-16-16-29-23.png)
 background-image: linear-gradient(direction, color-stop1, color-stop2, ...);
 
 ``` css
@@ -217,7 +220,7 @@ body{
 background: url() left top no-repeat ,url() right bottom no-repeat;
 
 #### 遮罩
-
+![](images/2022-11-16-16-30-36.png)
 mask-box-image:url() 75 stretch;
 mask-image: linear-gradient(left, rgba(209, 36, 36, 0), rgba(33, 30, 30, 0) 30%);
 
@@ -258,6 +261,7 @@ box-reflect：none , direction offset, mask-box-image
 - a:active  链接被点击的时刻
 
 ### 列表
+![](images/2022-11-16-16-31-05.png)
 - 列表的项目符号 list-style
 - 表格的边框和背景 border-collapse
 - 列表橫向顯示  display:none  
@@ -366,6 +370,8 @@ src:url(http://www.examples.com/fonts/Calibri.ttf);
 }
 ```
 ### 媒体查询 (根据不同设备适配不同样式)
+
+![](images/2022-11-16-16-32-02.png)
 ``` css
  .my-class {
    width: 40px;
@@ -389,7 +395,7 @@ src:url(http://www.examples.com/fonts/Calibri.ttf);
 
 ## 高级功能
 ### viewport (视窗)
-
+![](images/2022-11-16-16-40-09.png)
 1.  禁用缩放(手机默认会启用缩放)
 ``` html
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -440,73 +446,6 @@ div:hover{width:300px;}
 
 ### 滚动条
 用 max-width 代替 width 可以防止窗口太小时出现滚动条
-   
-## 布局
->传统布局与弹性布局的区别是: 传统布局空间大了，会挤占其它元素位置，而弹性布局不会
-
-### 传统布局
-> 布局的传统解决方案，基于盒状模型，依赖 display 属性 + position属性 + float属性。 它对于那些特殊布局非常不方便，比如，垂直居中就不容易实现。
-
-``` html
-
-<h2>传统布局，左右并列</h2>
-    <div class="row">
-        <div class="left">left</div>
-        <div class="right">right</div>
-    </div>
-
-  <style>
-        .left {
-            display: inline-block;
-        }
-
-        .right{
-            display: inline-block;
-            position: relative;
-            text-align: center;
-            float: right;
-        }
-
-    </style>
-```
-
-
-### 弹性布局 flex (Flexible 柔性的 Box )
-> 对于父节点 设置为 flex ，子节点就会 并行排列
-> 行内元素也可以使用 inline-flex
-> Webkit 内核的浏览器，必须加上-webkit前缀。
-> 微信使用 display: box
-
-```html
-    <div class="flex">
-        <div>左边</div>
-        <div>居中</div>
-        <div>right</div>
-    </div>
-
-<style>
-     .flex{
-            display: flex;
-        
-</style>}
-```
-
-父节点的属性(弹性容器):
-
-- flex-direction 排列方向 column (竖排), column-reverse ,row (横排，默认), row-reverse
-- flex-wrap  换行属性  nowrap(不换行) | wrap(换行,第一行在上方) | wrap-reverse; (换行，第一行在下方。)
-- flex-flow flex-direction属性和flex-wrap属性的简写形式，默认值为row nowrap
-- justify-content 对齐方式，flex-start (左对齐)| flex-end(右对齐) | center | space-between(两边对齐) | space-around(相对自己位置居中);
-- align-items 项目在交叉轴上如何对齐 flex-start | flex-end | center | baseline | stretch(延申，默认);
-- align-content 多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。
-
-子节点属性 
-- order 定义项目的排列顺序。数值越小，排列越靠前，默认为0
-- flex-grow 放大比例，默认为0(不放大),剩余空间分配的比例关系
-- flex-shrink 缩小比例，默认为1，即如果空间不足，该项目将缩小。
-- flex-basis 项目占据的主轴空间（main size），弹性布局中使用的宽高
-- flex flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto
-- align-self 允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性
 
 ## 溢出用省略号
 
@@ -534,6 +473,7 @@ h1::before  { content: "Chapter "; }
 ```
 
 ## 灰度
+![](images/2022-11-16-16-42-02.png)
 filter: blur(px);模糊度
 filter: grayscale(%);灰度
 filter: hue-rotate(deg);色相转换
