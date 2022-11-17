@@ -4,10 +4,13 @@ permalink: bootstrap3.html
 theme: jekyll-theme-cayman
 ---
 
-Bootstrap 是一个化妆品库，用来给页面 化妆
+
+### Bootstrap 
+
+![](images/2022-11-17-14-36-03.png)
 
 #### 移动设备优先
-
+![](images/2022-11-17-14-37-01.png)
 ```html
 <meta name="viewport" content="width=device-width, initial-scale=1">
 ```
@@ -17,19 +20,22 @@ Bootstrap 是一个化妆品库，用来给页面 化妆
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 ```
 #### 排版与链接
+
+![](images/2022-11-17-14-37-43.png)
 bootstrap 内置了基本的全局样式，可以在 scaffolding.less 找到相应的源码。
 
 1. 为body 元素设置 background-color:#fff;
 2. 为所有链接设置基本颜色 @link-color,并且 :hover 时有下划线。
 
 ### 布局容器
+![](images/2022-11-17-14-38-38.png)
 bootstrap 需要为页面内容和栅格系统包裹一个 .container 容器
 
 1. .container 类： 用于固定宽度并支持响应式布局
 2. .container-fluid 占据全部视口,100%宽度
 
 ### 栅格系统 (用于创建版面布局)
-
+![](images/2022-11-17-14-39-56.png)
 bootstrap 提供了一套响应式、移动设优先的流式栅格系统，随着屏幕或视口尺寸的增加，系统会自动分为最多12列。
 
 栅格系统使用一系列行(row)与列(column)来创建页面布局，下面是一些原理:
@@ -41,6 +47,8 @@ bootstrap 提供了一套响应式、移动设优先的流式栅格系统，随�
 - col-sm-1 的跨度是 col-xs-12 (即占用手机整列)
 
 #### 媒体查询 (有条件的CSS规则)
+
+![](images/2022-11-17-14-40-27.png)
 ``` css
 /* 超小设备（手机，小于 768px） */
 /* 在Bootstrap中默认情况下没有媒体查询 */
@@ -56,6 +64,7 @@ bootstrap 提供了一套响应式、移动设优先的流式栅格系统，随�
 
 ```
 #### 网格结构
+![](images/2022-11-17-14-40-53.png)
 > .col-xs- (手机)	.col-sm- (平板)	.col-md-(台式)	.col-lg- (电视)
 
 ##### 基本的网格结构
@@ -105,15 +114,14 @@ bootstrap 提供了一套响应式、移动设优先的流式栅格系统，随�
 
 #### 标题
 h1-h6 或者 .h1-.h6 都可以作为标题 
+
 #### 段落
 - 段落 <p>
 - 着重 .lead 
+
 #### 内联文本元素
 
 - 高亮 <mark> 
-- 删除 <del><s>
-- 插入 <ins> 有下划线
-- 下划线 <u>
 - 小号 <small >或 .small
 - 着重 <strong>
 - 斜体 <em>
@@ -149,6 +157,8 @@ footer 用于表明引用来源，cite用于倾斜footer 中的内容
 
 .blockquote-reverse :右对齐引用
 #### 列表
+![](images/2022-11-17-14-42-06.png)
+
 ``` html
 <h4>有序列表</h4>
 <ol>
@@ -195,13 +205,13 @@ footer 用于表明引用来源，cite用于倾斜footer 中的内容
 ```
 #### 更多排版类
 
-| 类                  | 描述                                        |
-|---------------------+---------------------------------------------|
-| .text-justify       | 设定文本对齐,段落中超出屏幕部分文字自动换行 |
-| .text-nowrap        | 段落中超出屏幕部分不换行                    |
-| .text-lowercase     | 设定文本小写                                |
-| .text-uppercase     | 设定文本大写                                |
-| .text-capitalize    | 设定单词首字母大写                          |
+| 类               | 描述                                        |
+| ---------------- | ------------------------------------------- |
+| .text-justify    | 设定文本对齐,段落中超出屏幕部分文字自动换行 |
+| .text-nowrap     | 段落中超出屏幕部分不换行                    |
+| .text-lowercase  | 设定文本小写                                |
+| .text-uppercase  | 设定文本大写                                |
+| .text-capitalize | 设定单词首字母大写                          |
 
 ### 代码
 ``` html
@@ -216,8 +226,9 @@ footer 用于表明引用来源，cite用于倾斜footer 中的内容
 ```
 ### 表格
 #### 表格类
+
 | 类                | 描述                                  |
-|-------------------+---------------------------------------|
+| ----------------- | ------------------------------------- |
 | .table            | 基本样式                              |
 | .table-striped    | 在 <tbody> 内添加斑马线形式的条纹     |
 | .table-bordered   | 为所有表格的单元格添加边框            |
@@ -229,7 +240,7 @@ footer 用于表明引用来源，cite用于倾斜footer 中的内容
 #### tr,th 和 td 类 (单元格类)
 
 | 类       | 描述                             |
-|----------+----------------------------------|
+| -------- | -------------------------------- |
 | .active  | 将悬停的颜色应用在行或者单元格上 |
 | .success | 表示成功的操作                   |
 | .info    | 表示信息变化的操作               |
@@ -397,7 +408,7 @@ footer 用于表明引用来源，cite用于倾斜footer 中的内容
 ```
 ### 按钮 
 | 类           | 描述                                    |
-|--------------+-----------------------------------------|
+| ------------ | --------------------------------------- |
 | .btn         | 为按钮添加基本样式                      |
 | .btn-default | 默认/标准按钮                           |
 | .btn-primary | 原始按钮样式（未被操作）                |
@@ -457,7 +468,7 @@ footer 用于表明引用来源，cite用于倾斜footer 中的内容
 ```
 ### 图片
 | 类              | 描述                                                  |
-|-----------------+-------------------------------------------------------|
+| --------------- | ----------------------------------------------------- |
 | .img-rounded    | 添加 border-radius:6px 来获得图片圆角。               |
 | .img-circle     | 添加 border-radius:50% 来让整个图片变成圆形。         |
 | .img-thumbnail  | 添加一些内边距（padding）和一个灰色的边框。           |
@@ -476,7 +487,7 @@ footer 用于表明引用来源，cite用于倾斜footer 中的内容
 ```
 #### 背景
 | 类          | 描述                             |
-|-------------+----------------------------------|
+| ----------- | -------------------------------- |
 | .bg-primary | 表格单元格使用了 "bg-primary" 类 |
 | .bg-success | 表格单元格使用了 "bg-success" 类 |
 | .bg-info    | 表格单元格使用了 "bg-info" 类    |
@@ -485,19 +496,19 @@ footer 用于表明引用来源，cite用于倾斜footer 中的内容
 
 #### 其它
 
-| 类                    | 描述                                                             |
-|-----------------------+------------------------------------------------------------------|
-| .pull-left            | 元素浮动到左边                                                   |
-| .pull-right           | 元素浮动到右边                                                   |
-| .center-block         | 设置元素为 display:block 并居中显示                              |
+| 类                 | 描述                                                             |
+| ------------------ | ---------------------------------------------------------------- |
+| .pull-left         | 元素浮动到左边                                                   |
+| .pull-right        | 元素浮动到右边                                                   |
+| .center-block      | 设置元素为 display:block 并居中显示                              |
 | .clearfix	清除浮动 |                                                                  |
-| .show                 | 强制元素显示                                                     |
-| .hidden               | 强制元素隐藏                                                     |
-| .sr-only              | 除了屏幕阅读器外，其他设备上隐藏元素                             |
-| .sr-only-focusable    | 与 .sr-only 类结合使用，在元素获取焦点时显示(如：键盘操作的用户) |
-| .text-hide            | 将页面元素所包含的文本内容替换为背景图                           |
-| .close                | 显示关闭按钮                                                     |
-| .caret                | 显示下拉式功能                                                   |
+| .show              | 强制元素显示                                                     |
+| .hidden            | 强制元素隐藏                                                     |
+| .sr-only           | 除了屏幕阅读器外，其他设备上隐藏元素                             |
+| .sr-only-focusable | 与 .sr-only 类结合使用，在元素获取焦点时显示(如：键盘操作的用户) |
+| .text-hide         | 将页面元素所包含的文本内容替换为背景图                           |
+| .close             | 显示关闭按钮                                                     |
+| .caret             | 显示下拉式功能                                                   |
 
 #### 关闭图标
 ``` html
@@ -679,7 +690,7 @@ Bootstrap3登录框自适应水平居中+垂直居中
 ```
 
 | 类                   | 描述                                        |
-|----------------------+---------------------------------------------|
+| -------------------- | ------------------------------------------- |
 | .dropdown            | 指定下拉菜单，下拉菜单都包裹在 .dropdown 里 |
 | .dropdown-menu       | 创建下拉菜单                                |
 | .dropdown-menu-right | 下拉菜单右对齐                              |
@@ -690,7 +701,7 @@ Bootstrap3登录框自适应水平居中+垂直居中
 
 ### 标签
 | 类                   | 描述                     |
-|----------------------+--------------------------|
+| -------------------- | ------------------------ |
 | .label label-default | 默认的灰色标签           |
 | .label label-primary | "primary" 类型的蓝色标签 |
 | .label label-success | "success" 类型的绿色标签 |
@@ -1213,7 +1224,7 @@ $('#identifier').on('slid.bs.carousel', function () {
 
 
 ## 遮罩
-
+``` html
 <div class="modal fade" id="loadingModal">
     <div style="width: 200px;height:20px; z-index: 20000; position: absolute; text-align: center; left: 50%; top: 50%;margin-left:-100px;margin-top:-10px">
         <div class="progress progress-striped active" style="margin-bottom: 0;">
@@ -1222,9 +1233,9 @@ $('#identifier').on('slid.bs.carousel', function () {
         <h5>正在加载...</h5>
     </div>
 </div>
-
+```
 2、用jquery进行显示和隐藏
-
+``` js
 //显示
 $("#loadingModal").modal('show');
 //隐藏
@@ -1240,3 +1251,4 @@ $("#loadingModal").modal({keyboard:false});
 //backdrop 为 static 时，点击模态对话框的外部区域不会将其关闭。
 //keyboard 为 false 时，按下 Esc 键不会关闭 Modal。
 $('#loadingModal').modal({backdrop: 'static', keyboard: false});
+```

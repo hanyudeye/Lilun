@@ -392,6 +392,7 @@ $savename = \think\facade\Filesystem::putFile( 'topic', $file, 'md5');
 | sha1 | 对文件使用sha1_file散列生成 |
 
 ### 上传验证
+![](images/2022-11-14-11-49-54.png)
 支持使用验证类对上传文件的验证，包括文件大小、文件类型和后缀：
 
 ``` php
