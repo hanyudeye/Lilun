@@ -4,10 +4,13 @@ vue 绑定 link
 https://github.com/icarusion/vue-book
 
 # Vue2
+![](images/2022-11-17-20-13-45.png)
 
  > 处理SPA(单页面富应用)  
 
 ## jQuery 与 Vue 区别
+![](images/2022-11-17-20-14-50.png)
+
 jQuery
 ``` js
 if(showBtn){
@@ -35,6 +38,7 @@ showBtn:true
 
 
 ## 对象
+![](images/2022-11-17-20-17-52.png)
 
 - el (用来绑定模板 )
 - data
@@ -61,7 +65,7 @@ new Vue({
 ```
 
 ## 模板
-
+![](images/2022-11-17-20-19-43.png)
 ### 内容
 
 #### 文本节点
@@ -180,7 +184,7 @@ vm.$watch('counter', function(nval, oval) {
 ```
 
 ### 事件 ###
-
+![](images/2022-11-17-20-21-25.png)
 #### 事件修饰符 ####
 
 ``` html
@@ -230,6 +234,7 @@ vm.$watch('counter', function(nval, oval) {
 ``` 
 
 ### 表单 v-model 双向绑定 ###
+![](images/2022-11-17-20-23-04.png)
 
 修饰符
 
