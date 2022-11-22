@@ -1,15 +1,18 @@
-# TODO
-第六天：了解一些并发、缓存、数据库优化等知识；
-第七天：看看网上大神的 PHP 技能树进阶，准备一份看起来还行的简历，等面试吧；
-
 https://doc.fastadmin.net/doc/178.html
 
 # fastadmin
-  
+ ![](images/2022-11-22-10-10-45.png) 
 FastAdmin 是一款基于 ThinkPHP5+Bootstrap 的快速后台开发框架
 
+
 ## 命令行
+![](images/2022-11-22-10-21-26.png)
 ### 生成 CURD 
+
+一般是显示对象
+
+![](images/2022-11-22-10-27-43.png)
+
 --force=true
 
     ``` shell
