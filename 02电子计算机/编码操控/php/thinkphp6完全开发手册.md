@@ -3,27 +3,18 @@ title: ThinkPHP6.0完全开发手册
 permalink: thinkphp6.html
 theme: jekyll-theme-cayman
 ---
+
 https://www.kancloud.cn/manual/thinkphp6_0/1037479
 
-## 网站程序 
-![](images/2022-11-12-14-21-49.png)
+- 网站软件
+- 客户端和服务端分离
 
-
-## 架构总览
-![](images/2022-11-12-14-24-25.png)
-
-### 进入不同应用
-
-- public/index.php (前台)
-- public/admin.php (后台)
-
-``` php
-// $http->name()用于设置当前入口文件绑定的应用
-$response = $http->name('api')->run();
-```
 
 ## 安装 
-![](images/2022-11-12-14-25-23.png)
+
+- 对于 散件，需要安装
+- 本身完整，无需安装
+
 ```shell
  composer create-project topthink/think tp 
  cd tp  
@@ -37,7 +28,18 @@ $response = $http->name('api')->run();
 ```
 
 ## config (设置)
-![](images/2022-11-12-14-26-14.png)
+
+### 进入不同应用
+
+- public/index.php (前台)
+- public/admin.php (后台)
+
+``` php
+// $http->name()用于设置当前入口文件绑定的应用
+$response = $http->name('api')->run();
+```
+
+
 ### environment-variables
 
 think\facade\Env
