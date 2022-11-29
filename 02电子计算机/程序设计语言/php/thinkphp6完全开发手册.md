@@ -8,6 +8,7 @@ https://www.kancloud.cn/manual/thinkphp6_0/1037479
 
 - 网站软件
 - 客户端和服务端分离
+- 拼装散件 （木工）工具
 
 
 ## 安装 
@@ -29,6 +30,8 @@ https://www.kancloud.cn/manual/thinkphp6_0/1037479
 
 ## config (设置)
 
+预先定义好配置文件，可直接配置
+
 ### 进入不同应用
 
 - public/index.php (前台)
@@ -39,7 +42,6 @@ https://www.kancloud.cn/manual/thinkphp6_0/1037479
 $response = $http->name('api')->run();
 ```
 
-
 ### environment-variables
 
 think\facade\Env
@@ -49,30 +51,18 @@ Env::get('database.username');
 ```
 ### config-file
 think\facade\Config;
+
 ```
  Config::get('app.app_name');
  Config::has('route.route_rule_merge');
 ```
  
-### 多应用
-> 每个应用相对保持独立，并且可以支持多个入口文件，应用下面还可以通过多级控制器来维护控制器分组。
-
-``` php
-// [ 应用入口文件 ]
-namespace think;
- 
-require __DIR__ . '/../vendor/autoload.php';
- 
-// 执行HTTP应用并响应
-$http = (new  App())->http;
-$response = $http->name('admin')->run();
-$response->send();
-$http->end($response);
-```
-
 ## 路由
-### 路由
-![](images/2022-11-12-14-32-29.png)
+
+>路径选择
+
+### 路由开关
+
 路由地址不能跨 应用 (除非采用重定向路由) 
     
 ```
@@ -99,8 +89,6 @@ Route::rule('blog/:id', 'Blog/read'); // 静态地址和动态地址结合
 Route::rule('new/:year/:month/:day', 'News/read'); // 静态地址和动态地址结合
 Route::rule(':user/:blog_id', 'Blog/read'); // 全动态地址
 ```
-### 路由地址
-![](images/2022-11-12-14-33-23.png)
 #### 重定向路由
 ```
 Route::redirect('blog/:id', 'http://blog.thinkphp.cn/read/:id', 302);
@@ -113,15 +101,10 @@ Route::view('hello/:name', 'index/hello');
 
 ### 资源路由
 
-### 路由绑定
-  可以使用路由绑定简化 URL 或者路由规则的定义
-#### 绑定到控制器/操作
-
-
-#### 绑定到命名空间
-
 ## 控制器
 ![](images/2022-11-12-14-34-26.png)
+
+> 使 URL 文本解析成代码
 
 ### 控制器定义
 
