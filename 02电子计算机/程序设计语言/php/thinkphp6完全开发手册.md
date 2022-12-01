@@ -9,9 +9,10 @@ https://www.kancloud.cn/manual/thinkphp6_0/1037479
 - 网站软件
 - 客户端和服务端分离
 - 拼装散件 （木工）工具
+- 模型(管理员），视图(管理员），控制器(管理员) 相当于人体的神经反映处理
 
 
-## 安装 
+## 安装 (管理员)
 
 - 对于 散件，需要安装
 - 本身完整，无需安装
@@ -28,7 +29,7 @@ https://www.kancloud.cn/manual/thinkphp6_0/1037479
  php think run -p 80 
 ```
 
-## config (设置)
+## config (配置管理员)
 
 预先定义好配置文件，可直接配置
 
@@ -57,9 +58,7 @@ think\facade\Config;
  Config::has('route.route_rule_merge');
 ```
  
-## 路由
-
->路径选择
+## 路由路径选择 (路由管理员)
 
 ### 路由开关
 
@@ -101,7 +100,8 @@ Route::view('hello/:name', 'index/hello');
 
 ### 资源路由
 
-## 控制器
+## 控制器管理员
+
 ![](images/2022-11-12-14-34-26.png)
 
 > 使 URL 文本解析成代码
@@ -133,7 +133,7 @@ $ php think make:controller index@Blog --api
 ``` php
 Route::resource('blog', 'Blog');
 ```
-## 请求 (客户端对象)
+## 请求 (客户请求处理管理员)
 
 ### 请求对象 
 ``` php
@@ -245,7 +245,7 @@ echo $info['accept-encoding'];
 echo $info['user-agent'];
 ```
 
-## 响应
+## 响应(服务响应管理员)
 ![](images/2022-11-12-14-50-43.png)
 
 大多数情况,我们不需要关注 Response 对象本身,只需要在控制器的操作方法中返回数据即可
@@ -282,8 +282,6 @@ response()->cookie('name', 'value', 600);
 
 文件下载
 
-![](images/2022-11-12-16-21-03.png)
-
 ``` php
 //如果需要设置文件下载的有效期,可以使用
 public function download()
@@ -293,8 +291,7 @@ return download('image.jpg', 'my')->expire(300);
 }
 ```
 
-## 数据库
-![](images/2022-11-14-11-41-35.png)
+## 数据库(管理员)
 
 ### 删除数据
 ``` php
@@ -309,7 +306,7 @@ Db::name('user')
 UPDATE `think_user` SET `delete_time` = '1515745214' WHERE `id` = 1
 ```
 
-## 模型
+## 模型(管理员)
 ![](images/2022-11-14-11-42-06.png)
 ``` php
 //指定主键
@@ -329,7 +326,7 @@ protected $schema = [
 'update_time' => 'datetime',
 ];
 ```
-## 视图
+## 视图(管理员)
 ![](images/2022-11-14-11-42-34.png)
 ``` php
 // 模板变量赋值
@@ -353,12 +350,15 @@ return view('index', [
 ```
 
 ## 上传文件
-![](images/2022-11-14-11-43-10.png)
+
 如果是多应用的话，上传根目录默认是runtime/index/storage，如果你希望上传的文件是可以直接访问或者下载的话，可以使用public存储方式。
 
+```php
 $savename = \think\facade\Filesystem::disk('public')->putFile( 'topic', $file);
+```
 
 你可以在config/filesystem.php配置文件中配置上传根目录及上传规则，例如：
+
 ``` php
 return [
     'default' =>  'local',
@@ -377,6 +377,7 @@ return [
     ],
 ];
 ```
+
 我们可以指定上传文件的命名规则，例如：
 ``` php
 $savename = \think\facade\Filesystem::putFile( 'topic', $file, 'md5');
@@ -392,6 +393,7 @@ $savename = \think\facade\Filesystem::putFile( 'topic', $file, 'md5');
 
 ### 上传验证
 ![](images/2022-11-14-11-49-54.png)
+
 支持使用验证类对上传文件的验证，包括文件大小、文件类型和后缀：
 
 ``` php
