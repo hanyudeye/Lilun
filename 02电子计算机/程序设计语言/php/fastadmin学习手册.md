@@ -1,7 +1,6 @@
 https://doc.fastadmin.net/doc/178.html
 
 # fastadmin
- ![](images/2022-11-22-10-10-45.png) 
 FastAdmin 是一款基于 ThinkPHP5+Bootstrap 的快速后台开发框架
 
 
@@ -11,7 +10,6 @@ FastAdmin 是一款基于 ThinkPHP5+Bootstrap 的快速后台开发框架
 
 一般是显示对象
 
-![](images/2022-11-22-10-27-43.png)
 
 --force=true
 
