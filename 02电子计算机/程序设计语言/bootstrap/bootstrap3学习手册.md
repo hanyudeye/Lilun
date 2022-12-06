@@ -7,10 +7,8 @@ theme: jekyll-theme-cayman
 
 ### Bootstrap 
 
-![](images/2022-11-17-14-36-03.png)
-
 #### 移动设备优先
-![](images/2022-11-17-14-37-01.png)
+
 ```html
 <meta name="viewport" content="width=device-width, initial-scale=1">
 ```
@@ -21,21 +19,20 @@ theme: jekyll-theme-cayman
 ```
 #### 排版与链接
 
-![](images/2022-11-17-14-37-43.png)
 bootstrap 内置了基本的全局样式，可以在 scaffolding.less 找到相应的源码。
 
 1. 为body 元素设置 background-color:#fff;
 2. 为所有链接设置基本颜色 @link-color,并且 :hover 时有下划线。
 
 ### 布局容器
-![](images/2022-11-17-14-38-38.png)
+
 bootstrap 需要为页面内容和栅格系统包裹一个 .container 容器
 
 1. .container 类： 用于固定宽度并支持响应式布局
 2. .container-fluid 占据全部视口,100%宽度
 
 ### 栅格系统 (用于创建版面布局)
-![](images/2022-11-17-14-39-56.png)
+
 bootstrap 提供了一套响应式、移动设优先的流式栅格系统，随着屏幕或视口尺寸的增加，系统会自动分为最多12列。
 
 栅格系统使用一系列行(row)与列(column)来创建页面布局，下面是一些原理:
