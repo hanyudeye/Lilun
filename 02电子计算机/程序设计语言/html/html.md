@@ -2,23 +2,51 @@
 
 - 超文本标记 (xml)
 
+## 文字
 
-![](images/2022-11-15-16-51-34.png)
-
-### 标题 h1,h6
-![](images/2022-11-17-14-31-49.png)
-
-### 段落
-![](images/2022-11-17-14-32-34.png)
+- 标题 h1,h6
+- 文字 "hello,world"
+- 段落 p
 
 
 ### 多媒体
 
-![](images/2022-11-15-16-52-30.png)
-
+- 音频 audio
+-  视频 video
 ### 表格
 
-![](images/2022-11-15-16-53-10.png)
+```html
+<table>
+    <tr>
+        <th>姓名</th>
+     </tr>
+     <tr>
+        <td>阿明</td>
+       </tr>
+    </table>
+```
+
+<table>
+    <tr>
+        <th>姓名</th>
+     </tr>
+     <tr>
+        <td>阿明</td>
+       </tr>
+    </table>
 
 ### 表单
-![](images/2022-11-15-16-53-57.png)
+
+```html
+<form action="">
+        <label for="">姓名：</label>
+        <input type="text" name="name" id="">
+        <input type="submit" value="提交">
+</form>
+```
+
+<form action="">
+        <label for="">姓名：</label>
+        <input type="text" name="name" id="">
+        <input type="submit" value="提交">
+</form>
