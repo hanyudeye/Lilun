@@ -9,6 +9,8 @@ theme: jekyll-theme-cayman
 - 样式
 
 ### 引入资源
+- bootstrap 使用 类选择器 定义 元素块的 样式
+- 元素的样式 默认已定义好，我们只需学习 需要使用的类 
 
 ```html
 <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
@@ -32,23 +34,14 @@ theme: jekyll-theme-cayman
 ```html
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 ```
-#### 排版与链接
 
-bootstrap 内置了基本的全局样式，可以在 scaffolding.less 找到相应的源码。
 
-1. 为body 元素设置 background-color:#fff;
-2. 为所有链接设置基本颜色 @link-color,并且 :hover 时有下划线。
+### 容器 (最外层页面的包装)
 
-### 布局容器
+1. container  居中
+2. container-fluid 100%宽度
 
-bootstrap 需要为页面内容和栅格系统包裹一个 .container 容器
-
-1. .container 类： 用于固定宽度并支持响应式布局
-2. .container-fluid 占据全部视口,100%宽度
-
-### 栅格系统 (用于创建版面布局)
-
-bootstrap 提供了一套响应式、移动设优先的流式栅格系统，随着屏幕或视口尺寸的增加，系统会自动分为最多12列。
+### 栅格 (创建网格布局)
 
 栅格系统使用一系列行(row)与列(column)来创建页面布局，下面是一些原理:
 - 行 必须包含在 容器中(.contianer 或 .container-fluid) 中
@@ -57,27 +50,14 @@ bootstrap 提供了一套响应式、移动设优先的流式栅格系统，随�
 - 跨列通过 .col-xs-4 这种形式指定 (有4个列长)
 - 如果一行 大于12列，会换行
 - col-sm-1 的跨度是 col-xs-12 (即占用手机整列)
+- 偏移列 (跨过列)
+语法格式： col-md-offset-3
+- 嵌套列
+- 列排序 (不会影响其它元素)
+语法： col-md-push-8(往后排)  col-md-pull-3(往前排)
+- .col-xs- (手机)	.col-sm- (平板)	.col-md-(台式)	.col-lg- (电视)
 
-#### 媒体查询 (有条件的CSS规则)
-
-![](images/2022-11-17-14-40-27.png)
-``` css
-/* 超小设备（手机，小于 768px） */
-/* 在Bootstrap中默认情况下没有媒体查询 */
-
-/* 小型设备（平板电脑，768px 起） */
-@media (min-width: @screen-sm-min) { ... }
-
-/* 中型设备（台式电脑，992px 起） */
-@media (min-width: @screen-md-min) { ... }
-
-/* 大型设备（大台式电脑，1200px 起） */
-@media (min-width: @screen-lg-min) { ... }
-
-```
 #### 网格结构
-![](images/2022-11-17-14-40-53.png)
-> .col-xs- (手机)	.col-sm- (平板)	.col-md-(台式)	.col-lg- (电视)
 
 ##### 基本的网格结构
 ``` html
@@ -113,32 +93,29 @@ bootstrap 提供了一套响应式、移动设优先的流式栅格系统，随�
 </div>
 ```
 
-##### 偏移列 (跨过列)
-语法格式： col-md-offset-3
-##### 嵌套列
-##### 列排序 (不会影响其它元素)
-语法： col-md-push-8(往后排)  col-md-pull-3(往前排)
-
 ### 排版
 
-#### 默认的页面主体
-默认样式为 font-size:14px ,line-height:1.428 ，<p>的边框为10px
-
-#### 标题
+- 默认样式
+font-size:14px ,line-height:1.428 ，`<p>`的边框为10px
+- 标题
 h1-h6 或者 .h1-.h6 都可以作为标题 
-
-#### 段落
 - 段落 <p>
 - 着重 .lead 
-
-#### 内联文本元素
-
 - 高亮 <mark> 
 - 小号 <small >或 .small
 - 着重 <strong>
 - 斜体 <em>
 
 #### 文本 对齐+变色
+
+- text-justify     设定文本对齐,段落中超出屏幕部分文字自动换行 
+- text-nowrap      段落中超出屏幕部分不换行           
+- text-lowercase   设定文本小写                 
+- text-uppercase   设定文本大写                 
+- text-capitalize  设定单词首字母大写              
+
+
+
 ``` html
 <p class="text-left">向左对齐文本</p>
 <p class="text-center">居中对齐文本</p>
@@ -156,8 +133,8 @@ h1-h6 或者 .h1-.h6 都可以作为标题
 <p class="text-uppercase">Uppercased text.</p>
 <p class="text-capitalize">Capitalized text.</p>
 ```
-#### <br/> 用于地址信息等不规则排版
 #### 引用（blockquote）
+
 footer 用于表明引用来源，cite用于倾斜footer 中的内容
 
 ```html
@@ -167,39 +144,13 @@ footer 用于表明引用来源，cite用于倾斜footer 中的内容
 </blockquote>
 ```
 
-.blockquote-reverse :右对齐引用
+- blockquote-reverse :右对齐引用
+
 #### 列表
-![](images/2022-11-17-14-42-06.png)
+- list-unstyled 去除列表缩进，序号
+- list-inline 水平排列
 
 ``` html
-<h4>有序列表</h4>
-<ol>
-  <li>Item 1</li>
-  <li>Item 2</li>
-  <li>Item 3</li>
-  <li>Item 4</li>
-</ol>
-<h4>无序列表</h4>
-<ul>
-  <li>Item 1</li>
-  <li>Item 2</li>
-  <li>Item 3</li>
-  <li>Item 4</li>
-</ul>
-<h4>未定义样式列表</h4>
-<ul class="list-unstyled">
-  <li>Item 1</li>
-  <li>Item 2</li>
-  <li>Item 3</li>
-  <li>Item 4</li>
-</ul>
-<h4>内联列表： 就是水平显示</h4>
-<ul class="list-inline">
-  <li>Item 1</li>
-  <li>Item 2</li>
-  <li>Item 3</li>
-  <li>Item 4</li>
-</ul>
 <h4>定义列表</h4>
 <dl>
   <dt>Description 1</dt>
@@ -215,40 +166,20 @@ footer 用于表明引用来源，cite用于倾斜footer 中的内容
   <dd>Item 2</dd>
 </dl>
 ```
-#### 更多排版类
 
-| 类               | 描述                                        |
-| ---------------- | ------------------------------------------- |
-| .text-justify    | 设定文本对齐,段落中超出屏幕部分文字自动换行 |
-| .text-nowrap     | 段落中超出屏幕部分不换行                    |
-| .text-lowercase  | 设定文本小写                                |
-| .text-uppercase  | 设定文本大写                                |
-| .text-capitalize | 设定单词首字母大写                          |
-
-### 代码
-``` html
-<p><code>&lt;header&gt;</code> 作为内联元素被包围。</p>
-<p>如果需要把代码显示为一个独立的块元素，请使用 &lt;pre&gt; 标签：</p>
-<pre>
-    &lt;article&gt;
-        &lt;h1&gt;Article Heading&lt;/h1&gt;
-    &lt;/article&gt;
-</pre>
-
-```
 ### 表格
+
 #### 表格类
 
-| 类                | 描述                                  |
-| ----------------- | ------------------------------------- |
-| .table            | 基本样式                              |
-| .table-striped    | 在 <tbody> 内添加斑马线形式的条纹     |
-| .table-bordered   | 为所有表格的单元格添加边框            |
-| .table-hover      | 在 <tbody> 内的任一行启用鼠标悬停状态 |
-| .table-condensed  | 让表格更加紧凑                        |
-| .table-responsive | 响应式，小型设备有滚动条              |
+- table             基本样式            
+- table-striped     添加斑马线形式的条纹      
+- table-bordered    为所有表格的单元格添加边框 
+- table-hover       启用鼠标悬停状态        
+- table-condensed   让表格更加紧凑         
+- table-responsive  响应式，小型设备有滚动条  
 
-垂直方向的内容截断: overflow-y: hidden
+- 垂直方向的内容截断: overflow-y: hidden
+
 #### tr,th 和 td 类 (单元格类)
 
 | 类       | 描述                             |
@@ -260,7 +191,10 @@ footer 用于表明引用来源，cite用于倾斜footer 中的内容
 | .danger  | 表示一个危险的操作               |
 
 ### 表单
+
 所有设置了 .form-control 的表单元素都被设置宽度为100%, 将 label 和表单元素放在 .form-group 能获得更好的表现
+
+
 #### 表单 
 ``` html
 <form role="form">
@@ -281,44 +215,12 @@ footer 用于表明引用来源，cite用于倾斜footer 中的内容
   <button type="submit" class="btn btn-default">提交</button>
 </form>
 ```
-#### 内联表单 
-平板及以上才能展示效果
-
-``` html
-<form class="form-inline" role="form">
-  <div class="form-group">
-    <label class="sr-only" for="name">名称</label>
-    <input type="text" class="form-control" id="name" placeholder="请输入名称">
-  </div>
-  <div class="form-group">
-    <label class="sr-only" for="inputfile">文件输入</label>
-    <input type="file" id="inputfile">
-  </div>
-  <div class="checkbox">
-    <label>
-      <input type="checkbox">请打勾
-    </label>
-  </div>
-  <button type="submit" class="btn btn-default">提交</button>
-</form>
-
-```
-#### 水平表单 .form-horizontal
-
-通过与 栅格类 .col-sm-10 结合，可以控制表单的长度
-```html
-<form class="form-horizontal">
-  <div class="form-group">
-    <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
-    <div class="col-sm-10">
-      <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
-    </div>
-  </div>
-</form>
-```
+- form-inline 内联表单 
+- form-horizontal 水平表单，去除缩进样式
 
 
 #### 其它
+
 - 多选 
 ``` html
  <select multiple class="form-control">
