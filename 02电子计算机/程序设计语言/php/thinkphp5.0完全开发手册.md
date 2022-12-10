@@ -5,7 +5,7 @@ theme: jekyll-theme-cayman
 ---
 
 ## 架构
-![](images/2022-11-15-09-35-30.png)
+
 入口文件 -> 转到应用 -> 判断模块 -> 调用控制器 -> 执行操作 -> 连接模型 -> 视图组装 -> 响应输出
 
 ## 命名空间
@@ -1546,7 +1546,7 @@ RewriteRule ^(.*)$ index.php?/$1 [QSA,PT,L]
 
 [Nginx]
 ``` c
-location / { // .....省略部分代码
+location / { 
 if (!-e $request_filename) {
 rewrite ^(.*)$ /index.php?s=/$1
  last;
