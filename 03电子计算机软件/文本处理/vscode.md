@@ -1,6 +1,5 @@
 
 ## 打开 vscode 软件
-![](images/2022-11-11-19-26-08.png)
 
 - 方法1 
 <!-- 我测试 已失效 -->
@@ -14,20 +13,11 @@
 
 ## 插件 
 ### settings Sync
-![](images/2022-11-15-18-58-35.png)
 - 通过GitHub生成你的gist Id 和 token
 - 两台电脑的VSCode中都需要安装settings Sync插件并配置 gistId 和 token
 - 原电脑上传配置
 - 新电脑下载同步配置
 
-![](images/2022-11-15-18-57-33.png)
-
-![](images/2022-11-15-18-59-40.png)
-
-![](images/2022-11-15-19-00-20.png)
-
-![](images/2022-11-15-19-00-58.png)
-![](images/2022-11-15-19-01-30.png)
 
 ### 搜索 search
 
@@ -36,3 +26,7 @@
 由于vscode安全策略，书架编辑请在插件安装目录 win:[C:\Users\ 你的用户名.vscode\extensions\renkun.reader\book],mac:[~/.vscode/extensions/renkun.reader/book]
 
 AD 翻页
+
+### 隐藏滚动条
+
+文本编辑器->所有语言-> 滚动条

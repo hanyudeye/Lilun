@@ -127,12 +127,15 @@ h1-h6 或者 .h1-.h6 都可以作为标题
 <p class="text-warning">本行内容带有一个 warning class</p>
 <p class="text-danger">本行内容带有一个 danger class</p>
 ```
-#### 改变大小写
-```html
-<p class="text-lowercase">Lowercased text.</p>
-<p class="text-uppercase">Uppercased text.</p>
-<p class="text-capitalize">Capitalized text.</p>
-```
+
+#### 背景
+- bg-primary 
+- bg-success 
+- bg-info   
+- bg-warning
+- bg-danger 
+
+
 #### 引用（blockquote）
 
 footer 用于表明引用来源，cite用于倾斜footer 中的内容
@@ -225,92 +228,17 @@ footer 用于表明引用来源，cite用于倾斜footer 中的内容
 ``` html
  <select multiple class="form-control">
 ```
-- 静态控件 
-``` html
-<p class="form-control-static">email@example.com</p>
-``` 
+- 静态控件  form-control-static(有一定缩进)
+
 #### 控件状态
-``` html
-<form class="form-horizontal" role="form">
-  <div class="form-group">
-    <label class="col-sm-2 control-label">聚焦</label>
-    <div class="col-sm-10">
-      <input class="form-control" id="focusedInput" type="text" value="该输入框获得焦点...">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="inputPassword" class="col-sm-2 control-label">禁用</label>
-    <div class="col-sm-10">
-      <input class="form-control" id="disabledInput" type="text" placeholder="该输入框禁止输入..." disabled>
-    </div>
-  </div>
-  <fieldset disabled>
-    <div class="form-group">
-      <label for="disabledTextInput" class="col-sm-2 control-label">禁用输入（Fieldset disabled）</label>
-      <div class="col-sm-10">
-        <input type="text" id="disabledTextInput" class="form-control" placeholder="禁止输入">
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="disabledSelect" class="col-sm-2 control-label">禁用选择菜单（Fieldset disabled）</label>
-      <div class="col-sm-10">
-        <select id="disabledSelect" class="form-control">
-          <option>禁止选择</option>
-        </select>
-      </div>
-    </div>
-  </fieldset>
-  <div class="form-group has-success">
-    <label class="col-sm-2 control-label" for="inputSuccess">输入成功</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" id="inputSuccess">
-    </div>
-  </div>
-  <div class="form-group has-warning">
-    <label class="col-sm-2 control-label" for="inputWarning">输入警告</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" id="inputWarning">
-    </div>
-  </div>
-  <div class="form-group has-error">
-    <label class="col-sm-2 control-label" for="inputError">输入错误</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" id="inputError">
-    </div>
-  </div>
-</form>
 
-```
+- disabled 禁止
+- has-success  form-group 中成功样式
+- has-warning 警告样式
+- has-error
+
 #### 表单帮助文本
-``` html
-<form role="form">
-  <span>帮助文本实例</span>
-  <input class="form-control" type="text" placeholder="">
-  <span class="help-block">一个较长的帮助文本块，超过一行，
-  需要扩展到下一行。本实例中的帮助文本总共有两行。</span>
-</form>
-```
-
-#### 校验状态
-添加校验样式 .has-warning、.has-error 或 .has-success
-
-```html
-<div class="form-group has-success">
-  <label class="control-label" for="inputSuccess1">Input with success</label>
-  <input type="text" class="form-control" id="inputSuccess1" aria-describedby="helpBlock2">
-  <span id="helpBlock2" class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
-</div>
-```
-##### 添加额外的图标
-.has-feedback 类并添加正确的图标即可
-```html
-<div class="form-group has-success has-feedback">
-  <label class="control-label" for="inputSuccess2">Input with success</label>
-  <input type="text" class="form-control" id="inputSuccess2" aria-describedby="inputSuccess2Status">
-  <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
-  <span id="inputSuccess2Status" class="sr-only">(success)</span>
-</div>
-```
+- help-block
 
 #### 控件尺寸
 通过 .input-lg 类似的类可以为控件设置高度，通过 .col-lg-* 类似的类可以为控件设置宽度。
@@ -321,6 +249,7 @@ footer 用于表明引用来源，cite用于倾斜footer 中的内容
 
 ```
 ### 按钮 
+
 | 类           | 描述                                    |
 | ------------ | --------------------------------------- |
 | .btn         | 为按钮添加基本样式                      |
@@ -347,27 +276,11 @@ footer 用于表明引用来源，cite用于倾斜footer 中的内容
 | .btn-xs    | 这会让按钮看起来特别小。 |
 | .btn-block | 占用整行                 |
 
-#### 按钮状态  active(激活) disabled
-#### 按钮组 btn-group  btn-group-lg  .btn-group-vertical (垂直) btn-group-justified (自适应大小)
+- 按钮状态  active(激活) disabled
 
-内嵌下拉菜单的按钮组
-``` html
-<div class="btn-group">
-  <button type="button" class="btn btn-primary">Apple</button>
-  <button type="button" class="btn btn-primary">Samsung</button>
-  <div class="btn-group">
-    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-    Sony <span class="caret"></span></button>
-    <ul class="dropdown-menu" role="menu">
-      <li><a href="#">Tablet</a></li>
-      <li><a href="#">Smartphone</a></li>
-    </ul>
-  </div>
-</div>
+- 按钮组 btn-group  btn-group-lg  .btn-group-vertical (垂直) btn-group-justified (自适应大小)
 
-```
-
-分割按钮
+下拉按钮
 ``` html
 <div class="btn-group">
   <button type="button" class="btn btn-primary">Sony</button>
@@ -389,25 +302,6 @@ footer 用于表明引用来源，cite用于倾斜footer 中的内容
 | .img-responsive | 将 max-width: 100%; 和 height: auto; 样式应用在图片上 |
 
 ### 辅助类
-#### 情境文本 (文本颜色)
-通过颜色来展示意图，与下面一样一般用于增加鼠标的行为
-```html
-<p class="text-muted">...</p>
-<p class="text-primary">...</p>
-<p class="text-success">...</p>
-<p class="text-info">...</p>
-<p class="text-warning">...</p>
-<p class="text-danger">...</p>
-```
-#### 背景
-| 类          | 描述                             |
-| ----------- | -------------------------------- |
-| .bg-primary | 表格单元格使用了 "bg-primary" 类 |
-| .bg-success | 表格单元格使用了 "bg-success" 类 |
-| .bg-info    | 表格单元格使用了 "bg-info" 类    |
-| .bg-warning | 表格单元格使用了 "bg-warning" 类 |
-| .bg-danger  | 表格单元格使用了 "bg-danger" 类  |
-
 #### 其它
 
 | 类                 | 描述                                                             |
@@ -438,57 +332,6 @@ footer 用于表明引用来源，cite用于倾斜footer 中的内容
 </p>
 
 ```
-#### 快速浮动
-```html
- <div class="pull-left" style="background:#58D3F7;">
-    向左快速浮动
-  </div>
-  <div class="pull-right" style="background: #DA81F5;">
-    向右快速浮动
-  </div>
-  ```
-#### 居中 .center-block
-1、 文本：class ="text-center"
-2、 图片居中：class = "center-block"
-#### 垂直居中
-
-bootstrap3 如何让div内部垂直居中：
-
-Bootstrap的栅格系统使用的是float：left的浮动方式，vertical-align属性不起作用，故把内部div的float属性清除，添加display属性，如下：
-``` css
-.middle {
-float: none;
-display: inline-block;
-vertical-align: middle;
-}
- ```
-
-Bootstrap3登录框自适应水平居中+垂直居中
-
-方法2 
-
-``` css
-.middle {
- display: flex; 
- flex-direction: column;
- justify-content: center;
- border: 1px solid #ccc;
- height:100px;
- width: 100px;
- text-align: center;
-}
- ```
-#### 清除浮动
-``` html
-<div class="clearfix"> </div>
-```
-
-#### 显示或隐藏内容
-.show .hidden
-### 响应式工具
-通过使用这些工具类，可以在不同的设备上提供不同的展现形式
-
-![](images/visible.png)
 
 ## 组件
 
@@ -496,70 +339,13 @@ Bootstrap3登录框自适应水平居中+垂直居中
 
 #### 标签页式导航
 ```html
-<ul class="nav nav-tabs">
-  <li role="presentation" class="active"><a href="#">Home</a></li>
-  <li role="presentation"><a href="#">Profile</a></li>
-  <li role="presentation"><a href="#">Messages</a></li>
-</ul>
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="">菜单</a></li>
+        <li><a href="">菜单</a></li>
+        <li><a href="">菜单</a></li>
+    </ul>
 ```
 
-#### 导航条
-
-```html
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">Brand</a>
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Link</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
-          </ul>
-        </li>
-      </ul>
-      <form class="navbar-form navbar-left">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-```
 ### 字体图标(Glyphicons)
 用法
 ```html
@@ -623,7 +409,7 @@ Bootstrap3登录框自适应水平居中+垂直居中
 | .label label-warning | "warning" 类型的黄色标签 |
 | .label label-danger  | "danger" 类型的红色标签  |
 
-### 警告（Alerts）
+### 警示条（Alerts）
 
 ``` html
 <div class="alert alert-success">成功！很好地完成了提交。</div>
@@ -633,6 +419,7 @@ Bootstrap3登录框自适应水平居中+垂直居中
 ```
 
 可取消的警告（Dismissal Alerts）
+> 加上js 代码可以关闭
 
 ``` html
 <div class="alert alert-success alert-dismissable">
@@ -641,27 +428,6 @@ Bootstrap3登录框自适应水平居中+垂直居中
                 &times;
             </button>
             成功！很好地完成了提交。
-        </div>
-        <div class="alert alert-info alert-dismissable">
-            <button type="button" class="close" data-dismiss="alert"
-                    aria-hidden="true">
-                &times;
-            </button>
-            信息！请注意这个信息。
-        </div>
-        <div class="alert alert-warning alert-dismissable">
-            <button type="button" class="close" data-dismiss="alert"
-                    aria-hidden="true">
-                &times;
-            </button>
-            警告！请不要提交。
-        </div>
-        <div class="alert alert-danger alert-dismissable">
-            <button type="button" class="close" data-dismiss="alert"
-                    aria-hidden="true">
-                &times;
-            </button>
-            错误！请进行一些更改。
         </div>
 ```
 
@@ -676,38 +442,6 @@ Bootstrap3登录框自适应水平居中+垂直居中
 
 ``` html
 <div class="panel panel-primary">
-    <div class="panel-heading">
-        <h3 class="panel-title">面板标题</h3>
-    </div>
-    <div class="panel-body">
-        这是一个基本的面板
-    </div>
-</div>
-<div class="panel panel-success">
-    <div class="panel-heading">
-        <h3 class="panel-title">面板标题</h3>
-    </div>
-    <div class="panel-body">
-        这是一个基本的面板
-    </div>
-</div>
-<div class="panel panel-info">
-    <div class="panel-heading">
-        <h3 class="panel-title">面板标题</h3>
-    </div>
-    <div class="panel-body">
-        这是一个基本的面板
-    </div>
-</div>
-<div class="panel panel-warning">
-    <div class="panel-heading">
-        <h3 class="panel-title">面板标题</h3>
-    </div>
-    <div class="panel-body">
-        这是一个基本的面板
-    </div>
-</div>
-<div class="panel panel-danger">
     <div class="panel-heading">
         <h3 class="panel-title">面板标题</h3>
     </div>

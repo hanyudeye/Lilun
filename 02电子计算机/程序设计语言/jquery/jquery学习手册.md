@@ -4,6 +4,10 @@ permalink: jquery.html
 theme: jekyll-theme-cayman
 ---
 
+资源
+```html
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+```
 
 ## 选择符
 
