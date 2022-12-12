@@ -4,18 +4,20 @@ permalink: jquery.html
 theme: jekyll-theme-cayman
 ---
 
-资源
+- 提供 **节点选择符** 的便捷操作。
+- 节点相当于 文件系统中的目录。 
+
+## 资源
+
 ```html
 <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 ```
 
-## 选择符
-
->选择符用来获取 html 对象
+## 选择符 (选择节点)
 
    | 选择符              | 匹配                                                     |
    |----------------------|-------------------------------------------------|
-   | #                   | 所有元素                                                 |
+   | *                   | 所有元素                                                 |
    | #id                 | 带有给定 ID 的元素                                       |
    | element             | 给定类型的所有元素，比如说 html 标签                     |
    | .class              | 带有给定类的所有元素                                     |
@@ -69,16 +71,8 @@ theme: jekyll-theme-cayman
   
 ## 事件
 
-文档载入事件
-``` js
-$(document).ready(function(){});
-等效于
-$(function(){})
-```
-
-以上这些事件在 jQuery 内部，都是.bind()的便捷方式。使用.bind()可以更灵活地控制事件，比如为多个事件绑定同一个函数：
-
-   ``` js
+### 绑定事件
+  ``` js
        $('input').bind(
            'click change'， //同时绑定click和change事件  
            function(){
@@ -87,7 +81,8 @@ $(function(){})
        );
    ```
 
-   如果你只想让事件运行一次，这时可以使用.one()方法。
+### 让事件运行一次 one
+- 非按钮对象
 
    ``` js
      $("p").one("click"， function(){
@@ -95,21 +90,14 @@ $(function(){})
      });
    ```
 
-   .unbind()用来解除事件绑定。
+  ### .unbind 解除事件绑定
 
    ``` js
    $('p').unbind('click'); 
    ```
 
-   所有的事件处理函数，都可以接受一个事件对象(event object)作为参数，比如下面例子中的 e：
 
-   ``` js
-     $("p").click(function(e){  
-         alert(e.type); //"click"  
-     }); 
-   ```
-
-   这个事件对象有一些很有用的属性和方法：
+### 事件属性
 
    - event.pageX 事件发生时，鼠标距离网页左上角的水平距离
    - event.pageY 事件发生时，鼠标距离网页左上角的垂直距离
@@ -172,6 +160,7 @@ $(function(){})
 
    - .stop()和.delay()用来停止或延缓特效的执行。
    - $.fx.off 如果设置为 true，则关闭所有网页特效。
+
 ## AJax
 
 ### $.ajax
