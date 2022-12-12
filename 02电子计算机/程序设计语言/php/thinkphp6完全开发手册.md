@@ -3,27 +3,20 @@ title: ThinkPHP6.0完全开发手册
 permalink: thinkphp6.html
 theme: jekyll-theme-cayman
 ---
+
 https://www.kancloud.cn/manual/thinkphp6_0/1037479
 
-## 网站程序 
-![](images/2022-11-12-14-21-49.png)
+- 网站软件
+- 客户端和服务端分离
+- 拼装散件 （木工）工具
+- 模型(管理员），视图(管理员），控制器(管理员) 相当于人体的神经反映处理
 
 
-## 架构总览
-![](images/2022-11-12-14-24-25.png)
+## 安装 (管理员)
 
-### 进入不同应用
+- 对于 散件，需要安装
+- 本身完整，无需安装
 
-- public/index.php (前台)
-- public/admin.php (后台)
-
-``` php
-// $http->name()用于设置当前入口文件绑定的应用
-$response = $http->name('api')->run();
-```
-
-## 安装 
-![](images/2022-11-12-14-25-23.png)
 ```shell
  composer create-project topthink/think tp 
  cd tp  
@@ -36,8 +29,20 @@ $response = $http->name('api')->run();
  php think run -p 80 
 ```
 
-## config (设置)
-![](images/2022-11-12-14-26-14.png)
+## config (配置管理员)
+
+预先定义好配置文件，可直接配置
+
+### 进入不同应用
+
+- public/index.php (前台)
+- public/admin.php (后台)
+
+``` php
+// $http->name()用于设置当前入口文件绑定的应用
+$response = $http->name('api')->run();
+```
+
 ### environment-variables
 
 think\facade\Env
@@ -47,30 +52,16 @@ Env::get('database.username');
 ```
 ### config-file
 think\facade\Config;
+
 ```
  Config::get('app.app_name');
  Config::has('route.route_rule_merge');
 ```
  
-### 多应用
-> 每个应用相对保持独立，并且可以支持多个入口文件，应用下面还可以通过多级控制器来维护控制器分组。
+## 路由路径选择 (路由管理员)
 
-``` php
-// [ 应用入口文件 ]
-namespace think;
- 
-require __DIR__ . '/../vendor/autoload.php';
- 
-// 执行HTTP应用并响应
-$http = (new  App())->http;
-$response = $http->name('admin')->run();
-$response->send();
-$http->end($response);
-```
+### 路由开关
 
-## 路由
-### 路由
-![](images/2022-11-12-14-32-29.png)
 路由地址不能跨 应用 (除非采用重定向路由) 
     
 ```
@@ -97,8 +88,6 @@ Route::rule('blog/:id', 'Blog/read'); // 静态地址和动态地址结合
 Route::rule('new/:year/:month/:day', 'News/read'); // 静态地址和动态地址结合
 Route::rule(':user/:blog_id', 'Blog/read'); // 全动态地址
 ```
-### 路由地址
-![](images/2022-11-12-14-33-23.png)
 #### 重定向路由
 ```
 Route::redirect('blog/:id', 'http://blog.thinkphp.cn/read/:id', 302);
@@ -111,15 +100,11 @@ Route::view('hello/:name', 'index/hello');
 
 ### 资源路由
 
-### 路由绑定
-  可以使用路由绑定简化 URL 或者路由规则的定义
-#### 绑定到控制器/操作
+## 控制器管理员
 
-
-#### 绑定到命名空间
-
-## 控制器
 ![](images/2022-11-12-14-34-26.png)
+
+> 使 URL 文本解析成代码
 
 ### 控制器定义
 
@@ -129,19 +114,27 @@ Route::view('hello/:name', 'index/hello');
 ### 资源控制器
 
 资源控制器可以让你轻松的创建RESTFul资源控制器，可以通过命令行生成需要的资源控制器，例如生成index应用的Blog资源控制器使用：
-php think make:controller index@Blog
+
+``` sh
+$ php think make:controller index@Blog
+```
 
 或者使用完整的命名空间生成
-php think make:controller app\index\controller\Blog
+``` sh
+$ php think make:controller app\index\controller\Blog
+```
 
 如果只是用于接口开发，可以使用
-php think make:controller index@Blog --api
+```sh
+$ php think make:controller index@Blog --api
+```
 
 然后你只需要为资源控制器注册一个资源路由：
+``` php
 Route::resource('blog', 'Blog');
+```
+## 请求 (客户请求处理管理员)
 
-## 请求
-![](images/2022-11-12-14-35-59.png)
 ### 请求对象 
 ``` php
 <?php
@@ -176,16 +169,22 @@ class Index
 
 ``` php
 use think\facade\Request;
+
 // 获取完整URL地址 不带域名
 Request::url();
+
 // 获取完整URL地址 包含域名
 Request::url(true);
+
 // 获取当前URL（不含QUERY_STRING） 不带域名
 Request::baseFile();
+
 // 获取当前URL（不含QUERY_STRING） 包含域名
 Request::baseFile(true);
+
 // 获取URL访问根地址 不带域名
 Request::root();
+
 // 获取URL访问根地址 包含域名
 Request::root(true);
 ```
@@ -246,7 +245,7 @@ echo $info['accept-encoding'];
 echo $info['user-agent'];
 ```
 
-## 响应
+## 响应(服务响应管理员)
 ![](images/2022-11-12-14-50-43.png)
 
 大多数情况,我们不需要关注 Response 对象本身,只需要在控制器的操作方法中返回数据即可
@@ -283,8 +282,6 @@ response()->cookie('name', 'value', 600);
 
 文件下载
 
-![](images/2022-11-12-16-21-03.png)
-
 ``` php
 //如果需要设置文件下载的有效期,可以使用
 public function download()
@@ -294,8 +291,7 @@ return download('image.jpg', 'my')->expire(300);
 }
 ```
 
-## 数据库
-![](images/2022-11-14-11-41-35.png)
+## 数据库(管理员)
 
 ### 删除数据
 ``` php
@@ -310,7 +306,7 @@ Db::name('user')
 UPDATE `think_user` SET `delete_time` = '1515745214' WHERE `id` = 1
 ```
 
-## 模型
+## 模型(管理员)
 ![](images/2022-11-14-11-42-06.png)
 ``` php
 //指定主键
@@ -330,7 +326,7 @@ protected $schema = [
 'update_time' => 'datetime',
 ];
 ```
-## 视图
+## 视图(管理员)
 ![](images/2022-11-14-11-42-34.png)
 ``` php
 // 模板变量赋值
@@ -354,12 +350,15 @@ return view('index', [
 ```
 
 ## 上传文件
-![](images/2022-11-14-11-43-10.png)
+
 如果是多应用的话，上传根目录默认是runtime/index/storage，如果你希望上传的文件是可以直接访问或者下载的话，可以使用public存储方式。
 
+```php
 $savename = \think\facade\Filesystem::disk('public')->putFile( 'topic', $file);
+```
 
 你可以在config/filesystem.php配置文件中配置上传根目录及上传规则，例如：
+
 ``` php
 return [
     'default' =>  'local',
@@ -378,6 +377,7 @@ return [
     ],
 ];
 ```
+
 我们可以指定上传文件的命名规则，例如：
 ``` php
 $savename = \think\facade\Filesystem::putFile( 'topic', $file, 'md5');
@@ -393,6 +393,7 @@ $savename = \think\facade\Filesystem::putFile( 'topic', $file, 'md5');
 
 ### 上传验证
 ![](images/2022-11-14-11-49-54.png)
+
 支持使用验证类对上传文件的验证，包括文件大小、文件类型和后缀：
 
 ``` php

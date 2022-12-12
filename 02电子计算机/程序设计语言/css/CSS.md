@@ -4,30 +4,24 @@ permalink: css2learn.html
 theme: jekyll-theme-cayman
 ---
 
-## 基本概念
+## CSS
 
-### 盒子模型
-![](images/2022-11-16-10-20-17.png)
+- 定义元素或元素块(元素's) 的显示样式
 
-> 默认的width ,height 不包含 内边距 (padding) ，所以为了包含内边距 ，需要定义 border-size:border-box;
+### 元素块的显示方式 
 
-### 显示方式 display
 > 纵向对齐
 ![纵向对齐](images/纵向对齐.png)
 > 横向对齐
 ![横向对齐](images/横向对齐.png)
 
-对象（元素）分为两种显示方式，一种是平铺的，一种是垂直排列的。
 
->要切换对象的默认显示方式，使用  display:block 或 inline
-
-还有一种是弹性的，会自适应  
-
-1. 容器: display:flex;
-排列方向: flex-direction  : row , row-reverse , column ,column-reverse
-溢出处理: flex-wrap : nowrap(会溢出)， wrap (溢出部分会换行)， wrap-reverse
-对齐方式: align-items (纵向对齐) , justify-content (横向对齐，单行) ， align-content( 多行 )
-
+- 排列方向: flex-direction : row , row-reverse , column ,column-reverse
+- 溢出处理: flex-wrap : nowrap(会溢出)， wrap (溢出部分会换行)， wrap-reverse
+- 纵向对齐: align-items   
+- 横向对齐
+-  justify-content (单行)
+-  横向对齐 align-content( 多行 )
 
 2. 元素
 扩展: flex-grow
@@ -35,17 +29,13 @@ theme: jekyll-theme-cayman
 基础长度: flex-basis
 
 ### 定位
-![](images/2022-11-16-16-16-28.png)
-
-对象如果想 突破 原来的显示方式，就要使用定位，确认自己相对（绝对）其它对象的位置。
 
 - 静态坐标 static  (文档流坐标，默认) 设置了偏移，不影响元素所在位置
 - 相对坐标 relative   (相对文档流坐标，设置偏移后，元素会偏移，但其原有的文档流位置保留)
 - 绝对坐标 absolute (会脱离文档流，其它元素的位置会变化)
 - 固定坐标 fixed (同样会脱离文档流)
 
-## 选择器 
-![](images/2022-11-16-16-17-41.png)
+## 元素块选择器 
 > 增强某样式的权重  !important
 
 ### 标签选择器

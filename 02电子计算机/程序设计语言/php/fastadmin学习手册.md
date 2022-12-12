@@ -1,7 +1,6 @@
 https://doc.fastadmin.net/doc/178.html
 
 # fastadmin
- ![](images/2022-11-22-10-10-45.png) 
 FastAdmin 是一款基于 ThinkPHP5+Bootstrap 的快速后台开发框架
 
 
@@ -11,7 +10,6 @@ FastAdmin 是一款基于 ThinkPHP5+Bootstrap 的快速后台开发框架
 
 一般是显示对象
 
-![](images/2022-11-22-10-27-43.png)
 
 --force=true
 
@@ -318,7 +316,7 @@ application/common/controller/Frontend.php //前台基类控制器
     
     基类中所定义的方法如下，以下方法都是通过 application/admin/library/traits/Backend.php 引入的
 
-    #+begin_src php
+   ```php 
       
       class Backend extends Controller{
           /##
@@ -374,7 +372,7 @@ application/common/controller/Frontend.php //前台基类控制器
               return parent::selectpage();
           }
       } 
-#+end_src
+```
 
 ### 属性和方法
     
@@ -848,36 +846,35 @@ function var_export_short($var, $indent = "")
 ```
 
 
-
 ## 组件
    FastAdmin 默认集成了多个第三方组合，如表单验证、文件上传、下拉列表、时间选择、城市选择、Selectpage，所有的组件都必须使用 Form.api.bindevent("form[role=form]")来进行初始化，如果不进行初始化是无法对相应组件进行渲染和事件绑定。
 
 如果我们想单独为元素绑定事件和渲染，我们可以使用如下的代码
 
-| 组件         | 代码                                   | 介绍                               |
-|--------------+----------------------------------------+------------------------------------|
-| 文件上传     | Form.events.plupload($("form"));       | 渲染并绑定 form 中的上传组件         |
+| 组件         | 代码                                   | 介绍                                   |
+| ------------ | -------------------------------------- | -------------------------------------- |
+| 文件上传     | Form.events.plupload($("form"));       | 渲染并绑定 form 中的上传组件           |
 | 动态下拉列表 | Form.events.selectpage($("form"));     | 渲染并绑定 form 中的 Selectpage 组件   |
-| 表单验证     | Form.events.validator($("form"));      | 渲染并绑定 form 中的表单验证         |
-| 城市选择     | Form.events.citypicker($("form"));     | 渲染并绑定 form 中的城市选择组件     |
-| 日期时间     | Form.events.datetimepicker($("form")); | 渲染并绑定 form 中的日期时间组件     |
+| 表单验证     | Form.events.validator($("form"));      | 渲染并绑定 form 中的表单验证           |
+| 城市选择     | Form.events.citypicker($("form"));     | 渲染并绑定 form 中的城市选择组件       |
+| 日期时间     | Form.events.datetimepicker($("form")); | 渲染并绑定 form 中的日期时间组件       |
 | 下拉列表     | Form.events.selectpicker($("form"));   | 渲染并绑定 form 中的 Selectpicker 组件 |
-| 附件选择     | Form.events.faselect($("form"));       | 渲染并绑定 form 中的选择附件组件     |
-| 键值组件     | Form.events.fieldlist($("form"));      | 渲染并绑定 form 中的键值组件         |
-| 开关组件     | Form.events.switcher($("form"));       | 渲染并绑定 form 中的开关组件         |
-| 滑块组件     | Form.events.slider($("form"));         | 渲染并绑定 form 中的滑块组件         |
+| 附件选择     | Form.events.faselect($("form"));       | 渲染并绑定 form 中的选择附件组件       |
+| 键值组件     | Form.events.fieldlist($("form"));      | 渲染并绑定 form 中的键值组件           |
+| 开关组件     | Form.events.switcher($("form"));       | 渲染并绑定 form 中的开关组件           |
+| 滑块组件     | Form.events.slider($("form"));         | 渲染并绑定 form 中的滑块组件           |
 
 如果是动态生成的元素，默认是没有绑定事件的，可以使用上述的代码进行绑定事件。其中$("form")为所需绑定事件元素的父级元素，并不限定为必须是一个 form，也可以是个 div 或 p 元素。
 
 ### 参数列表
 Form.api.bindevent 共有四个元素，分别如下：
 
-| 名称    | 类型           | 说明                                                      |
-|---------+----------------+-----------------------------------------------------------|
+| 名称    | 类型           | 说明                                                          |
+| ------- | -------------- | ------------------------------------------------------------- |
 | form    | string、object | 元素容器，并不限定一定是个 form 元素，也可以是 div 或其它元素 |
-| success | function       | 成功后的回调，回调参数：data,ret                          |
-| error   | function       | 失败后的回调，回调参数：data,ret                          |
-| submit  | function       | 提交前的回调，回调参数：success,error                     |
+| success | function       | 成功后的回调，回调参数：data,ret                              |
+| error   | function       | 失败后的回调，回调参数：data,ret                              |
+| submit  | function       | 提交前的回调，回调参数：success,error                         |
 
 ### 常规用法
 ``` php
@@ -911,29 +908,29 @@ require(['form'], function(Form){
 
 #### 载入依赖
      
-     #+begin_src js
+ ```js 
        require(['table'], function(Table){
            //编写实例化代码
            //使用 Table 对象
        });
-     #+end_src
+``` 
 
 #### 引入 CSS
-     由于表格列表常用于后台管理列表，后台已经默认引入了表格相关的 CSS 文件，在前台未
-     引入相关的 CSS 文件，如果你需要在前台使用到 Bootstrap-table，则需要手动载入表格
-     相关的 CSS 文件。如下：
 
-     #+begin_src html
+由于表格列表常用于后台管理列表，后台已经默认引入了表格相关的 CSS 文件，在前台未
+引入相关的 CSS 文件，如果你需要在前台使用到 Bootstrap-table，则需要手动载入表格
+相关的 CSS 文件。如下：
+
+```html
        <link rel="stylesheet" type="text/css"
              href="__CDN__/assets/libs/bootstrap-table/dist/bootstrap-table.min.css"/>
-     #+end_src
-
+```
 ### Table 对象
     
     我们引入表格依赖后 table 后，我们就可以通过 Table 来进行相关表格的初始化和绑
     定相关事件。返回的 Table 对象包括以下几个对象：
 
-    #+begin_src json
+ ```php 
       {
           list:[], //实例化的表格对象列表
           defaults:{}, //默认表格参数
@@ -942,19 +939,7 @@ require(['form'], function(Form){
           button:{}, //默认编辑、删除、排序按钮配置
           api:{} //封装的 API 方法
       }
-    #+end_src
-
-    #+begin_src json
-      {
-          list:[], //实例化的表格对象列表
-          defaults:{}, //默认表格参数
-          columnDefaults:{}, //默认列参数
-          config:{}, //相关按钮的 DOM 选择类
-          button:{}, //默认编辑、删除、排序按钮配置
-          api:{} //封装的 API 方法
-      }
-    #+end_src
->>>>>>> 41c308649a0968a08885508b4d598cbc69d893e3
+```
 
 #### Table.list
      
@@ -1095,3 +1080,188 @@ https://blog.csdn.net/GhostWHS/article/details/110085937
         <ul class="row list-inline plupload-preview" id="p-avatar"></ul>
     </div>
 </div>
+
+
+## 文件上传
+
+`FastAdmin`开发框架支持将文件、图片、视频、压缩包等文件快速的上传至本地服务器或云存储，同时支持云存储直传模式和服务器进行中转模式。  
+你可以直接在后台`插件管理`安装第三方云存储的插件后使用，目前支持以下云存储平台：
+
+| 平台          | 特点                                                          | 插件下载                                            |
+| ------------- | ------------------------------------------------------------- | --------------------------------------------------- |
+| 又拍云存储    | 申请加入又拍云联盟可享每月10G存储空间+15G流量                 | [下载](https://www.fastadmin.net/store/upyun.html)  |
+| 七牛云存储    | 实名认证后每月免费10G流量+10GCDN回源流量                      | [下载](https://www.fastadmin.net/store/qiniu.html)  |
+| 阿里OSS云存储 | 阿里系、稳定、图片处理、支持挂载为分区                        | [下载](https://www.fastadmin.net/store/alioss.html) |
+| Ucloud云存储  | 数据安全可靠、成本灵活可控的海量文件存储服务                  | [下载](https://www.fastadmin.net/store/ucloud.html) |
+| 腾讯COS云存储 | 认证个人用户50G标准存储(6个月)，认证企业用户1T标准存储(6个月) | [下载](https://www.fastadmin.net/store/cos.html)    |
+| 百度BOS云存储 | 提供稳定、安全、高效、高可扩展的云存储服务                    | [下载](https://www.fastadmin.net/store/bos.html)    |
+| 华为OBS云存储 | 提供海量、安全、高可靠、低成本的数据存储能力                  | [下载](https://www.fastadmin.net/store/hwobs.html)  |
+
+> 从FastAdmin 1.2.0版本开始，所有云存储均已适配分片上传功能
+
+FastAdmin开发框架的上传功能非常强大，我们只需要简单的配置即可支持单图或多图上传。
+
+## 上传配置
+
+如果我们未启用云存储插件，此时上传读取的是`application/extra/upload.php`这个配置文件。
+
+| 配置名称  | 配置值                                       | 说明                                                                                                                                                                |
+| --------- | -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| uploadurl | ajax/upload                                  | 一般情况下无需修改                                                                                                                                                  |
+| cdnurl    | 空                                           | 一般情况下为空，如果你的应用不限于PC端，可以填写你的网站地址，如[http://www.yoursite.com](https://www.fastadmin.net/outlink.html?url=http%3A%2F%2Fwww.yoursite.com) |
+| savekey   | /uploads/{year}{mon}{day}/{filemd5}{.suffix} | 配置文件保存的路径                                                                                                                                                  |
+| maxsize   | 10mb                                         | 最大可上传的文件大小，如果启用分片上传，这个值则是限制单一分片的最大值                                                                                              |
+| maxcount  | 0                                            | 最大可上传的文件数量，仅对多文件上传有效，为0时表示不限制                                                                                                           |
+| mimetype  | jpg,png,bmp,jpeg,gif,zip,rar,xls,xlsx        | 允许上传的后缀列表，支持Mimetype，如`jpg,png,image/bmp,application/zip`                                                                                             |
+| timeout   | 30000                                        | 默认上传超时时长为30000，表示30秒                                                                                                                                   |
+| multiple  | false                                        | 是否默认启用多文件上传，默认关闭，一般在HTML中配置`data-multiple="true"`                                                                                            |
+| chunking  | false                                        | 是否允许使用分片上传，默认关闭，如需启用需配合HTML中的配置，参考下方的分片上传                                                                                      |
+| chunksize | 2097152                                      | 分片的大小，默认为`2MB`，建议整数                                                                                                                                   |
+| fullmode  | false                                        | 是否启用完整URL路路径模式，默认关闭，只支持`FastAdmin1.3.3+`                                                                                                        |
+
+> 如果安装了云存储插件并启用，则相关配置请在后台插件管理，对应的云存储配置中进行设置。  
+> 如果安装了云存储插件并启用，则所有的文件都将上传至云存储，如果需要上传到本地服务器，请给按钮添加`data-url="ajax/upload"`属性  
+> 不支持同时启用多个云存储插件，只允许启用一个云存储插件
+
+### 文件名规则
+
+文件保存文件名`savekey`支持替换的变量如下：
+
+| 变量       | 描述                                            | 示例                                           |
+| ---------- | ----------------------------------------------- | ---------------------------------------------- |
+| {year}     | 获取当前上传的年份,以上传获取配置的时间为基准   | 2021                                           |
+| {mon}      | 获取当前上传的月份,以上传获取配置的时间为基准   | 10                                             |
+| {day}      | 获取当前上传的日期,以上传获取配置的时间为基准   | 08                                             |
+| {hour}     | 获取当前上传的小时,以上传获取配置的时间为基准   | 12                                             |
+| {min}      | 获取当前上传的分钟,以上传获取配置的时间为基准   | 43                                             |
+| {sec}      | 获取当前上传的秒,以上传获取配置的时间为基准     | 36                                             |
+| {random}   | 16位随机数                                      | 38dj38h92jf0sjf5                               |
+| {random32} | 32位随机数                                      | jf0sjf0sjf538dj38h92jf538dj38h92               |
+| {filename} | 文件名                                          | `abcd` (`FastAdmin 1.3.0+`支持) 文件名不含后缀 |
+| {suffix}   | 文件后缀名,如果上传文件无后缀则为`file`         | `jpg`                                          |
+| {.suffix}  | 带`.`的文件后缀名,如果上传文件无后缀则为`.file` | `.jpg`                                         |
+| {filemd5}  | 上传文件的MD5值                                 | sjf538dj0f53h9238h92jjf08dj38sjf               |
+
+### 上传示例
+
+<div class="form-group">
+    <label for="c-avatar" class="control-label col-xs-12 col-sm-2">头像:</label>
+    <div class="col-xs-12 col-sm-8">
+        <div class="input-group">
+            <input id="c-avatar" data-rule="" class="form-control" size="50" name="row[avatar]" type="text" value="{$row.avatar}">
+            <div class="input-group-addon no-border no-padding">
+                <span><button type="button" id="faupload-avatar" class="btn btn-danger faupload" data-input-id="c-avatar" data-mimetype="image/gif,image/jpeg,image/png,image/jpg,image/bmp" data-multiple="false" data-preview-id="p-avatar"><i class="fa fa-upload"></i> 上传</button></span>
+                <span><button type="button" id="fachoose-avatar" class="btn btn-primary fachoose" data-input-id="c-avatar" data-mimetype="image/*" data-multiple="false"><i class="fa fa-list"></i> 选择</button></span>
+            </div>
+            <span class="msg-box n-right" for="c-avatar"></span>
+        </div>
+        <ul class="row list-inline faupload-preview" id="p-avatar"></ul>
+    </div>
+</div>
+
+我们可以看到这里配置了一个文本框、一个上传按钮、一个选择按钮和一个预览的DIV
+
+| 类型     | 说明                                                                               |
+| -------- | ---------------------------------------------------------------------------------- |
+| 文本框   | 主要用于接收上传后返回的图片链接，文本框`id`属性是必选的，这里的`id`是`c-avatar`   |
+| 上传按钮 | 主要用于点击后上传文件，有几个属性非常重要，请参考下方的上传按钮属性介绍           |
+| 选择按钮 | 主要用于点击后选择已经上传的文件，有几个属性非常重要，请参考下方的选择按钮属性介绍 |
+| 预览区域 | 主要用于预览上传或选择文件后的预览。`id`属性是必选的，这里的`id`是`p-avatar`       |
+
+### 按钮属性
+
+上传按钮支持属性
+
+| 属性                | 示例值                                             | 说明                                                                                                |
+| ------------------- | -------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| data-url            | ajax/upload                                        | 用于配置上传文件接收的地址，当配置为`ajax/upload`表示启用本地上传                                   |
+| data-multipart      | {"key1":"value1"}                                  | 用于上传时附加额外的参数信息                                                                        |
+| data-input-id       | c-avatar                                           | 用于填充返回URL地址的设文本框                                                                       |
+| data-mimetype       | image/gif,image/jpeg,image/png,image/jpg,image/bmp | 用于过滤允许上传的文件类型，支持mimetype或文件后缀名                                                |
+| data-multiple       | false                                              | 是否支持多图或多文件模式                                                                            |
+| data-preview-id     | p-avatar                                           | 用于预览返回URL地址的DIV                                                                            |
+| data-maxsize        | 10M                                                | 用于限制最大可上传的文件大小                                                                        |
+| data-timeout        | 60000                                              | 用于设定上传超时时长，`60000`表示`60`秒，默认为`30000`，表示`30`秒                                  |
+| data-chunking       | true                                               | 是否启用分片上传,`1.2.0`版本新增                                                                    |
+| data-chunk-size     | 2097152                                            | 分片单片文件大小,`1.2.0`版本新增                                                                    |
+| data-resize-quality | 0.8                                                | 默认不压缩，只有当设置`resizeWidth`或`resizeHeight`时才压缩，设置上传图片的压缩品质,`1.2.0`版本新增 |
+| data-resize-width   | 1024                                               | 默认为`null`不剪裁，上传前剪裁图片宽度,`1.2.0`版本新增                                              |
+| data-resize-height  | 768                                                | 默认为`null`不剪裁，上传前剪裁图片高度,`1.2.0`版本新增                                              |
+
+选择按钮支持属性
+
+| 属性            | 示例值                                             | 说明                                                 |
+| --------------- | -------------------------------------------------- | ---------------------------------------------------- |
+| data-input-id   | c-avatar                                           | 用于填充返回URL地址的设文本框                        |
+| data-mimetype   | image/gif,image/jpeg,image/png,image/jpg,image/bmp | 用于过滤允许上传的文件类型，支持mimetype或文件后缀名 |
+| data-multiple   | false                                              | 是否支持多图或多文件模式                             |
+| data-preview-id | p-avatar                                           | 用于预览返回URL地址的DIV                             |
+
+上传按钮事件
+
+| 属性                     | 示例值   | 说明                                                                                                |
+| ------------------------ | -------- | --------------------------------------------------------------------------------------------------- |
+| data-upload-success      | function | 上传成功后会进行回调，需使用`$("按钮").data("upload-success", function(){});`赋值                   |
+| data-upload-error        | function | 上传失败后会进行回调，需使用`$("按钮").data("upload-error", function(){});`赋值                     |
+| data-totaluploadprogress | function | 上传进度的回调，需使用`$("按钮").data("totaluploadprogress", function(progress, bytesSent){});`赋值 |
+
+如果我们想直接通过JS上传一个文件到我们的服务器，我们可以使用`Upload.api.send(file, success, failure, complete)`来上传文件。
+
+## 分片上传
+
+从FastAdmin `1.2.0`版本开始已经支持分片上传，如果需要启用分片上传，必须客户端和服务端同时开启。首先找到`application/extra/upload.php`，修改其中的`chunking`值为`true`。  
+其次给按钮添加`data-chunking=true`属性即可，如果提示文件过大，可以再添加`data-maxsize="1024M"`来控制允许上传的文件大小。
+
+## 上传成功后归类
+
+从FastAdmin `1.2.1`版本开始已经支持上传成功后归类功能，我们可以通过给上传按钮添加`data-params='{"category":"category2"}'`来实现，这个即是上传归类到`category2`，这个`category2`可以在`常规管理`\->`系统配置`\->`字典配置`中添加修改
+
+## 自定义上传预览
+
+FastAdmin中的上传组件，默认只支持预览图片预览，当判断到不是图片时会使用对应的文件后缀进行预览，如果需要使用自定义上传预览，可以参考以下方法进行实现。  
+首先请参考上方的上传示例代码，我们给预览区域`<ul class="row list-inline faupload-preview" id="p-avatar"></ul>`添加一个`data-template`的属性
+
+```
+<ul class="row list-inline faupload-preview" id="p-avatar" data-template="avatartpl"></ul>
+```
+
+然后在页面底部添加一个`avatartpl`的自定义模板，如：
+
+```
+<script type="text/html" id="introtpl">
+    <li class="col-xs-3">
+        <a href="<%=fullurl%>" data-url="<%=url%>" target="_blank" class="thumbnail">
+            <img src="<%=fullurl%>" class="img-responsive">
+        </a>
+        <a href="javascript:;" class="btn btn-danger btn-xs btn-trash"><i class="fa fa-trash"></i></a>
+    </li>
+</script>
+```
+
+这其中的`data-template`的值对应我们自定义模板ID的值，自定义模板中支持的变量如下：
+
+| 变量名  | 描述                                               |
+| ------- | -------------------------------------------------- |
+| fullurl | 完整的资源路径                                     |
+| url     | 相对的资源路径，当启用`fullmode`时为完整的资源路径 |
+| index   | 多个资源时，当前资源所在位置的索引                 |
+
+## 大文件上传
+
+当我们在大文件上传时，除了可以采用上方的`分片上传`以外，还可以通过修改服务器的配置来实现大文件上传。大文件上传时通常涉及到`插件配置/本地配置/PHP配置/Nginx配置`四处地方需要修改。  
+1、如果有安装云存储插件，首先请在后台`插件管理`修改云存储插件->`配置`中的`最大可上传`配置值。  
+2、然后修改 `application/extra/upload.php` 里的 `maxsize`的值。  
+3、接着修改`PHP`上传限制，修改你服务器运行环境的 `php.ini` 里的 `max_execution_time=300`、`upload_max_filesize=100M`、`post_max_size=100M`三个配置值。  
+4、如果使用`Nginx` 还需要修改`Nginx`的配置`client_max_body_size 100M;`  
+5、修改配置后务必重启Web服务和清浏览器缓存。
+
+## 温馨提示
+
+1、如果是动态生成的上传按钮，需要使用`Form.events.faupload(表单);`绑定事件  
+2、即使设置了分片上传，也只有当上传的文件超过设置的单一分片文件大小时才会启用分片上传。  
+3、从`1.2.0`开始，前端上传默认超时为`30`秒，如上传大文件，请给上传按钮添加`data-timeout="600000"`设定为10分钟超时。  
+4、如果安装了云存储插件，上传没有生效，请尝试清空浏览器缓存。  
+5、如果遇到上传大文件失败，请参考[https://ask.fastadmin.net/question/26919.html](https://ask.fastadmin.net/question/26919.html) 进行修改服务器的限制。  
+6、如果安装了云存储插件并启用，则所有的文件都将上传至云存储，如果仍需要上传文件到本地服务器，请给按钮添加`data-url="ajax/upload"`属性  
+7、由于`FastAdmin`中多图(多文件)使用`,`作为分隔符处理，因此不支持单个文件(图片)URL中使用`,`，这种情况常见于云存储图片自定义处理，建议云存储图片处理时采用自定义样式来避免使用到`,`的情况。
+
