@@ -4,6 +4,8 @@ permalink: thinkphp5.html
 theme: jekyll-theme-cayman
 ---
 
+https://www.kancloud.cn/manual/thinkphp5/
+
 ## 架构
 
 入口文件 -> 转到应用 -> 判断模块 -> 调用控制器 -> 执行操作 -> 连接模型 -> 视图组装 -> 响应输出
