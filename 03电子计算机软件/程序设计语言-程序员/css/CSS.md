@@ -6,7 +6,7 @@ theme: jekyll-theme-cayman
 
 ## CSS
 
-- 定义元素或元素块(元素's) 的显示样式
+- **图文展示**的元素默认有一个浏览器固定样式 (大小，间距），你可以通过 CSS 自定义样式。
 
 ### 元素块的显示方式 
 
@@ -81,7 +81,6 @@ theme: jekyll-theme-cayman
 ## 单位
 
 ### 颜色
-![](images/2022-11-16-16-18-24.png)
 1.  使用颜色的名字表示特定颜色  red , yellow  
 2.  rgb(0,100,100) 用十进制的 rgb 混色模式 (255的色值)
 3.  \#ffffff 用十六进制的 rgb 混色模式
@@ -89,7 +88,6 @@ theme: jekyll-theme-cayman
 5.  设置透明 [图片(opacity:0.8)] [文字rgba(100,0,0,0)]  (0-1) 0是全透明
 
 ### 长度
-![](images/2022-11-16-16-18-57.png)
 > CSS 中的长度单位是一定要写的，因为有多种 
 
 #### 绝对长度 (尺寸不固定，慎用) 
@@ -126,7 +124,6 @@ theme: jekyll-theme-cayman
 * 视口（Viewport）= 浏览器窗口的尺寸。如果视口宽 50 里面，则 1vw = 0.5cm。
 
 ## 样式 
-![](images/2022-11-16-16-27-46.png)
 ### 浏览器特殊前缀 
 - -o- Opera 
 - -webkit- safari 和 chrome
@@ -135,7 +132,6 @@ theme: jekyll-theme-cayman
 ### 背景色
 
 
-![](images/2022-11-16-16-28-26.png)
 
 background-color
 ### 背景图像 
@@ -177,7 +173,6 @@ box-shadow: h-shadow v-shadow blur spread color inset;
 ### 背景
 
 #### 渐变背景
-![](images/2022-11-16-16-29-23.png)
 background-image: linear-gradient(direction, color-stop1, color-stop2, ...);
 
 ``` css
@@ -210,7 +205,6 @@ body{
 background: url() left top no-repeat ,url() right bottom no-repeat;
 
 #### 遮罩
-![](images/2022-11-16-16-30-36.png)
 mask-box-image:url() 75 stretch;
 mask-image: linear-gradient(left, rgba(209, 36, 36, 0), rgba(33, 30, 30, 0) 30%);
 
@@ -251,7 +245,6 @@ box-reflect：none , direction offset, mask-box-image
 - a:active  链接被点击的时刻
 
 ### 列表
-![](images/2022-11-16-16-31-05.png)
 - 列表的项目符号 list-style
 - 表格的边框和背景 border-collapse
 - 列表橫向顯示  display:none  
@@ -361,7 +354,6 @@ src:url(http://www.examples.com/fonts/Calibri.ttf);
 ```
 ### 媒体查询 (根据不同设备适配不同样式)
 
-![](images/2022-11-16-16-32-02.png)
 ``` css
  .my-class {
    width: 40px;
@@ -385,7 +377,6 @@ src:url(http://www.examples.com/fonts/Calibri.ttf);
 
 ## 高级功能
 ### viewport (视窗)
-![](images/2022-11-16-16-40-09.png)
 1.  禁用缩放(手机默认会启用缩放)
 ``` html
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -449,7 +440,7 @@ text-overflow: ellipsis;
 /* 以上3个步骤一个都不能少*/
 ``` 
 
-### content
+### CSS中添加 文本内容 content
 ``` css
 q {
     color: #00008B;
@@ -463,7 +454,6 @@ h1::before  { content: "Chapter "; }
 ```
 
 ## 灰度
-![](images/2022-11-16-16-42-02.png)
 filter: blur(px);模糊度
 filter: grayscale(%);灰度
 filter: hue-rotate(deg);色相转换

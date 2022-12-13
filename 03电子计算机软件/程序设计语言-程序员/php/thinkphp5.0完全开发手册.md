@@ -4,12 +4,12 @@ permalink: thinkphp5.html
 theme: jekyll-theme-cayman
 ---
 
-## 架构
+## ThinkPHP网站程序的架构
 
-入口文件 -> 转到应用 -> 判断模块 -> 调用控制器 -> 执行操作 -> 连接模型 -> 视图组装 -> 响应输出
+入口文件(启动程序) -> 转到应用 -> 判断模块 -> 调用控制器 -> 执行操作 -> 连接模型 -> 视图组装 -> 响应输出
 
 ## 命名空间
-![](images/2022-11-15-09-37-41.png)
+
 ### 引用内置或没命名空间类库
 > 需要在类库的前面加上 \ 
 
@@ -27,9 +27,9 @@ $xml = new \SimpleXmlElement($xmlstr);
 $class = new \think\cache\driver\File();
 ```
 
-## 配置
+## 网站程序的配置
 
-> 配置目录默认在 application 目录下
+> 配置目录默认在 application 下
 
 ```php
 // 定义配置文件目录和应用目录同级
@@ -55,15 +55,15 @@ Config::set($config);
 // 读取二级配置参数
 echo Config::get('user.type');
   //获取所有配置内容，返回的是个Array
-    dump(Config::get());
-    //获取app中的配置内容，返回的是个Array
-    dump(Config::get('app.'));
-    //获取app中的配置内容，返回的是个Array
-    dump(Config::pull('app'));
-    //获取app中的debug中的配置内容
-    dump(Config::get('app.app_debug'));
+ dump(Config::get());
+ //获取app中的配置内容，返回的是个Array
+ dump(Config::get('app.'));
+ //获取app中的配置内容，返回的是个Array
+ dump(Config::pull('app'));
+ //获取app中的debug中的配置内容
+ dump(Config::get('app.app_debug'));
  //判断template下的type项是否存在，返回true或者false
-    dump(Config::has('template.type'));
+dump(Config::has('template.type'));
 ```
 
 助手函数
@@ -77,7 +77,7 @@ echo Config::get('user.type');
     // 获取配置
     dump(config('database.hostname'));
 ```
-### .env 配置
+### 网站程序的环境 .env 配置
 ```
 数组
 [app]
@@ -88,13 +88,13 @@ APP_DEBUG = true
 忽略大小写
 ```
 
-## 路由管理
+## 网站程序的路由管理
 路由的用途是简化URL访问地址
 
 通过 \think\Route 对HTTP协议中的 URL  进行管理。
 
-关闭路由模式
 ``` php
+//关闭路由模式
 'url_route_on'  =>  false,
 ``` 
 
@@ -107,12 +107,9 @@ APP_DEBUG = true
 - 单模块
   - http://server/controller/action/param/value/
 
-命名空间也要修改
-
 ### 自定义规则
 ``` php
 Route::get('/',function(){ return 'Hello,world!'; }); //首页规则
-Route::get('new/:id','News/read'); // 定义GET请求路由规则
 Route::get('new/:id','News/read'); // 定义GET请求路由规则
 Route::post('new/:id','News/update'); // 定义POST请求路由规则
 Route::put('new/:id','News/update'); // 定义PUT请求路由规则
@@ -125,22 +122,6 @@ Route::any('new/:id','News/read'); // 所有请求都支持的路由规则
 
 控制器文件的命名规范是 : 首字母需要大写，如果是两个单词的组合，如 HelloWorld ，则 URL 为 hello_world
 
-```php
-namespace application\index\controller;
-
-class Index 
-{
-    public function index()
-    {
-        return 'index';
-    }
-}
-```
-
-``` php
-// 是否自动转换URL中的控制器和操作名
-'url_convert'            => true,
-```
 ### 初始化
 ```php
   public function _initialize()
@@ -150,7 +131,6 @@ class Index
 ```
 
 ### 前置操作
-可以为某个操作指定前置操作，只要设置 **beforeActionList** 属性，键名为需要调用的前置方法名，无值的话为当前控制器下所有方法的前置方法。
 
 ``` php
 protected $beforeActionList = [
@@ -176,38 +156,11 @@ $this->error('新增失败');
 
 //重定向到News模块的Category操作
 $this->redirect('News/category', ['cate_id' => 2]);
-
-```
-### 空操作
-空操作是指系统在找不到指定的操作方法的时候,会定位到空操作( _empty )方法来执行,利用这个机制,
-我们可以实现错误页面和一些URL的优化。
-
-### 空控制器
-class Error
-
-### 自动定位
-``` php
- public function index()
-    {
-        return $this->fetch();
-    }
-    
-    public function add()
-    {
-        return $this->fetch();
-    }
-    
-    public function edit($id)
-    {
-        return $this->fetch('edit:'.$id);
-    } 
 ```
 
-## 请求 \think\Request
-### 请求信息
-要获取当前的请求信息，可以使用\think\Request 类 Request::instance() 或者助手函数 request()
+## 网络程序的请求处理
 
-#### 获取URL信息
+### 获取URL信息
 
 
 ``` php
@@ -234,7 +187,7 @@ echo 'pathinfo: ' . $request->path() . '<br/>';
 // 获取URL地址中的后缀信息
 echo 'ext: ' . $request->ext() . '<br/>';
 ```
-#### 设置/获取 模块/控制器/操作名称
+### 设置/获取 模块/控制器/操作名称
 ```php
 $request = Request::instance();
 echo "当前模块名称是" . $request->module();
