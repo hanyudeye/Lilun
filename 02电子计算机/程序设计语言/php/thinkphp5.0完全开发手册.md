@@ -1531,34 +1531,6 @@ define('APP_PATH', __DIR__.'/apps/');
 require './thinkphp/start.php';
 ```
 
-#### URL重写
-
-[Apache]
-
-``` apache
-<IfModule mod_rewrite.c>
-Options +FollowSymlinks -Multiviews
-RewriteEngine on
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^(.*)$ index.php?/$1 [QSA,PT,L]
-</IfModule>
-
-```
-
-[Nginx]
-``` c
-location / { 
-if (!-e $request_filename) {
-rewrite ^(.*)$ /index.php?s=/$1
- last;
-break;
-}
-}
-
-```
-(/  3600 24)
-
 ### 设置session 时间
 > ROOT\application\config.php
 
