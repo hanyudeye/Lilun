@@ -5,6 +5,9 @@ theme: jekyll-theme-cayman
 ---
 
 ## ThinkPHP网站程序的架构
+https://www.kancloud.cn/manual/thinkphp5/
+
+## 架构
 
 入口文件(启动程序) -> 转到应用 -> 判断模块 -> 调用控制器 -> 执行操作 -> 连接模型 -> 视图组装 -> 响应输出
 
