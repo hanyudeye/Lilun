@@ -1,6 +1,12 @@
 
+## 数据
+
+- 数据：也叫对象，现实中的东西，物体。
+
+
 ## 类型转换
-![](images/2022-11-11-19-57-37.png)
+
+- 类型，也叫数据类型，把东西分类，同类的东西操作是一样的，可以有效控制东西的品类。
 
 - list(s)  转列表
 - set(s)  转集合(无重复，排序随机)
@@ -13,9 +19,10 @@
 - oct(x) 将一个整数转换为一个八进制字符串
 
 # 库
+
 ## 运行时服务
 
-### os and sys
+### os and sys (系统管理员)
 
     - 显示模块搜索路径  sys.path
     - 显示加载的模块 print(sys.modules)
@@ -88,6 +95,7 @@
 ### subprocess
 ### time
 ### winreg
+
 ## 进程  
 ### 创建进程
     Process([group [, target [, name [, args [, kwargs]]]]])
@@ -98,6 +106,7 @@
     group 实质上不使用
 
     下面看一个创建函数并将其作为多个进程的例子：
+
     ``` python
       #!/usr/bin/env python3
       import multiprocessing
@@ -123,8 +132,8 @@
           for p in multiprocessing.active_children():
               print("child   p.name:" + p.name + "\tp.id" + str(p.pid))
               print("END!!!!!!!!!!!!!!!!!")
-
     ```
+
 ### 把进程创建成类
     当然我们也可以把进程创建成一个类，如下面的例子，当进程 p 调用 start() 时，自
     动调用 run() 方法。
@@ -149,8 +158,8 @@
       if __name__ == '__main__':
           p = ClockProcess(3)
           p.start()
-
     ```
+
 ### daemon 属性
 
     想知道 daemon 属性有什么用，看下下面两个例子吧，一个加了 daemon 属性，一个没有加，对比输出的结果：

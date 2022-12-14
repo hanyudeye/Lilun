@@ -1,5 +1,4 @@
 Python 
-![](images/2022-11-11-19-57-01.png)
 
 ## 正则表达式
 
@@ -32,6 +31,7 @@ Python
 
 
 匹配好了，输出配对字符串
+
 ```python
 result=re.match("helo","heloo",0).group()
 print(result)
