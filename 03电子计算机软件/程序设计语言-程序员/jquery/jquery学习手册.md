@@ -633,7 +633,8 @@ document.getElementById("#id").checked = true
        <li>  
          <input value="Item-Z" name="item" class="unknown" type="radio"> Item Z</li>  
      </ul>
-   #+end_src
+  ``` 
+
    ``` js
      //Where possible, pre-fix your class names with a tag name  
      //so that jQuery doesn't have to spend more time searching  
