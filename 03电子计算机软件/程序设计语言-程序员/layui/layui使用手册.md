@@ -31,78 +31,8 @@ layui.use(['mod1', 'mod2'], function(args){
 });    
 ```
 
-   
-使用
-``` js
-    //一般直接写在一个js文件中
-    layui.use(['layer', 'form'], function(){
-    var layer = layui.layer
-    ,form = layui.form;
-
-    layer.msg('Hello World');
-    });
-```
-
-您可以遵循layui 的模块规范建立一个入口文件，并通过 layui.use() 方式来加载该入口文件
-``` html
-<script>
-layui.config({
-  base: '/res/js/modules/' //你存放新模块的目录，注意，不是 layui 的模块目录
-}).use('index'); //加载入口
-</script>    
-```
-上述的 index 即为你 /res/js/modules/ 目录下的 index.js,它的内容应该如下：
-
-``` js
-index.js 是项目的主入口
-以依赖 layui 的 layer 和 form 模块为例
-
-layui.define(['layer','form'],function(exports){
-var layer = layui.layer
-,form = layui.form;
-
-exports('index',{}); //注意，这里是模块的输出核心，模块必须和 use 是的模块名一致
-
-});
-
-```
-
-从 layui2.6开始，如果你引入的是构建后的 layui.js ，里面包含了所有的内置模块，无需另外指定
-
-``` js
-index.js 项目主入口
-layui.define(function(){
-var layer=layui.layer
-,form =layui.form
-,table=layui.table;
-
-//..... 代码
-
-exports('index',{}); //注意，这里是模块的输出核心，模块必须和 use 是的模块名一致
-})
-
-```
-
-管理扩展模块
-
-除了使用 layui 的内置模块， 必不可少也需要加载扩展模块（符合 layui 模块规范的 js 代码文件)
-``` js
-//mod1.js
-layui.define('layer',function(exports){
-//...
-exports(mod1,{});
-})
-
-//mod2.js, 假设依赖 mod1 和 form
-layui.define('mod1','form',function(exports){
-//...
-exports(mod2,{});
-})
-```
 
 ## 底层方法
-> 本篇主要介绍即出库所发挥的作用，其中过滤了大部分在外部不常用的方法，侧重罗列了基础框架支撑。
-
 ### 全局配置
 
 方法： layui.config(options)
@@ -151,7 +81,9 @@ layui.use(['layer', 'laydate','demo'], function(){
 });
 ```
 注意： 自定义的模块都在 layui 命名空间下面
+
 ##  页面元素
+
 ### CSS内置公共基础类
 
 | 类名                | 说明                                                                                    |
@@ -159,7 +91,7 @@ layui.use(['layer', 'laydate','demo'], function(){
 |                     | 布局/容器                                                                               |
 | layui-main          | 用于设置一个宽度为1140px的水平居中块(无响应式)                                          |
 | layui-inline        | 用于将标签设为内联块状元素                                                              |
-| layui-box           | 用于排除一些UI框架(如Bootstrap)强制将全部元素设为box-sizing:border-box 所引发的尺寸偏差 |
+| layui-box           | 强制将全部元素设为box-sizing:border-box 所引发的尺寸偏差 |
 | layui-clear         | 用于消除浮动（不常用，因为layui 几乎没用到浮动)                                         |
 | layui-btn-container | 用于定义按钮的父容器                                                                    |
 | layui-btn-fluid     | 用于定义流体按钮，即宽度最大化适应                                                      |
@@ -172,7 +104,7 @@ layui.use(['layer', 'laydate','demo'], function(){
 | layui-show          | 显示块状元素                                                                            |
 | layui-hide          | 隐藏元素                                                                                |
 |                     | 文本                                                                                    |
-| layui-text          | 定义一段文本区域，该区域内的特殊标签(如a、li、em等)将会进行相应处理                     |
+| layui-text          | 定义一段文本区域              |
 | layui-word-aux      | 灰色标注性文字，左右会有间隔                                                            |
 |                     | 背景色                                                                                  |
 | layui-bg-red        | 用于设置元素赤色背景                                                                    |
@@ -197,7 +129,7 @@ layui.use(['layer', 'laydate','demo'], function(){
 | layui-font-gray     | （灰色字体）                                                                            |
 
 ### HTML规范：常用公共属性
-很多时候，元素的基本交互行为，都是由模块自动开启。但不同的区域可能需要触发不同的动作，这就需要你设定我们所支持的自定义属性来作为分区。如下面的 lay-submit、 lay-filter 既为公共属性:
+如下面的 lay-submit、 lay-filter 既为公共属性:
 
 ``` html
 <button class="layui-btn" lay-submit lay-filter="login">登入</button>
@@ -283,15 +215,7 @@ layui.use(['mymod', 'mod1'], function(){
 
 ## 布局
 ### 栅格系统
-为了丰富网页布局，简化 html/css 代码的耦合，并提升多终端的适配能力，layui 在2.0的版本中引进了自己的一套具备响应式能力的栅格系统.我们将容器进行了12等分,预设了4*12中CSS排列类,他们在移动设备,平板,桌面中/大尺寸四种不同的屏幕下发挥着各自的作用.
 
-一. 栅格布局规则:
-1. 采用 layui-row定义行,如: <div class="layui-row"></div>
-2. 采用 layui-col-md* 定义一组列
-3. 类可以同时出现最多四种不同的组合,分别是 xs（超小屏幕，如手机<768px）、sm（小屏幕，如平板>=768px）、md（桌面中等屏幕 992px）、lg（桌面大型屏幕>=1200px）
-4. 可对列追加类似 layui-col-space5 (列间距，单位 px)、 layui-col-md-offset3 ( 列偏移 )
-      
- 移动设备、平板、桌面端的不同表现：
    ```  html
          <div class="layui-row">
            <div class="layui-col-xs6 layui-col-sm6 layui-col-md4">
@@ -312,22 +236,8 @@ layui.use(['mymod', 'mod1'], function(){
          </div>
        </div>
 ```
-二. 响应式规则:          
-栅格的响应式能力,得益于CSS3媒体查询的强力支持,从而针对四类不同的尺寸屏幕,进行相应的适配处理
 
-三. 响应式公共类：
-    | 类名（class）             | 说明                                                        |
-    | layui-show-*-block        | 定义不同设备下的 display: block; * 可选值有：xs、sm、md、lg |
-    | layui-show-*-inline       | 定义不同设备下的 display: inline; * 可选值同上              |
-    | layui-show-*-inline-block | 定义不同设备下的 display: inline-block; * 可选值同上        |
-    | layui-hide-*              | 定义不同设备下的隐藏类，即： display: none; * 可选值同上    |
 
-四. 布局容器:
-将栅格放入一个带有 class="layui-contianer"的特定容器中,以便在小屏幕以上的设备中固定宽度,让列可控.
-当然,你也可以不固定容器宽度,只要将栅格和其它元素放入 class="layui-fluid"的容器中,它会100%适应.
-
-五. 列间距 (用来微调列) layui-col-space1 ~ layui-col-space30
-六. 列偏移 (用来定位列) layui-col-md-offset*
 ### 颜色
 #### 主色调 (墨绿色)
 1. #009688 主色调之一
@@ -361,11 +271,9 @@ layui.use(['mymod', 'mod1'], function(){
 ``` html
 <i class="layui-icon layui-icon-face-smile"></i>   
 <i class="layui-icon layui-icon-face-smile" style="font-size: 30px; color: #1E9FFF;"></i>
-      ```
-内置图标 (168个)
+```
 
-
-跨域问题的解决
+#### 跨域问题的解决
 
 由于浏览器存在同源策略，所以如果 layui（里面含图标字体文件）所在的地址与你当
 前的页面地址不在同一个域下，即会出现图标跨域问题。所以要么你就把layui 与网站
@@ -725,9 +633,6 @@ layer.msg('不开心。。', {icon: 5});
 layer.load(1); //风格1的加载
 ```
 
-##### TODO btn - 按钮
-TODO: 未完，待续
-
 ### confirm
     ``` js
      var index = layer.confirm('您确定要删除该产品信息？', {
@@ -803,7 +708,6 @@ layui.use('upload', function(){
 </body>
 </html>
 ```
-
 这原本是一个普通的 button，正是upload模块赋予了它"文件选择"的特殊技能。
 
 #### 核心方法与基础参数选项
@@ -840,29 +744,6 @@ upload.render({
 })
 
 ```
-更多支持的参数详见下表，合理的配置，应对各式各样的业务要求。
-
-| 参数选项   | 说明                                                                                                                                                    | 类型          | 默认值                                    |
-| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- | ----------------------------------------- |
-| elem       | 指向容器选择器，如：emem:'#id'。也可以是 DOM对象                                                                                                        | string/object | -                                         |
-| url        | 服务端上传接口，返回的数据规范请详见下文                                                                                                                | string        | -                                         |
-| data       | 请求上传接口的额外参数。如：data:{id:'xxx'}，从layui2.2开始，支持动态值 <br> data: { <br> id: function(){ <br> return $('#id').val(); <br> }<br> } <br> | object        | -                                         |
-| headers    | 接口的请求头。如:headers:{token:'sasas'}。layui2.2 新增                                                                                                 | object        | -                                         |
-| accept     | 指定允许上传时校验的文件类型，可选的值有：images、file,video,audio                                                                                      | string        | images                                    |
-| acceptMime | 规定打开文件选择框时，筛选的文件类型，如: acceptMime:'image/*'(只显示图片)，acceptMime:'image/jpg,image/png'                                            | string        | images                                    |
-| exts       | 允许上传的文件后缀，一般结合accept参数设定 如 exts:'zip &#124;rar&#124;7z'                                                                              | string        | jpg &#124;png&#124;gif&#124;bmp&#124;jpeg |
-| auto       | 是否选完文件后自动上传。如设定为 false，那么需要设置 bindAction参数来指向一个其它按钮提交上传                                                           | bllolean      | true                                      |
-| bindAction | 指向一个按钮出发上传,值为选择器或DOM对象,如:bindAction:'#btn'                                                                                           | string/object | -                                         |
-| field      | 设定文件域的字段名                                                                                                                                      | string        | file                                      |
-| size       | 设置文件最大可允许上传的大小，单位 KB                                                                                                                   | number        | 0(即不限制)                               |
-| multiple   | 是否支持多文件上传                                                                                                                                      | boolean       | false                                     |
-| number     | 设置同时上传的文件数量,一般配合 multiple参数出现                                                                                                        | number        | 0(不限制)                                 |
-| drag       | 是否支持拖拽                                                                                                                                            | boolean       | true                                      |
-| ---        | 回调                                                                                                                                                    | 回调          | ---                                       |
-| choose     | 选择文件后的回调函数                                                                                                                                    | function      | -                                         |
-| before     | 文件提交上传前的回调                                                                                                                                    | function      | -                                         |
-| done       | 执行上传请求后的回调。返回： res(服务端响应)，index(当前文件索引),upload(重新上传方法)                                                                  | funciton      | -                                         |
-| error      | 执行上传请求出现异常的回调(一般为网络异常，URL404等)，返回：index(当前文件索引),upload(重新上传方法)                                                    | function      | -                                         |
 
 #### 上传接口
 设定一个URL给 url参数
