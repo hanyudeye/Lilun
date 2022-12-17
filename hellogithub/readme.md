@@ -6,7 +6,7 @@ https://hellogithub.com/
 ### 11.23
 
 - [x] Intermediate Python  这是 python 2.7 的理论知识
-- [x]
+- [x] python 代码写一个简单的 http server ，并注释
 
 
 

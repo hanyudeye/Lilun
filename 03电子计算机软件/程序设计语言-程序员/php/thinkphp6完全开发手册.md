@@ -102,8 +102,6 @@ Route::view('hello/:name', 'index/hello');
 
 ## 控制器管理员
 
-![](images/2022-11-12-14-34-26.png)
-
 > 使 URL 文本解析成代码
 
 ### 控制器定义
@@ -246,7 +244,6 @@ echo $info['user-agent'];
 ```
 
 ## 响应(服务响应管理员)
-![](images/2022-11-12-14-50-43.png)
 
 大多数情况,我们不需要关注 Response 对象本身,只需要在控制器的操作方法中返回数据即可
 > 使用 return  返回响应类型的数据 return json($data);
@@ -307,7 +304,6 @@ UPDATE `think_user` SET `delete_time` = '1515745214' WHERE `id` = 1
 ```
 
 ## 模型(管理员)
-![](images/2022-11-14-11-42-06.png)
 ``` php
 //指定主键
 protected $pk = 'uid';
@@ -327,7 +323,6 @@ protected $schema = [
 ];
 ```
 ## 视图(管理员)
-![](images/2022-11-14-11-42-34.png)
 ``` php
 // 模板变量赋值
 View::assign('name','ThinkPHP');
@@ -392,8 +387,6 @@ $savename = \think\facade\Filesystem::putFile( 'topic', $file, 'md5');
 | sha1 | 对文件使用sha1_file散列生成 |
 
 ### 上传验证
-![](images/2022-11-14-11-49-54.png)
-
 支持使用验证类对上传文件的验证，包括文件大小、文件类型和后缀：
 
 ``` php
