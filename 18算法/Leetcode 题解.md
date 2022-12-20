@@ -1,8 +1,5 @@
 ## 算法图表 
 
-- http://sorting.at/
-- https://visualgo.net/zh
-
 
 # 算法思想
 ## 双指针
