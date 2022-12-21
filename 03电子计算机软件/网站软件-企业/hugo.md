@@ -1,22 +1,20 @@
 
 ## Get Started
 
-- Step 1: Install Hugo
+<!-- - Step 1: Install Hugo -->
 
-下载命令行程序，放在PATH路径下面
+<!-- 下载命令行程序，放在PATH路径下面，Ubuntu 下 直接 apt 安装 -->
 
 - Step 2: Create a New Site
 ``` shell
 hugo new site quickstart
 ```
-![](images/2022-11-11-19-41-44.png)
 - Step 3: Add a Theme 
 ``` shell
 cd quickstart
 git init
 git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke
 ```
-![](images/2022-11-11-19-42-13.png)
 添加配置
 ``` shell
 echo theme = \"ananke\" >> config.toml
@@ -32,7 +30,6 @@ hugo new posts/my-first-post.md
 hugo server -D
 ```
 
-![](images/2022-11-11-19-40-35.png)
 - Step 6: 部署
 
 ```shell
