@@ -14,8 +14,6 @@ https://www.kancloud.cn/manual/thinkphp6_0/1037479
 
 ## 安装 (管理员)
 
-- 对于 散件，需要安装
-- 本身完整，无需安装
 
 ```shell
  composer create-project topthink/think tp 
@@ -28,6 +26,8 @@ https://www.kancloud.cn/manual/thinkphp6_0/1037479
 
  php think run -p 80 
 ```
+- 更新  composer update topthink/framework
+- 安装开发版 composer create-project topthink/think=6.0.x-dev tp
 
 ## config (配置管理员)
 
