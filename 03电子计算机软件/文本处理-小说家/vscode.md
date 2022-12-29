@@ -30,3 +30,13 @@ AD 翻页
 ### 隐藏滚动条
 
 文本编辑器->所有语言-> 滚动条
+
+### 设置本地变量
+1. 创建配置文件  .vscode/settings.json
+2. 添加内容
+
+```json
+{
+    "pasteImage.path": "${currentFileDir}/asserts/images/"
+}
+```
