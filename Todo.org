@@ -1,2 +1,10 @@
 ** Todo List
-*** learn how to make a dream 
+*** DONE 寄软著
+    SCHEDULED: <2022-12-30 周五 12:00>
+    
+*** DONE 剪视频
+    SCHEDULED: <2022-12-30 周五 09:00>
+
+*** TODO 写文章
+*** TODO 录视频
+*** 程序员 精英才是好行业
