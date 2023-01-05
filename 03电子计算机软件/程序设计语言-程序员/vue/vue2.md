@@ -5,8 +5,6 @@ https://github.com/icarusion/vue-book
 
 # Vue2
 
- > 处理SPA(单页面富应用)  
-
 ## jQuery 与 Vue 区别
 
 jQuery
@@ -19,7 +17,7 @@ $('#app').append(btn);
 ```
 
 Vue
-```
+``` html
 <div id="app">
 <button v-if="showBtn" v-on:click="handleClick">Click me</button>
 </div>

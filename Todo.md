@@ -3,7 +3,22 @@
 - [工作] 闲时 发视频 社交
 - [学习] 学习技术栈
 
-# [TODO] Need To do
+# TODO Need To do
+
+## TODO 做一个抖音静态页面
+
+## TODO 在 vscode 中处理  TODO List 
+
+安装插件 TODO TREE 即可
+
+
+## FIXME 完成
+
+## TODO 学习 layui 的使用
+
+[2023/1/5]
+
+
 
 <!-- ## 双屏摆放问题 -->
 
