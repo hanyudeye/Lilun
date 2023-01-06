@@ -6,7 +6,7 @@ theme: jekyll-theme-cayman
 
 https://www.kancloud.cn/manual/thinkphp5/
 
-网站内容系统
+网站内容系统， 能够  根据 互联网 请求，发送相应的 页面信息，作为内容传输。
 
 ## 结构
 
@@ -556,11 +556,16 @@ $user->where('name', 'thinkphp')
  ```
 
 ## 视图
+
+use think\Controller;
+extends Controller
+
 ``` php
 // 渲染模板输出
 return $this->fetch('hello',['name'=>'thinkphp']);
 return view('hello',['name'=>'thinkphp']);
 ```
+
 ## 模板
 ### 请求参数 
 ``` php

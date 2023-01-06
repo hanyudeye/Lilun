@@ -185,6 +185,8 @@ Request::root();
 
 // 获取URL访问根地址 包含域名
 Request::root(true);
+
+Request::domain();
 ```
 
 获取当前控制器/操作
