@@ -1,8 +1,16 @@
+## TODO 1/7
+
+- 配置 hugo 图片账号
+
 ## TODO 1/6 
 
 - FIXME [x]剪两个视频
 - FIXME [x] 看一篇文章
 - FIXME 复习 F:\self\Lilun\03电子计算机软件\程序设计语言-程序员\php\thinkphp5小功能.md
+- FIXME [x] 看书《计算机科学概论(第12版)》
+- TODO [] 看书 java
+
+
 
 ## [Doing] 目标
 
