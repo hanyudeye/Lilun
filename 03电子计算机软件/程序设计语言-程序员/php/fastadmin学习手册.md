@@ -8,11 +8,9 @@ FastAdmin 是一款基于 ThinkPHP5+Bootstrap 的快速后台开发框架
 
 ### 生成 CURD 
 
-一般是显示对象
-
 --force=true
 
-    ``` shell
+    ``` sh
     //生成 fa_test 表的 CRUD
     php think crud -t test
 
@@ -46,20 +44,6 @@ FastAdmin 是一款基于 ThinkPHP5+Bootstrap 的快速后台开发框架
     //生成 v_phealth_db2 数据库下的 fa_test 表的 CRUD
     php think crud -t test --db=v_phealth_db2
     ```
-
-### 生成菜单
-
-    //一键生成 test 控制器的权限菜单
-    php think menu -c test
-    
-    //一键生成 mydir/test 控制器的权限菜单
-    php think menu -c mydir/test
-    
-    //删除 test 控制器生成的菜单
-    php think menu -c test -d 1
-    
-    //一键全部重新所有控制器的权限菜单
-    php think menu -c all-controller
 
 ### 压缩打包
     在 FastAdmin 中如果修改了核心的 JS 或 CSS 文件，是需要重新压缩打包后在生产环境下才会生效。FastAdmin 采用的是基于 RequireJS 的 r.js 进行 JS 和 CSS 文件的压缩打包。
@@ -167,53 +151,7 @@ FastAdmin 是一款基于 ThinkPHP5+Bootstrap 的快速后台开发框架
     //强制重新安装 FastAdmin
     php think install -f 1
 
-## 架构
-  ![](images/fastadmin-jiagou.png)
   
-### 应用模块  
-    
-    在 FastAdmin 中默认有四个应用模块：admin、api、common、index
-    
-    后台模块(admin)是 FastAdmin 中的核心模块，后台模块又分为系统配置、附件管理、
-    分类管理、插件管理等多个功能模块，更多的功能模块可以在插件管理中自由的安装和
-    卸载
-    
-    后台的前端是基于 AdminLTE 和 Bootstrap 进行了大量二次开发，采用 RequireJS 进
-    行 JS 模块化管理和加载。
-   
-    公共模块(common)是一个特殊的模块，默认是禁止直接访问的，一般用于放置一些公共
-    的类或其它模块的继承基类等。
-
-    Api 模块(api)通常用于对接 APP，用于向 APP 提供接口，目前 FastAdmin 暂未提供
-    API 相关的插件和文档，你可以直接参考 ThinkPHP5 官方的文档。
-
-### 功能模块
-    
-  ``` 
-    ├── application
-    │   └── admin
-    │       ├── controller
-    │       │   └── Test.php        //控制器类
-    │       ├── lang
-    │       │   ├── zh-cn            
-    │       │   │   └── test.php    //功能语言包,按需加载
-    │       │   └── zh-cn.php        //后台语言包,默认加载
-    │       ├── model
-    │       │   └── Test.php        //模型类
-    │       ├── validate
-    │       │   └── Test.php        //验证器类
-    │       └── view
-    │           └── test            
-    │               ├── index.html   //列表视图
-    │               ├── add.html     //添加视图
-    │               └── edit.html    //编辑视图
-    └── public
-           └── assets
-                  └── js
-                        └── backend
-                               └── test.js      //功能模块JS文件
-   ``` 
-    
 ## 多语言
       在 FastAdmin 中可以在任何位置(控制器、视图、JS)使用__('语言标识');调用语言包，如
    果语言标识不存在，则直接输出该语言标识
