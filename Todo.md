@@ -1,3 +1,10 @@
+## TODO 1/9
+
+- 作计划 (看 python)
+- 作改进 (看 python)
+
+
+
 ## TODO 1/7
 
 - 配置 hugo 图片账号
