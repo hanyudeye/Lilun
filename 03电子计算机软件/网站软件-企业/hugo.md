@@ -1,36 +1,38 @@
+Hugo 可以根据 模板 生成 **静态网站**，
 
-## Get Started
+## 使用
 
-<!-- - Step 1: Install Hugo -->
+- 创建hugo 网站
 
-<!-- 下载命令行程序，放在PATH路径下面，Ubuntu 下 直接 apt 安装 -->
-
-- Step 2: Create a New Site
 ``` shell
 hugo new site quickstart
 ```
-- Step 3: Add a Theme 
+- 添加主题
+
 ``` shell
 cd quickstart
 git init
 git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke
 ```
-添加配置
+
+- 添加配置
 ``` shell
 echo theme = \"ananke\" >> config.toml
 ``` 
+$ git clone https://github.com/olOwOlo/hugo-theme-even themes/even
 
-- Step 4: Add Some Content 
+- 添加文章
+
 ```shell
 hugo new posts/my-first-post.md
 ```
 
-- Step 5: Start the Hugo server
-```
-hugo server -D
+- 开启服务
+``` sh
+hugo server 
 ```
 
-- Step 6: 部署
+- 部署
 
 ```shell
 $ cd public
@@ -40,9 +42,7 @@ $ git add -A
 $ git commit -m "first commit"
 $ git push -u origin master
 ```
-
-- Step 7: Build static pages
-
-```shell
-hugo -D
+- 构建静态页面
+``` sh
+hugo server -D
 ```
