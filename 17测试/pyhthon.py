@@ -3,6 +3,8 @@ def xx():
 
 
 
-if __name__=="main":
+if __name__=="__main__":
+    print(__name__)
+    print(__loader__)
     xx()
 
