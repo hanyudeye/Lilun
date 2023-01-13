@@ -8,3 +8,30 @@
 *** TODO 写文章
 *** TODO 录视频
 *** TODO 程序员 精英才是好行业
+
+*** TODO 鼠标拖拽式学习法
+
+- https://xyzrank.com/#/
+- https://musicforprogramming.net/thirty
+
+*** 直播行业，最大最繁荣，题材多样
+
+https://sample-code.aspect.app/
+
+
+*** AI 合影
+
+这个功能很适合风景区的摄影亭，"单人照变男女合照"肯定受欢迎。
+这个可以有!!!
+
+*** AI 自拍
+
+https://www.strmr.com/
+
+用户向该网站上传5～10张自拍照，它就会用 AI 模型生成一张很帅的自拍。下图是原始素材和模型生成的自拍。
+
+*** 手册 
+https://wangchujiang.com/reference/
+
+*** 学会看书，学会看书姿势
+http://ixuexila.com/

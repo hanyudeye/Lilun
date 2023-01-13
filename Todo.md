@@ -1,9 +1,52 @@
+## 1/10
+- 做奶茶 (绿茶带回去)
+    我个人喜欢用浓香的红茶做奶茶，多放点茶叶直接用牛奶煮一会再泡一会，这样味道更浓。。绿茶一般都太淡，被奶味压制住了茶味。
+- 配置 hugo
+- 
+
+## TODO 1/9
+
+- 作计划 (看 python)
+- 作改进 (看 python)
+
+
+
+## TODO 1/7
+
+- 配置 hugo 图片账号
+- 布置瑜伽垫，桌子搬好
+
+## TODO 1/6 
+
+- FIXME [x]剪两个视频
+- FIXME [x] 看一篇文章
+- FIXME 复习 F:\self\Lilun\03电子计算机软件\程序设计语言-程序员\php\thinkphp5小功能.md
+- FIXME [x] 看书《计算机科学概论(第12版)》
+- TODO [] 看书 java
+
+
+
 ## [Doing] 目标
 
 - [工作] 闲时 发视频 社交
 - [学习] 学习技术栈
 
-# [TODO] Need To do
+# FIXME Need To do
+
+## FIXME 做一个抖音静态页面
+
+## FIXME 在 vscode 中处理  TODO List 
+
+安装插件 TODO TREE 即可
+
+
+## FIXME 完成
+
+## FIXME 学习 layui 的使用
+
+[2023/1/5]
+
+
 
 <!-- ## 双屏摆放问题 -->
 

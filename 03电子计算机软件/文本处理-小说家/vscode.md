@@ -40,3 +40,5 @@ AD 翻页
     "pasteImage.path": "${currentFileDir}/asserts/images/"
 }
 ```
+
+### vscode 代码运行 中文

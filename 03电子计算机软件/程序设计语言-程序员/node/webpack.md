@@ -1,3 +1,10 @@
+## Webpack 脚本指令用法
+
+- `webpack` 直接打包输出
+- `webpack serve` 启动开发服务器，内存编译打包没有输出
+
+我们将 `Webpack` 输出的文件叫做 `bundle` (捆，束)。
+
 ## webpack
 
 - 初始化 npm init -y
@@ -24,6 +31,11 @@ module.exports = {
   mode: "",
 };
 ```
+
+- 开发模式：development
+- 生产模式：production
+
+
 ``` js
 // Node.js的核心模块，专门用来处理文件路径
 const path = require("path");
