@@ -4,6 +4,9 @@
 - 配置 hugo
 - 
 
+xsel
+Recent Files
+
 ## TODO 1/9
 
 - 作计划 (看 python)

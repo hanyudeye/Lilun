@@ -11,6 +11,8 @@
 - 方法2
 直接使用命令 code.cmd 打开
 
+## vscode 折叠
+
 ## 插件 
 ### settings Sync
 - 通过GitHub生成你的gist Id 和 token
