@@ -1,9 +1,12 @@
 ## 什么是 git?
-![](images/2022-11-12-06-00-34.png)
+
+远程同步历史记录
+
 
 ## 分支操作
-![](images/2022-11-15-21-14-54.png)
 1、git branch 创建分支
+假如有个开发版一直在开发，到有个稳定时刻，创建一个稳定版，继续开发，再有稳定的就再创建。
+
 
 2、git branch -b 创建并切换到新建的分支上
 
@@ -30,7 +33,6 @@
 13、git merge 分支名 合并分支到当前分支上
 
 ## 暂存操作
-![](images/2022-11-15-21-15-33.png)
 1、git stash 暂存当前修改
 
 2、git stash apply 恢复最近的一次暂存
@@ -44,7 +46,6 @@
 6、git stash clear 清除暂存
 
 ## 回退操作
-![](images/2022-11-15-21-17-55.png)
 1、git reset --hard HEAD^ 回退到上一个版本
 
 2、git reset --hard ahdhs1(commit_id) 回退到某个版本
