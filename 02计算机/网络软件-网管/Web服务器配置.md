@@ -1,19 +1,15 @@
 
-## 服务器隐藏入口文件
+## apache 配置 httpd.conf
 
-Nginx：
-
-```
-location / {
-    if (!-e $request_filename){
-        rewrite  ^(.*)$  /index.php?s=$1  last;   break;
-    }
-}
+``` conf 
+Timeout 300 # 设定超时时间
+Listen 80 #设置监听IP及端口  Listen 127.0.0.1:8080
+DocumentRoot "/www"  # 设置站点根目录
 ```
 
-Apache：
-
-```
+### .htaccess 配置
+- 隐藏入口文件
+``` 
 <IfModule mod_rewrite.c>
  RewriteEngine on
  RewriteBase /
@@ -24,7 +20,21 @@ Apache：
 ```
 
 
-## 内网穿透
+## Nginx 配置
+
+### ng.htaccess 配置
+- 隐藏入口文件
+
+``` c 
+location / {
+    if (!-e $request_filename){
+        rewrite  ^(.*)$  /index.php?s=$1  last;   break;
+    }
+}
+```
+
+
+## 内网穿透 natapp
 
 ### 临时域名
 natapp -authtoken=e4eb817e91aeee83  
