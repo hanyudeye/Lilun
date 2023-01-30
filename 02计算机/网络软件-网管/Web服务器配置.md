@@ -33,6 +33,25 @@ location / {
 }
 ```
 
+```
+server {
+    listen 80;
+    server_name tp6.bb;
+    root /home/wuming/web/tp6/public;
+    index  index.php index.html;
+    location / {
+          # try_files $uri $uri/ /index.php?$query_string;
+        if (!-e $request_filename) {
+   		      rewrite  ^(.*)$  /index.php?s=/$1  last;
+        }
+    }
+
+    location ~ \.php$ {
+        include snippets/fastcgi-php.conf;
+        fastcgi_pass unix:/var/run/php/php7.4-fpm.sock;
+    }
+}
+```
 
 ## 内网穿透 natapp
 

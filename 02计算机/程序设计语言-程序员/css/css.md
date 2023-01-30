@@ -1,23 +1,16 @@
 ---
-title: 定义样式 css
+title: css
 permalink: css2learn.html
+description: 定义显示元素的外观
 theme: jekyll-theme-cayman
 ---
 
 ## CSS
 
-- **图文展示**的元素默认有一个浏览器固定样式 (大小，间距），你可以通过 CSS 自定义样式。
-
-### 元素块的显示方式 
-
-> 纵向对齐
-![纵向对齐](images/纵向对齐.png)
-> 横向对齐
-![横向对齐](images/横向对齐.png)
+> css 是用来定义显示元素的外观,语法简单,由外观属性:具体描述值组成 
 
 
-- 排列方向: flex-direction : row , row-reverse , column ,column-reverse
-- 溢出处理: flex-wrap : nowrap(会溢出)， wrap (溢出部分会换行)， wrap-reverse
+
 - 纵向对齐: align-items   
 - 横向对齐
 -  justify-content (单行)
