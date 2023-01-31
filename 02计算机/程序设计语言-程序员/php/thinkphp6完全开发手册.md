@@ -6,14 +6,11 @@ theme: jekyll-theme-cayman
 
 https://www.kancloud.cn/manual/thinkphp6_0/1037479
 
-- 网站软件
-- 客户端和服务端分离
-- 拼装散件 （木工）工具
-- 模型(管理员），视图(管理员），控制器(管理员) 相当于人体的神经反映处理
+- 用于 开发  **网页** 的 网站软件
+- 作为一个 服务器程序，响应客户端的请求
+- 每个请求作为单独的控制器，调用方法处理
 
-
-## 安装 (管理员)
-
+## 安装 
 
 ```shell
  composer create-project topthink/think tp 
@@ -26,12 +23,11 @@ https://www.kancloud.cn/manual/thinkphp6_0/1037479
 
  php think run -p 80 
 ```
+
 - 更新  composer update topthink/framework
 - 安装开发版 composer create-project topthink/think=6.0.x-dev tp
 
-## config (配置管理员)
-
-预先定义好配置文件，可直接配置
+## config 配置
 
 ### 进入不同应用
 
@@ -42,6 +38,9 @@ https://www.kancloud.cn/manual/thinkphp6_0/1037479
 // $http->name()用于设置当前入口文件绑定的应用
 $response = $http->name('api')->run();
 ```
+
+目录结构
+- F:\www\thinkphp\tp6\app\api\controller\Index.php
 
 ### environment-variables
 

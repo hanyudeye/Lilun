@@ -4,19 +4,13 @@ permalink: jquery.html
 theme: jekyll-theme-cayman
 ---
 
-- 提供 **节点选择符** 的便捷操作。
-- 节点相当于 文件系统中的目录。 
-
-## 资源
-
-```html
-<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-```
+- jQuery 提供了 对 **节点** (抽象为具体物质)的便捷操作。
+- 节点相当于 文件系统中的文件或目录对象。 
 
 ## 选择符 (选择节点)
 
    | 选择符              | 匹配                                                     |
-   |----------------------|-------------------------------------------------|
+   | ------------------- | -------------------------------------------------------- |
    | *                   | 所有元素                                                 |
    | #id                 | 带有给定 ID 的元素                                       |
    | element             | 给定类型的所有元素，比如说 html 标签                     |
@@ -24,8 +18,8 @@ theme: jekyll-theme-cayman
    | a,b                 | 匹配 a 或者匹配 b 的元素                                 |
    | a b                 | 作为 a 后代的匹配 b 的元素（包括孙子辈的）               |
    | a > b               | 作为 a 子元素的匹配 b 的元素（只包括儿子辈）             |
-   | a + b               | 相邻兄弟选择器，选择与A相邻的元素B            |
-   | a ~ b               | 兄弟选择器，选择与A同层的元素B  |
+   | a + b               | 相邻兄弟选择器，选择与A相邻的元素B                       |
+   | a ~ b               | 兄弟选择器，选择与A同层的元素B                           |
    | :first              | 结果集中的第一个元素                                     |
    | :last               | 结果集中的最后一个元素                                   |
    | :not(a)             | 结果集中与 a 不匹配的所有元素                            |
@@ -34,14 +28,14 @@ theme: jekyll-theme-cayman
    | :eq(index)          | 结果集中索引为 index 的元素（从 0 开始计数）             |
    | :gt(index)          | 结果集中所有位于给定索引之后的元素（从 0 开始计数）      |
    | :lt(index)          | 结果集中所有位于给定索引之前的元素（从 0 开始计数）      |
-   | :header            | 标题元素（<h1><h2>）                                     |
-   | :animated          | 其动画正在播放的元素                                     |
-   | :contains(text)    | 包含给定文本 text 的元素                                 |
+   | :header             | 标题元素（<h1><h2>）                                     |
+   | :animated           | 其动画正在播放的元素                                     |
+   | :contains(text)     | 包含给定文本 text 的元素                                 |
    | :empty              | 不包含子节点的元素                                       |
    | :has(a)             | 后代元素中至少有一个匹配 a 的元素                        |
    | :parent             | 当前元素的直接父元素                                     |
    | :hidden             | 隐藏的元素，包括通过 css 隐藏以及<input type="hidden" /> |
-   | :visible            | 与:hidden 匹配的元素相反                                |
+   | :visible            | 与:hidden 匹配的元素相反                                 |
    | [attr]              | 带有属性 attr 的元素                                     |
    | [attr=value]        | attr 属性的值为 value 的元素                             |
    | [attr!=value]       | attr 属性的值不为 value 的元素                           |
@@ -55,21 +49,23 @@ theme: jekyll-theme-cayman
    | :last-child         | 匹配集合中每个元素的最后一个子元素                       |
    | :only-child         | 匹配集合中每个元素的惟一子元素,如果不唯一,则不执行       |
    | :input              | 所有<input><select><textarea>和<button>元素              |
-   | :text               | Type＝“text”的<input>元素                              |
-   | :password           | Type＝“password”的<input>元素                          |
-   | :radio              | Type=“radio”的<input>元素                              |
-   | :checkbox           | Type＝“checkbox”的<input>元素                          |
-   | :submit             | Type＝“submit”的<input>元素                            |
-   | :image              | Type＝“image”的<input>元素                             |
-   | :reset              | Type＝“reset”的<input>元素                             |
-   | :button             | Type＝“button”的<input>元素及<button>元素              |
-   | :file               | Type＝“file”的<input>元素                              |
+   | :text               | Type＝“text”的<input>元素                                |
+   | :password           | Type＝“password”的<input>元素                            |
+   | :radio              | Type=“radio”的<input>元素                                |
+   | :checkbox           | Type＝“checkbox”的<input>元素                            |
+   | :submit             | Type＝“submit”的<input>元素                              |
+   | :image              | Type＝“image”的<input>元素                               |
+   | :reset              | Type＝“reset”的<input>元素                               |
+   | :button             | Type＝“button”的<input>元素及<button>元素                |
+   | :file               | Type＝“file”的<input>元素                                |
    | :enabled            | 启用的表单元素                                           |
    | :disabled           | 禁用的表单元素                                           |
    | :checked            | 选中的复选框和单选按钮元素                               |
    | :selected           | 选中的<option>元素                                       |
   
 ## 事件
+
+- 设置节点的属性
 
 ### 绑定事件
   ``` js
@@ -118,6 +114,7 @@ theme: jekyll-theme-cayman
            }  
        });  
      ```
+
      有两种方法，可以自动触发一个事件。一种是直接使用事件函数，另一种是使用.trigger()或.triggerHandler()。
 
      ``` js
@@ -200,9 +197,10 @@ theme: jekyll-theme-cayman
  13. password：返回认证请求中携带的密码，字符串表示
 
 ### $.post
-    形式：$.post(url, data, func, dataType);
+
+    - 形式：$.post(url, data, func, dataType);
     
-    ``` js
+ ``` js
     $.post(
     "/greet",
     {name: 'Brad'},
@@ -211,115 +209,19 @@ theme: jekyll-theme-cayman
     },
     "json"
 );
-    ```
+ ```
 
 ### $.get()
-    形式：$.get(url, data, func, dataType);
+ - 形式：$.get(url, data, func, dataType);
 
 ### $.getJSON()
-    形式：$.getJSON(url, data, func);
+   - 形式：$.getJSON(url, data, func);
 
 ### $.load()
-    形式：$.load(url, data, func);
+   - 形式：$.load(url, data, func);
     其中data如果存在则使用POST方式发送请求，不存在则使用GET方式发送请求。
 
 ### $(selector).serialize()
-
-
-# [[http://jquery.cuishifeng.cn/index.html][速查表]]
-
-## 遍历方法
-
-   | 遍历方法              | 返回值的 jQuery 对象包含                                     |
-   |-----------------------|--------------------------------------------------------------|
-   | .filter(selector)     | 与给定的选择符匹配的选中元素, !注意, 是选中的集合中再filter                                |
-   | .filter(callback)     | 回调函数 callback 返回 true 的选中元素                       |
-   | .eq(index)            | 从 0 开始计数的第 index 个选中元素                           |
-   | .slice(start,[end])   | 从 0 开始计数的给定范围的选中元素                            |
-   | .not(selector)        | 与给定的选择符不匹配的选中元素                               |
-   | .add(selector)        | 选中元素再加上与给定选择符匹配的元素                         |
-   | .find(selector)       | 与给定选择符匹配的后代元素                                   |
-   | .contents             | 子节点，包括文本节点                                         |
-   | .children([selector]) | 匹配选择符的子节点                                           |
-   | .next([selector])     | 每个选中元素的下一个匹配选择符的同辈元素                     |
-   | .nextAll([selector])  | 每个选中元素之后的所有匹配选择符的同辈元素                   |
-   | .prev([selector])     | 每个选中元素的上一个匹配选择符的同辈元素                     |
-   | .prevAll([selector])  | 每个选中元素之后的所有匹配选择符的同辈元素                   |
-   | .siblings([selector]) | 匹配选择符的所有同辈元素                                     |
-   | .parent([selector])   | 每个选中元素的匹配选择符的父元素                             |
-   | .parents([selector])  | 每个选中元素的匹配选择符的所有祖先元素                       |
-   | .offsetParent()       | 第一个选中元素被定位的父元素(用 relative 或者 absolute 定位) |
-   | .andSelf()            | 选中元素再加上内部 jQuery 栈中之前选中的元素                 |
-   | .end()                | 内部 jQuery 栈中之前选中的元素                               |
-   | .map(callback)        | 对每个选中元素调用回调函数 callback 之后的结果               |
-
-## 事件方法
-
-   | 事件方法                     | 说明                                                       |
-   | .ready(fun)                  | 绑定在 DOM 和 CSS 完全加载后调用的处理程序 fun             |
-   | .bind(type,[data],fun)       | 绑定在给定类型的事件 type 发送到元素时调用的处理程序 fun   |
-   | .one(type,[data],fun)        | fun 方法只执行一次                                         |
-   | .unbind(type,[fun])          | 解除元素上绑定的处理程序                                   |
-   | .live(type,fun)              | 绑定当给定事件发送到元素后调用的处理程序，动态生成使用这个 |
-   | .die(type,[fun])             | 移除前面通过 live()绑定到元素上的处理程序                  |
-   | .blur(fun)                   | 失去焦点事件                                               |
-   | .change(fun)                 | 当前值改变事件                                             |
-   | .click(fun)                  | 点击事件                                                   |
-   | .dbclick(fun)                | 双击事件                                                   |
-   | .error(fun)                  | 错误事件                                                   |
-   | .focus(fun)                  | 获取键盘焦点事件                                           |
-   | .keydown(fun)                | 获取键盘焦点且有键被按下事件                               |
-   | .keypress(fun)               | 获取键盘焦点且有按键事件发生事件                           |
-   | .keyup(fun)                  | 获取键盘焦点且有键被释放事件                               |
-   | .load(fun)                   | 元素加载完成事件                                           |
-   | .mousedown(fun)              | 按下鼠标键事件                                             |
-   | .mouseenter(fun)             | 鼠标指针进入元素事件，不受事件冒泡影响                     |
-   | .mouseleave(fun)             | 鼠标指针离开元素事件，不受事件冒泡影响                     |
-   | .mousemove(fun)              | 移动鼠标指针事件                                           |
-   | .mouseout(fun)               | 鼠标指针离开事件                                           |
-   | .mouseover(fun)              | 鼠标指针进入事件                                           |
-   | .mouseup(fun)                | 鼠标指针释放事件                                           |
-   | .resize(fun)                 | 调整元素大小事件                                           |
-   | .scroll(fun)                 | 元素滚动位置改变事件                                       |
-   | .select(fun)                 | 文本被选中事件                                             |
-   | .submit(fun)                 | 提交事件                                                   |
-   | .unload(fun)                 | 元素从内存被卸载后调用事件                                 |
-   | .hover(enter,leave)          | 进入执行 enter，离开执行 leave                             |
-   | .toggle(fun1,fun2)           | 顺序执行事件，来回循环                                     |
-   | .trigger(type,[data])        | 触发元素事件，并执行该事件默认操作                         |
-   | .triggerHandler(type,[data]) | 触发元素事件，不执行该事件默认操作                         |
-   | .blur()                      | 触发 blur 事件，下面道理一样，方法变动                     |
-   | .change()                    |                                                            |
-   | .click()                     | ...                                                        |
-   | .dbclick()                   | ...                                                        |
-   | .error()                     | ...                                                        |
-   | .focus()                     | ...                                                        |
-   | .keydown()                   | ...                                                        |
-   | .keypress()                  | ...                                                        |
-   | .keyup()                     | ...                                                        |
-   | .select()                    | ...                                                        |
-   | .submit()                    | ...                                                        |
-## 效果方法
-
-   | 效果方法                          | 说明                                 |
-   | .show()                           | 显示                                 |
-   | .hide()                           | 隐藏                                 |
-   | .show(speed,[callback])           | 显示速度                             |
-   | .hide(speed,[callback])           | 隐藏速度                             |
-   | .toggle(speed,[callback])         | 显示或者隐藏                         |
-   | .slideDown(speed,[callback])      | 滑入显示                             |
-   | .slideUp(speed,[callback])        | 滑出显示                             |
-   | .slideToggle(speed,[callback])    | 滑动显示或者隐藏                     |
-   | .fadeIn(speed,[callback])         | 淡入显示                             |
-   | .fadeOut(speed,[callback])        | 淡入隐藏                             |
-   | .fadeTo(speed,opacity,[callback]) | 匹配调整元素的不透明度               |
-   | .animate(attr,[speed],[easing])   | 针对指定的 css 属性执行自定义动画    |
-   | .animate(attr,options)            | 动画队列                             |
-   | .stop([clearQueue],[jumpToEnd])   | 停止当前播放动画，然后启动排列的动画 |
-   | .queue()                          | 取得第一个匹配元素上的动画队列       |
-   | .queue(callback)                  | 动画队列最后添加函数                 |
-   | .queue(newQueue)                  | 新队列替换原队列                     |
-   | .dequeue()                        | 执行队列中的下一个动画               |
 
 ## 方法                        
    | 方法                        | 说明                                                          |
@@ -381,52 +283,6 @@ prop() 方法应该用于检索属性值，例如 DOM 属性（如 selectedIndex
 提示：如需移除属性，请使用 removeProp() 方法。
 
 
-
-## AJAX方法
-   | AJAX 方法                                  | 说明                                                    |
-   | $.ajax(options)                            | 使用传入的 options 生成一次 ajax 请求                   |
-   | .load(url,[data],[callback])               | 向传入的 url 生成一次 ajax 请求，然后将响应放入匹配元素 |
-   | $.get(url,[data],[callback],[returnType])  | 使用 get 方法向传入的 url 生成一次 ajax 请求            |
-   | $.getJSON(url,[data],[callback])           | 向传入的 url 生成一次请求，将响应作为 json 数据结构解析 |
-   | $.getScript(url,[callback])                | 向传入的 url 生成一次请求，将响应作为 js 脚本执行       |
-   | $.post(url,[data],[callback],[returnType]) | 使用 post 方法向传入的 url 生成一次 ajax 请求           |
-   | .ajaxComplete(handler)                     | 绑定当任意 ajax 事务完成后调用 fun                      |
-   | .ajaxError(handler)                        | 绑定当任意 ajax 事务发生错误时调用 fun                  |
-   | .ajaxSend(handler)                         | 绑定当任意 ajax 事务开始时调用 fun                      |
-   | .ajaxStart(handler)                        | 绑定当任意 ajax 事务开始没有其他事务还在活动时调用 fun  |
-   | .ajaxStop(handler)                         | 绑定当任意 ajax 事务结束没有其他事务还在活动时调用 fun  |
-   | .ajaxSuccess(handler)                      | 绑定当任意 ajax 事务成功完成时调用的程序                |
-   | $.ajaxSetup(options)                       | 为后续的 ajax 事务设置默认选项                          |
-   | .serialize()                               | 将一组表单控件的值编码为一个查询字符串                  |
-   | .serializeArray()                          | 将一组表单控件的值编码为一个 json 数据结构              |
-   | $.param(map)                               | 将任意值的映射编码为一个查询字符串                      |
-## 方法或属性                     
-
-   | 方法或属性                    | 说明                                                   |
-   | $.support                     | 返回一个属性的映射，表示浏览器是否支持各种特性和标准   |
-   | $.each(collection,callback)   | 迭代遍历集合，针对集合中的每一项执行回调函数           |
-   | $.extend(target,addition,...) | 扩展 target 对象，即将后面传入对象的属性添加入这个对象 |
-   | $.makeArray(object)           | 将对象转换为一个数组                                   |
-   | $.map(array,callback)         | 针对数组中每一项执行回调函数，返回新数组               |
-   | $.inArray(value,array)        | 确定数组 array 中是否包含值 value                      |
-   | $.merge(array1,array2)        | 合并两个数组                                           |
-   | $.unique(array)               | 从数组中移除重复的 dom 元素                            |
-   | $.isFunction(object)          | 确定对象是否一个函数                                   |
-   | $.trim(String)                | 从字符串末尾移除空白符                                 |
-   | $.noConflict([extreme])       | 让渡$符号使用权，恢复使用 jquery 标识符                |
-   | .hasClass(className)          | 确定匹配元素是否包含给定的类                           |
-   | .is(selector)                 | 确定是否有匹配元素与给定的选择符表达式匹配             |
-   | .each(callback)               | 迭代遍历匹配元素，针对每个元素执行回调函数             |
-   | .length                       | 取得匹配元素的个数                                     |
-   | .get()                        | 取得与匹配元素对应的 dom 节点的数组                    |
-   | .get(index)                   | 取得匹配元素中与传入的索引值对应的 dom 节点            |
-   | .index(element)               | 取得给定 dom 节点在匹配元素集合中的索引值              |
-
-``` js
-  $.each([52, 97], function(index, value) {
-        alert(index + ': ' + value);
-    });
-```
 
 ## 获取表单数据
 ``` js 
@@ -562,7 +418,6 @@ $("#fileUpload").change(function () {
 ```
 
 
-
 # 最佳实践
 
 ## 基础
@@ -636,14 +491,9 @@ document.getElementById("#id").checked = true
   ``` 
 
    ``` js
-     //Where possible, pre-fix your class names with a tag name  
-     //so that jQuery doesn't have to spend more time searching  
-     //for the element you're after. Also remember that anything  
-     //you can do to be more specific about where the element is  
-     //on your page will cut down on execution/search times  
      var in_stock = $('#shopping_cart_items input.is_in_stock');
-   #+end_src
      
+  ``` 
 ## 6. 如何正确使用 ToggleClass
 ``` js
      //Toggle class allows you to add or remove a class  
@@ -777,7 +627,10 @@ document.getElementById("#id").checked = true
      });
 ```
 
+```html
    <input class="swap" type="text" value="Enter Username here.." />
+```
+
 ## 27. 指定时间后自动隐藏或者关闭元素(1.4 支持）
    ``` js
      //Here's how we used to do it in 1.3.2 using setTimeout
