@@ -415,3 +415,9 @@ public function upload(){
 | image    | 验证图像文件的尺寸和类型             |
 
 具体用法可以参考验证章节的内置规则-> 上传验证。
+
+## thinkphp6解决 CORS 跨域
+在 app/middleware.php中添加
+``` php
+\think\middleware\AllowCrossDomain::class
+```

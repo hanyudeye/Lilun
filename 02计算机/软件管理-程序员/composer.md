@@ -3,7 +3,13 @@
 
 包管理器 - 管家
 
-使用
+下载,安装
+
+- 1.composer.phar wget https://getcomposer.org/composer.phar
+- 2.重命名composer.phar为composer mv composer.phar composer
+- 3.增加可执行权限 chmod +x composer
+
+
 
 - 安装 
 
@@ -24,6 +30,8 @@ require "vendor/autoload.php";
 ``` sh
 composer config -g repo.packagist composer https://packagist.phpcomposer.com
 ```
+
+composer config -g repo.packagist composer https://mirrors.aliyun.com/composer/
 
 - 阿里云 Composer 镜像 https://mirrors.aliyun.com/composer/
 - 腾讯云 Composer 镜像 https://mirrors.cloud.tencent.com/composer/
