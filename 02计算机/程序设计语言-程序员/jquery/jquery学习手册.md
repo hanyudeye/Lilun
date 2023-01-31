@@ -160,6 +160,8 @@ theme: jekyll-theme-cayman
 
 ## AJax
 
+异步 asynchronous javascript 
+
 ### $.ajax
 
 ``` js
