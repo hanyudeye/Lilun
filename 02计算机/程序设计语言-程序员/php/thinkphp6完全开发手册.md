@@ -10,7 +10,7 @@ https://www.kancloud.cn/manual/thinkphp6_0/1037479
 - 作为一个 服务器程序，响应客户端的请求
 - 每个请求作为单独的控制器，调用方法处理
 
-## 安装 
+## 安装
 
 ```shell
  composer create-project topthink/think tp 
@@ -27,9 +27,9 @@ https://www.kancloud.cn/manual/thinkphp6_0/1037479
 - 更新  composer update topthink/framework
 - 安装开发版 composer create-project topthink/think=6.0.x-dev tp
 
-## config 配置
+## 软件配置config 
 
-### 进入不同应用
+### 多应用配制 
 
 - public/index.php (前台)
 - public/admin.php (后台)
@@ -42,14 +42,14 @@ $response = $http->name('api')->run();
 目录结构
 - F:\www\thinkphp\tp6\app\api\controller\Index.php
 
-### environment-variables
+### 环境变量配制 
 
 think\facade\Env
 
 ```
 Env::get('database.username');
 ```
-### config-file
+### 通用配制文件 
 think\facade\Config;
 
 ```
@@ -57,9 +57,9 @@ think\facade\Config;
  Config::has('route.route_rule_merge');
 ```
  
-## 路由路径选择 (路由管理员)
+## 路由配制 
 
-### 路由开关
+### 打开路由开关
 
 路由地址不能跨 应用 (除非采用重定向路由) 
     
@@ -99,7 +99,7 @@ Route::view('hello/:name', 'index/hello');
 
 ### 资源路由
 
-## 控制器管理员
+## 网站执行  (控制器)
 
 > 使 URL 文本解析成代码
 
@@ -130,24 +130,53 @@ $ php think make:controller index@Blog --api
 ``` php
 Route::resource('blog', 'Blog');
 ```
-## 请求 (客户请求处理管理员)
 
-### 请求对象 
+## 模型操作 
 ``` php
-<?php
-namespace app\index\controller;
-use think\Request;
+//指定主键
+protected $pk = 'uid';
+// 定义默认的表后缀(默认查询中文数据)
+protected $suffix = _cn';
 
-class Index
-{
-    
-    public function index(Request $request)
-    {
-		return $request->param('name');
-    }    
-}
+// 设置字段信息
+//模型的数据字段和对应数据表的字段是对应的,默认会自动获取(包括字段类型),但自动获取会导致增加一次查询
+
+protected $schema = [
+'id' => 'int',
+'name' => 'string',
+'status' => 'int',
+'score' => 'float',
+'create_time' => 'datetime',
+'update_time' => 'datetime',
+];
+```
+## 视图输出 
+
+``` php
+// 模板变量赋值
+View::assign('name','ThinkPHP');
+View::assign('email','thinkphp@qq.com');
+// 或者批量赋值
+View::assign([
+'name' => 'ThinkPHP',
+'email' => 'thinkphp@qq.com'
+]);
+// 模板输出
+return View::fetch('index');
 ```
 
+``` php
+return view('index', [
+'name' => 'ThinkPHP',
+'email' => 'thinkphp@qq.com'
+]);
+
+```
+
+
+## 处理请求
+
+### 请求对象
 助手函数
 ``` php
 <?php
@@ -244,7 +273,7 @@ echo $info['accept-encoding'];
 echo $info['user-agent'];
 ```
 
-## 响应(服务响应管理员)
+## 具体响应
 
 大多数情况,我们不需要关注 Response 对象本身,只需要在控制器的操作方法中返回数据即可
 > 使用 return  返回响应类型的数据 return json($data);
@@ -304,47 +333,7 @@ Db::name('user')
 UPDATE `think_user` SET `delete_time` = '1515745214' WHERE `id` = 1
 ```
 
-## 模型(管理员)
-``` php
-//指定主键
-protected $pk = 'uid';
-// 定义默认的表后缀(默认查询中文数据)
-protected $suffix = _cn';
-
-// 设置字段信息
-//模型的数据字段和对应数据表的字段是对应的,默认会自动获取(包括字段类型),但自动获取会导致增加一次查询
-
-protected $schema = [
-'id' => 'int',
-'name' => 'string',
-'status' => 'int',
-'score' => 'float',
-'create_time' => 'datetime',
-'update_time' => 'datetime',
-];
-```
-## 视图(管理员)
-``` php
-// 模板变量赋值
-View::assign('name','ThinkPHP');
-View::assign('email','thinkphp@qq.com');
-// 或者批量赋值
-View::assign([
-'name' => 'ThinkPHP',
-'email' => 'thinkphp@qq.com'
-]);
-// 模板输出
-return View::fetch('index');
-```
-
-``` php
-return view('index', [
-'name' => 'ThinkPHP',
-'email' => 'thinkphp@qq.com'
-]);
-
-```
-
+# 其他 
 ## 上传文件
 
 如果是多应用的话，上传根目录默认是runtime/index/storage，如果你希望上传的文件是可以直接访问或者下载的话，可以使用public存储方式。
