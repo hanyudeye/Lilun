@@ -3,9 +3,48 @@ vue 绑定 link
 
 https://github.com/icarusion/vue-book
 
+https://github.com/sg552/happy_book_vuejs.git
+
+
 # Vue2
 
 ## 安装
+
+要同时安装 `vue`和 `vue-cli`这两个node package.
+
+运行下面这个命令：
+
+```
+$ npm install vue vue-cli -g
+```
+
+`-g` 表示这个包安装后可以被全局使用。 
+
+### 运行 vue
+
+创建一个基于 webpack 模板的新项目:
+
+```
+$ vue init webpack my-project
+```
+
+注意： 我们使用Vue, 都是在 `webpack` 这个大前提下使用的。
+
+安装依赖:
+
+```
+$ cd my-project
+$ cnpm install
+```
+
+在本地，以默认端口来运行：
+
+```
+$ npm run dev
+```
+
+然后就可以看到 在本地已经跑起来了。
+
 
 
 ## jQuery 与 Vue 区别
@@ -36,6 +75,55 @@ showBtn:true
 ```
 
 
+
+
+## 项目结构
+
+```
+▸ build/                // 编译用到的脚本
+▸ config/               // 各种配置
+▸ dist/                 // 打包后的文件夹
+▸ node_modules/         // node第三方包
+▸ src/                  // 源代码
+  ▾ assets/
+      logo.png
+  ▾ components/
+      Book.vue
+      BookList.vue
+      Hello.vue
+  ▾ router/
+      index.js
+    App.vue
+    main.js
+▸ static/               // 静态文件, 暂时无用
+  index.html            // 最外层文件
+  package.json          // node项目配置文件
+```
+
+- assets 文件夹
+
+用到的图片都可以放在这里。
+
+- components
+
+用到的"视图"和"组件"所在的文件夹。（最最核心）
+
+- router/index.js  
+
+路由文件。 定义了各个页面对应的url. 
+
+- App.vue
+
+如果index.html 是一级页面模板的话，这个App.vue就是二级页面模板。
+所有的其他vuejs页面，都作为该模板的 一部分被渲染出来。
+
+- main.js
+
+没有实际的业务逻辑，但是为了支撑整个vuejs框架，存在很必要。
+
+
+
+## 创建一个页面
 
 ## 对象
 
