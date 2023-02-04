@@ -5,6 +5,9 @@ https://github.com/icarusion/vue-book
 
 # Vue2
 
+## 安装
+
+
 ## jQuery 与 Vue 区别
 
 jQuery
@@ -31,6 +34,7 @@ showBtn:true
 });
 </script>
 ```
+
 
 
 ## 对象

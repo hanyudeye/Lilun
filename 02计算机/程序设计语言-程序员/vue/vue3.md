@@ -30,3 +30,7 @@ const Counter = {
 Vue.createApp(Counter).mount('#counter')
 ```
 
+## 获取数据
+
+
+
