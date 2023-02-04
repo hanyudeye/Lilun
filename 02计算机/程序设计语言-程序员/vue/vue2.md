@@ -7,7 +7,7 @@ https://github.com/sg552/happy_book_vuejs.git
 
 
 # Vue2
-
+    
 ## 安装
 
 要同时安装 `vue`和 `vue-cli`这两个node package.
