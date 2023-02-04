@@ -230,13 +230,16 @@ vm.$watch('counter', function(nval, oval) {
 .meta
 ``` 
 
+
+
+
+
+
 ### 表单 v-model 双向绑定 ###
 
 修饰符
 
 #### .lazy ####
-
-在默认情况下， v-model 在 input 事件中同步输入框的值与数据，但你可以添加一个修饰符 lazy ，从而转变为在 change 事件中同步：
 
 ``` html
 <!-- 在 "change" 而不是 "input" 事件中更新 -->
