@@ -262,6 +262,14 @@ bindsym $mod+1 workspace 1: ☕
 bindsym $mod+2 workspace 2: ♬
 ```
 
+### reload
+
+```
+# reload the configuration file
+bindsym $mod+Shift+r reload
+```
+
+
 ### 控制i3bar
 
 有两个命令控制i3bar的状态。

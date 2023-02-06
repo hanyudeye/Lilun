@@ -29,14 +29,14 @@ element.className=value
 ### 事件类型
 #### Window事件
 | 属性     | 描述                         |
-|----------+------------------------------|
+| -------- | ---------------------------- |
 | onload   | 页面结束加载之后触发         |
 | onresize | 当浏览器窗口被调整大小时触发 |
 
 #### Form 事件
 
 | 属性         | 描述                           |
-|--------------+--------------------------------|
+| ------------ | ------------------------------ |
 | onblur       | 元素失去焦点时运行的脚本       |
 | onchange     | 在元素值被改变时运行的脚本     |
 | onfocus      | 当元素获得焦点时运行的脚本     |
@@ -48,7 +48,7 @@ element.className=value
 #### Keyboard事件
 
 | 属性       | 描述                 |
-|------------+----------------------|
+|------------|----------------------|
 | onkeydown  | 在用户按下按键时触发 |
 | onkeypress | 在用户敲击按钮时触发 |
 | onkeyup    | 当用户释放按键时触发 |
@@ -71,7 +71,7 @@ function keydown(event){
 #### Mouse 事件
 
 | 属性         | 描述                                         |
-|--------------+----------------------------------------------|
+| ------------ | -------------------------------------------- |
 | onclick      | 元素上发生鼠标点击时触发                     |
 | ondblclick   | 元素上发生鼠标双击时触发                     |
 | ondrag       | 元素被拖动时运行的脚本                       |
@@ -88,17 +88,19 @@ function keydown(event){
 | onmouseup    | 当在元素上释放鼠标按钮时触发                 |
 | onmousewheel | 当鼠标滚轮正在被滚动时运行的脚本             |
 | onscroll     | 当元素滚动条被滚动时运行的脚本               |
+
 #### Media 事件
-由媒介（比如视频、图像和音频）触发的事件（适用于所有 HTML 元素，但常见于媒介元素中，比如 <audio>、<embed>、<img>、<object> 以及 <video>）:
+
+<!-- 由媒介（比如视频、图像和音频）触发的事件（适用于所有 HTML 元素，但常见于媒介元素中，比如 <audio>、<embed>、<img>、<object> 以及 <video>）: -->
 
 | 属性               | 描述                                                                     |
-|--------------------+--------------------------------------------------------------------------|
+| ------------------ | ------------------------------------------------------------------------ |
 | onabort            | 在退出时运行的脚本                                                       |
 | oncanplay          | 当文件就绪可以开始播放时运行的脚本（缓冲已足够开始时）                   |
 | oncanplaythrough   | 当媒介能够无需因缓冲而停止即可播放至结尾时运行的脚本                     |
 | ondurationchange   | 当媒介长度改变时运行的脚本                                               |
 | onemptied          | 当发生故障并且文件突然不可用时运行的脚本（比如连接意外断开时）           |
-| onended            | 当媒介已到达结尾时运行的脚本（可发送类似“感谢观看”之类的消息）         |
+| onended            | 当媒介已到达结尾时运行的脚本（可发送类似“感谢观看”之类的消息）           |
 | onerror            | 当在文件加载期间发生错误时运行的脚本                                     |
 | onloadeddata       | 当媒介数据已加载时运行的脚本                                             |
 | onloadedmetadata   | 当元数据（比如分辨率和时长）被加载时运行的脚本                           |
@@ -254,72 +256,6 @@ send
 ## base64
 window.atob('hello world')
 > ascii 转 base64
-
-window.atob
-# BOM (浏览器命令)
-## history
-- window.history.back()
-- window.history.forward()
-- window.history.go()
-- window.history.length
-- window.history.pushState()
-- window.history.replaceState()
-
-## 跨源通信
-### 有安全问题
-1. 使用 iframe 或 Frameset 调用其它网站的页面
-2. Web Service 为代表的主动服务模式
-
-CSRF(Cross-Site Request Forgery) 跨站请求伪造
->伪装来自受信任用户的请求
-### 安全使用
-sandbox  
-``` html
-<iframe sandbox src="frame1.html"></iframe>
-<iframe sandbox="allow-forms allow-scripts" src="frame1.html"></iframe>
-```
-
-### 跨文档消息通信
-#### window.postMessage
-#### 服务器端推送事件
-#### 管道消息传送  MessageChannel
-
-
-
-## Notification Api ##
-> window.webkitNotifications
-
-
-
-# websocket与ajax的区别浅析
-
-1.本质不同
- Ajax,即异步JavaScript和XML，是一种创建交互式网页应用的网页开发技术；
- WebSocket是HTML5一种新的协议，实现了浏览器与服务器全双工通信。其本质是先通过HTTP/HTTPS协议进行握手后创建一个用于交换数据的TCP连接，服务端与客户端通过此TCP连接进行实时通信。
-2.生命周期不同。
-websocket建立的是长连接，在一个会话中一直保持连接；而ajax是短连接，数据发送和接受完成后就会断开连接。
-3.适用范围不同
-websocket一般用于前后端实时数据交互，而ajax前后端非实时数据交互。
-4.发起人不同
-Ajax技术需要客户端发起请求，而WebSocket服务器和客户端可以相互推送信息。
-5.用法不同
-``` js
-ajax：
-$.ajax({
-type:"post",
-url:"http://localhost:8080/target",
-data:"state = yes",
-dataType:"json",
-success:funciont(data){
-}
-});
- ```
-websocket:
-``` js
-var monitor = new WebSocket("ws://"+ip+path)
-onOpen()、onMessage()、onClose()
-```
-
 
 # localstorage
 

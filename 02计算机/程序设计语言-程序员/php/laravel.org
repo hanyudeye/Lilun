@@ -16,11 +16,12 @@
     创建Laravel 项目 laravel new blog
 **** 通过 Composer 创建项目
      composer create-project --prefer-dist laravel/laravel blog "5.5.*"
+     composer create-project laravel/laravel example-app
 **** 启动应用
      php artisan serve 或  apache (推荐)
      
      对于本地开发来说，最好的选择还是 Homestead 和 Valet。
-
+     
 *** 配置 
     
     - 配置文件都在 */config* 目录里面
