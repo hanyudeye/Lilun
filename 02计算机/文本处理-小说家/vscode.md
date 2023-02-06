@@ -1,3 +1,8 @@
+# VSCode
+
+## 用户自定义配置文件settings.json
+
+## 默认配置defaultSettings.json
 
 ## 打开 vscode 软件
 
