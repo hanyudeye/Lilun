@@ -7,7 +7,7 @@ https://github.com/sg552/happy_book_vuejs.git
 
 
 # Vue2
-    
+
 ## 安装
 
 要同时安装 `vue`和 `vue-cli`这两个node package.
@@ -47,7 +47,10 @@ $ npm run dev
 
 
 
+
 ## jQuery 与 Vue 区别
+
+区别是： 看着 vue 可以直接 在 html 中进行 编程。
 
 jQuery
 ``` js
@@ -122,8 +125,6 @@ showBtn:true
 没有实际的业务逻辑，但是为了支撑整个vuejs框架，存在很必要。
 
 
-
-## 创建一个页面
 
 ## 对象
 
