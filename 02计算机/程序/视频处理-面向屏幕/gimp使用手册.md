@@ -127,3 +127,7 @@ https://teliute.org/linux/gimp/index.html
 # 模糊图片变清晰   
   1. 滤镜-高斯模糊
   2. 模式-亮光
+
+# 文字(t)和图层
+# 画笔(n)
+
