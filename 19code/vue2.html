@@ -13,13 +13,20 @@
 
     <div class="app">
         <div>
-            <h3>hhh</h3>
+            <h3>双向数据绑定</h3>
+            <input v-model:title="msg" placeholder="name" />
+            <input v-bind:value="msg" placeholder="namea" />
         </div>
     </div>
 
 
     <script>
-        
+        new Vue({
+            el: ".app",
+            data: {
+                msg: "hello"
+            }
+        })
     </script>
 </body>
 
