@@ -1,15 +1,14 @@
-> 关系型数据库：设置关系结构用来存储数据
-> sql: 查询结构化数据的语法
+## 什么是 **关系型** 数据库
+
+> 按 **行** 存取数据
+> 每**行** 是数据所对应的关系(属性)
+> 存取数据使用 sql(结构化查询语法)
+
+## 安装程序
+mysqld 默认监听 3306 网络端口
 
 
-## 数据堆
-![](images/2022-11-12-05-38-46.png)
-
-## 怎么在数据堆中处理数据
-
-用到了 操作数据的语法 . (增删改查)
-
-## 配置文件 /etc/mysql/my.cnf
+配置文件 /etc/mysql/my.cnf
 
 ``` cnf
 max_connections = 10
@@ -17,9 +16,64 @@ log-slow-queries
 long_query_time = 5
 ```
 
-## 连接数据库
+## 客户机 mysql
 
-```
+``` sql
+/* 连接数据库 */
 mysql> mysql -h192.168.206.100 -uroot -p12345678; /*u与root可以不加空格*/
 ```
+
+``` sql
+use mysql;
+/* 设置密码，在新版本过时了，不存在 password 字段了 */
+SET PASSWORD FOR'root'@'127.0.0.1'=PASSWORD('password');
+/* 更新密码 */
+update user set password=password("123") where user="root";
+```
+
+``` sql
+/* 授权 */
+GRANT ALL ON db1.*TO'kerry'@'localhost'IDENTIFIED BY'beck123';
+
+/* 更新数据库信息 */
+FLUSH PRIVILEGES
+```
+
+## SQL语句和函数
+
+```sql
+
+/* 创建数据库 */
+create database bookstore;
+use bookstore;
+
+create table books(
+book_id int,
+title varchar(50),
+author varchar(50)
+);
+
+insert into books (book_id,title,author) values (1,"gogo","lily");
+
+delete from books where book_id=1;
+
+describe books;
+
+alter Table books
+change Column book_id book_id int auto_increment primary key,
+change column author author author_id int,
+add column description text,
+add column genre ENUM ('novel','poetry','drama');
+
+/* 修改数据 */
+update books set author="xli" where book_id=13;
+
+```
+
+
+## 用户账号与安全
+
+## 事件、存储过程、触发器，自定义函数
+
+
 

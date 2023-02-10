@@ -10,7 +10,6 @@ theme: jekyll-theme-cayman
 > css 是用来定义显示元素的外观,语法简单,由外观属性:具体描述值组成 
 
 
-
 - 纵向对齐: align-items   
 - 横向对齐
 -  justify-content (单行)
@@ -21,6 +20,15 @@ theme: jekyll-theme-cayman
 收缩: flex-shrink
 基础长度: flex-basis
 
+
+ ### 使 width ,height 包含 padding
+```css
+-webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  ```
 ### 定位
 
 - 静态坐标 static  (文档流坐标，默认) 设置了偏移，不影响元素所在位置

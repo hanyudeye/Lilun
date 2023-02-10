@@ -13,6 +13,8 @@ https://cdn.bootcdn.net/ajax/libs/jquery/3.6.3/jquery.min.js
 https://cdn.bootcdn.net/ajax/libs/layui/2.7.6/css/layui.min.css
 https://cdn.bootcdn.net/ajax/libs/layui/2.7.6/layui.min.js
 
+### vue2
+
 ### vue3
 ``` html
 <script src="https://unpkg.com/vue@next" rel="external nofollow" ></script>

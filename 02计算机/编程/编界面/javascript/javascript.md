@@ -1,7 +1,11 @@
 ## javascript
 
-    
-
+## 查看对象属性    
+```js
+  for(i in Vue){
+            console.log(i)
+        }
+```
 ## 事件
 
 ### 鼠标事件
