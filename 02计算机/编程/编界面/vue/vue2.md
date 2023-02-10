@@ -8,6 +8,20 @@ https://github.com/sg552/happy_book_vuejs.git
 
 # Vue2
 
+当前的web页面分为2种，
+
+- 1. 传统页面，特点是 一个个页面独立加载所有资源然后进行渲染，但在手机端很慢。
+- 2. 单页应用, 特点是 点击链接，不是整页刷新，而是局部刷新，用的技术是 ajax(异步请求)
+
+- jQuery 流行后，ajax 请求非常方便
+
+``` js
+jQuery.get("http://url?par=1",function(data){});
+```
+
+- 现在的移动开发 ，web 端 使用 SPA H5 框架，框架包含，路由，历史记录，事件处理，组件等功能
+
+
 ## 安装
 
 要同时安装 `vue`和 `vue-cli`这两个node package.
@@ -27,7 +41,14 @@ $ npm install vue vue-cli -g
 ```
 $ vue init webpack my-project
 ```
+如果网络不好，进行离线下载到本地用户目录下的.vue-templates目录下
+https://github.com/vuejs-templates/webpack
 
+![](images/2023-02-10-15-46-55.png)
+
+```
+vue init webpack vuedemo --offline
+```
 注意： 我们使用Vue, 都是在 `webpack` 这个大前提下使用的。
 
 安装依赖:
@@ -45,12 +66,9 @@ $ npm run dev
 
 然后就可以看到 在本地已经跑起来了。
 
-
-
-
 ## jQuery 与 Vue 区别
 
-区别是： 看着 vue 可以直接 在 html 中进行 编程。
+区别是： vue 可以直接 在 html 中进行 编程。
 
 jQuery
 ``` js
@@ -76,10 +94,6 @@ showBtn:true
 });
 </script>
 ```
-
-
-
-
 ## 项目结构
 
 ```

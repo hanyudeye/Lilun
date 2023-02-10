@@ -14,7 +14,9 @@ https://cdn.bootcdn.net/ajax/libs/layui/2.7.6/css/layui.min.css
 https://cdn.bootcdn.net/ajax/libs/layui/2.7.6/layui.min.js
 
 ### vue2
-
+```html
+<script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.13/vue.js"></script>
+```
 ### vue3
 ``` html
 <script src="https://unpkg.com/vue@next" rel="external nofollow" ></script>

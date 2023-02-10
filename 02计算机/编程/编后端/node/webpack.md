@@ -1,4 +1,50 @@
+## webpack
+
+- 传统的web，js/css/png 等文件结构复杂，需要有个工具统一管理，压缩，模块化规范化。
+- 安装
+
+```
+$ npm install --save-dev webpack
+```
+
+## 安装vuejs
+
+要同时安装 `vue`和 `vue-cli`这两个node package.
+
+运行下面这个命令：
+
+```
+$ npm install vue vue-cli -g
+```
+
+`-g` 表示这个包安装后可以被全局使用。 
+
+## 运行 vue
+
+创建一个基于 webpack 模板的新项目:
+
+```
+$ vue init webpack my-project
+```
+
+注意： 我们使用Vue, 都是在 `webpack` 这个大前提下使用的。
+
+安装依赖:
+
+```
+$ cd my-project
+$ cnpm install
+```
+
+在本地，以默认端口来运行：
+
+```
+$ npm run dev
+```
+
+
 ## Webpack 脚本指令用法
+
 
 - `webpack` 直接打包输出
 - `webpack serve` 启动开发服务器，内存编译打包没有输出
