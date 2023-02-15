@@ -51,3 +51,19 @@ AD 翻页
 ### vscode 代码运行 中文
 
 ### Vue 扩展  vue language features
+
+### Auto Close Tag 自动闭合标签
+输入标签名称的时候自动生成闭合标签
+
+### Auto Rename Tag 尾部闭合标签同步修改
+自动检测配对标签，同步修改
+
+### Vscode-element-helper 
+
+提示 element 标签名称
+
+### element-ui-helper 组件属性提示
+### live server 热更新插件
+
+### Browser Preview 直接预览插件
+
