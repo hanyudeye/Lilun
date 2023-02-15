@@ -12,16 +12,14 @@
 
 <body>
     <div id="app">
-        <el-row>
-            <el-button>默认按钮</el-button>
-            <el-button type="primary" @click="visible = true">默认按钮</el-button>
-            <el-dialog :visible.sync="visible" title="Hello world">
-                <p>Try Element</p>
-            </el-dialog>
-        </el-row>
-
-        <!-- 等同于这样的 -->
-        <button class="el-button">默认按钮</button>
+        <el-container>
+            <el-asider>
+                侧栏
+            </el-asider>
+            <el-main>
+main,kfjas
+            </el-main>
+       </el-container>
     </div>
     <!-- import Vue before Element -->
     <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.13/vue.js"></script>
