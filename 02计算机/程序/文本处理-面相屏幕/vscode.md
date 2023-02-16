@@ -48,6 +48,12 @@ AD 翻页
 }
 ```
 
-### vscode 代码运行 中文
+### 扩展
 
-### Vue 扩展  vue language features
+- 简体中文
+- Live Server
+- Code Runner
+- px to rem
+- vue language features(volar)
+- vue vscode snippets
+- Code Spell Checker

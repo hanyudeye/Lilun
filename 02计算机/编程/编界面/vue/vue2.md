@@ -487,3 +487,7 @@ app4.todos.push({ text: '新项目' })
     }
   }
 ```
+
+## vue-router 页面跳转
+
+- 安装  npm install vue-router --save-dev

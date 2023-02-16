@@ -22,3 +22,7 @@ https://cdn.bootcdn.net/ajax/libs/layui/2.7.6/layui.min.js
 <script src="https://unpkg.com/vue@next" rel="external nofollow" ></script>
 ```
 
+### axios
+```
+https://cdn.bootcdn.net/ajax/libs/axios/1.3.2/axios.min.js
+```
