@@ -39,3 +39,12 @@ UUID=d17b3219-a43d-4c38-b9cd-0ad892fa9d6e /media/Bankai ext4 defaults 0 0
 ```
 - 重启测试
   
+
+### 网络
+
+``` shell
+<!-- 网络开关 -->
+nmcli network on/off
+<!-- 无线开关 -->
+nmcli radio wifi on/off
+```
