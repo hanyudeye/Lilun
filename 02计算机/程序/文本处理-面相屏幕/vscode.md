@@ -1,0 +1,76 @@
+# VSCode
+
+## 用户自定义配置文件settings.json
+
+## 默认配置defaultSettings.json
+
+## 打开 vscode 软件
+
+- 方法1 
+<!-- 我测试 已失效 -->
+1. 打开命令面板,command+shift+p
+2. 输入Shell Command；
+3. 此时会有提示“Shell Command: Install ‘code’ command in PATH”，运行即可；
+4. 关闭vscode，直接在终端中输入code .，则打开vscode。
+
+- 方法2
+直接使用命令 code.cmd 打开
+
+## vscode 折叠
+
+## 插件 
+### settings Sync
+- 通过GitHub生成你的gist Id 和 token
+- 两台电脑的VSCode中都需要安装settings Sync插件并配置 gistId 和 token
+- 原电脑上传配置
+- 新电脑下载同步配置
+
+
+### 搜索 search
+
+### epub reader
+
+由于vscode安全策略，书架编辑请在插件安装目录 win:[C:\Users\ 你的用户名.vscode\extensions\renkun.reader\book],mac:[~/.vscode/extensions/renkun.reader/book]
+
+AD 翻页
+
+### 隐藏滚动条
+
+文本编辑器->所有语言-> 滚动条
+
+### 设置本地变量
+1. 创建配置文件  .vscode/settings.json
+2. 添加内容
+
+```json
+{
+    "pasteImage.path": "${currentFileDir}/asserts/images/"
+}
+```
+
+### 扩展
+
+- 简体中文
+- Live Server
+- Code Runner
+- px to rem
+- vue language features(volar)
+- vue vscode snippets
+- Code Spell Checker
+=======
+### Vue 扩展  vue language features
+
+### Auto Close Tag 自动闭合标签
+输入标签名称的时候自动生成闭合标签
+
+### Auto Rename Tag 尾部闭合标签同步修改
+自动检测配对标签，同步修改
+
+### Vscode-element-helper 
+
+提示 element 标签名称
+
+### element-ui-helper 组件属性提示
+### live server 热更新插件
+
+### Browser Preview 直接预览插件
