@@ -16,7 +16,6 @@
 - man
 - info
 
-
 (1) User commands
 (2) System calls
 (3) Standard library functions
