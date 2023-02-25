@@ -4,15 +4,10 @@ permalink: thinkphp5.html
 theme: jekyll-theme-cayman
 ---
 
-https://www.kancloud.cn/manual/thinkphp5/
+- 程序框架
+- 入口(启动) -> 转到应用 -> 判断模块 -> 调用控制器(功能) -> 执行操作 -> 连接模型 -> 视图组装 -> 响应输出
 
-网站内容系统， 能够  根据 互联网 请求，发送相应的 页面信息，作为内容传输。
-
-## 结构
-
-入口文件(启动程序) -> 转到应用 -> 判断模块 -> 调用控制器 -> 执行操作 -> 连接模型 -> 视图组装 -> 响应输出
-
-## 网站程序的配置
+## 程序配置类
 
 ``` php
 use think\facade\Config;
@@ -51,20 +46,11 @@ dump(Config::has('template.type'));
 
 ## 控制器
 
-控制器文件的命名规范是 : 首字母需要大写，如果是两个单词的组合，如 HelloWorld ，则 URL 为 hello_world
+制器文件的命名规范是 : 首字母需要大写，如果是两个单词的组合，如 HelloWorld ，则 URL 为 hello_world
 
-### 初始化
-```php
-  public function _initialize()
-    {
-        echo 'init<br/>';
-    }
-```
-
-## 网络程序的请求处理
+## 请求处理
 
 ### 获取URL信息
-
 
 ``` php
 $request = Request::instance();
@@ -633,7 +619,6 @@ if (!$validate->check($data)) {
     dump($validate->getError());
 }
 ```
-### 验证器 (推荐方式)
 这是扩展的方式，继承独立验证的功能，使得控制器内代码更少
 
 ``` php
@@ -669,18 +654,6 @@ $validate = validate('User');
 ```
 
 ### 设置验证规则
-## 安全
-### 输入安全
-### 上传安全 
-
-
-### 文件上传
-### 杂项
-#### 缓存
-
-``` php
-Cache::set('name',$value,3600);
-```
 #### session
 ```php
 Session::set('name','thinkphp');
@@ -761,8 +734,6 @@ session('name', null);
 // 清除session（当前作用域）
 session(null);
 
-// 清除think作用域
-session(null, 'think');
 ```
 #### 多语言
 
@@ -829,7 +800,6 @@ return $this->fetch();
 <li class="active"><span>2</span></li>
 <li class="disabled"><span>&raquo;</span></li>
 </ul>
-
 ```
 
 分页后数据处理 
