@@ -19,7 +19,6 @@ python3 -m venv test_env
 
 ## 启用虚拟环境
 
-![](images/2022-11-17-19-16-48.png)
 
 ```sh
 .\test_env\bin\activate.bat

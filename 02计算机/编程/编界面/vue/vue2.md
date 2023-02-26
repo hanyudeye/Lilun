@@ -56,35 +56,6 @@ $ cnpm install
 $ npm run dev
 ```
 
-## jQuery 与 Vue 区别
-
-区别是： vue 可以直接 在 html 中进行 编程。
-
-jQuery
-``` js
-if(showBtn){
-var btn=$('<button>Click me</button>');
-btn.on('click',function(){});
-$('#app').append(btn);
-}
-```
-
-Vue
-``` html
-<div id="app">
-<button v-if="showBtn" v-on:click="handleClick">Click me</button>
-</div>
-
-<script>
-new Vue({
-el:'#app',
-data:{
-showBtn:true
-}
-});
-</script>
-```
-
 ## 开发模式的演化
 ### 传统MVC的缺点
 
@@ -94,35 +65,6 @@ showBtn:true
 - MVVM 把视图中的数据 与 单独的数据进行双向绑定
 ### 前端MVC的产生(前后端分离) -> nodejs全栈
 
-
-### 为什么使用vuejs
-
-- 移动优先，比如移动端Touch事件
-- 开源，社区活跃
-- 组件化
-
-## 项目结构
-
-```
-▸ build/                // 编译用到的脚本
-▸ config/               // 各种配置
-▸ dist/                 // 打包后的文件夹
-▸ node_modules/         // node第三方包
-▸ src/                  // 源代码
-  ▾ assets/
-      logo.png
-  ▾ components/
-      Book.vue
-      BookList.vue
-      Hello.vue
-  ▾ router/
-      index.js
-    App.vue
-    main.js
-▸ static/               // 静态文件, 暂时无用
-  index.html            // 最外层文件
-  package.json          // node项目配置文件
-```
 
 - assets 文件夹
 
@@ -144,8 +86,6 @@ showBtn:true
 - main.js
 
 没有实际的业务逻辑，但是为了支撑整个vuejs框架，存在很必要。
-
-
 
 ## 对象
 
@@ -233,10 +173,6 @@ v-model与 input ,select ,textarea,checkbox,radio 等表单形成关联
 ### 过滤filters  {{ a | b}}
 
 ### 条件 ###
-
-#### v-if  等价于后台模板的写法 {{#if }} {{/if}} ####
-
-#### v-else ####
 
 ``` html
 <div id="app">
@@ -341,10 +277,6 @@ vm.$watch('counter', function(nval, oval) {
 ``` 
 
 
-
-
-
-
 ### 表单 v-model 双向绑定 ###
 
 修饰符
@@ -369,30 +301,6 @@ vm.$watch('counter', function(nval, oval) {
 如果要自动过滤用户输入的首尾空格，可以添加 trim 修饰符到 v-model 上过滤输入：
 ``` html
 <input v-model.trim="msg">
-```
-
-
-## vue-cli
-### 创建项目
-``` shell
-vue init webpack MY-PROJECT
-cd MY-PROJECT
-npm install
-npm run dev
-```
-
-
-### file structure
-
-- index.html     #main app file
-- src/App.vue   #Component  
-- src/main.js  #drive file
-- src/assets/logo.png
-- src/components/HelloWorld.vue   # 另一个组件，被App.vue 包含
-
-### 添加 plugins
-``` console
-vue add @vue/cli-plugin-babel
 ```
 
 
@@ -434,60 +342,6 @@ Vue.component('buttonclicked', {
 });
 
 ```
-## 单文件组件
-为了更好地适应复杂的项目，Vue支持以.vue为扩展名的文件来定义一个完整组件，用以替代使用Vue.component注册组件的方式。
-
-> 开发者可以使用 Webpack或Browserify等构建工具来打包单文件组件。
-
-
-# 使用
-## 安装
-独立版本
-> 直接下载并用 <script> 标签引入，Vue 会被注册为一个全局变量。
-
-NPM
-> 大型项目中使用，可以与 webpack 或 Browserify 配合使用
-
-## 表单数据与应用状态的双向绑定
-``` html
-<input v-model="name">
-<span v-bind:title="message">鼠标悬停 title 属性显示</span>
-
-```
-
-## 条件与循环
-``` html
-<p v-if="seen">现在你看到我了</p>
-
-<ol>
-    <li v-for="todo in todos">
-      {{ todo.text }}
-    </li>
-  </ol>
-```
-
-
-
-## vue对象操作 [直接数据操作]
-``` js
-app4.todos.push({ text: '新项目' })
-```
-
-## 处理用户输入
-``` html
-<!-- 反转消息 -->
-<p>{{ message }}</p>
-<button v-on:click="reverseMessage">反转消息</button>
-```
-
-``` js
- methods: {
-    reverseMessage: function () {
-      this.message = this.message.split('').reverse().join('')
-    }
-  }
-```
-
 ## vue-router 页面跳转
 
 - 安装  npm install vue-router --save-dev
