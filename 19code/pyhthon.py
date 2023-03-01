@@ -12,7 +12,7 @@ def reg():
 
 
 if __name__=="__main__":
-    # print(__name__)
+    # print(_name__)
     # print(__loader__)
     # xx()
     # print("azzczzzb"[2:-2])
