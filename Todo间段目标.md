@@ -24,3 +24,4 @@
 - 2023-02-09 启用 hugo 博客写创意的世界。
 - 2.11 下载 hbuilder 调试 vue
 - 2.21 我如何以 SerenityOS 谋生（英文） https://awesomekling.github.io/How-I-make-a-living-working-on-SerenityOS/
+- 3.1 i3 中，使用命令旋转窗口库
