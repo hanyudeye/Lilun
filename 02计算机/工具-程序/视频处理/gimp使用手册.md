@@ -7,6 +7,8 @@ theme: jekyll-theme-cayman
 文档地址: https://docs.gimp.org/2.10/zh_CN/
 https://teliute.org/linux/gimp/index.html
 
+- 对像素进行处理的软件
+
 ## 基本概念
 
 - 像素(pixel)与矢量(vector)

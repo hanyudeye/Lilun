@@ -24,3 +24,4 @@
 - 2023-02-09 启用 hugo 博客写创意的世界。
 - 2.11 下载 hbuilder 调试 vue
 - 2.21 我如何以 SerenityOS 谋生（英文） https://awesomekling.github.io/How-I-make-a-living-working-on-SerenityOS/
+- 3.1 看完当前尚硅谷的视频
