@@ -25,3 +25,4 @@
 - 2.11 下载 hbuilder 调试 vue
 - 2.21 我如何以 SerenityOS 谋生（英文） https://awesomekling.github.io/How-I-make-a-living-working-on-SerenityOS/
 - 3.1 看完当前尚硅谷的视频
+- 3.1 i3 中，使用命令旋转窗口库
