@@ -18,11 +18,11 @@
 - 做菜的视频可以先发起来
 - https://github.com/hardphp/tp6-vue-admin 研究这个源码
 
-- 2.2 see vue
+- [x] 2.2 see vue
 - 2.3 查看 vue
-- 2.7 学会使用 eww ，能更好地编辑参考文本
-- 2023-02-09 启用 hugo 博客写创意的世界。
+- [x] 2.7 学会使用 eww ，能更好地编辑参考文本
+- [x] 2023-02-09 启用 hugo 博客写创意的世界。
 - 2.11 下载 hbuilder 调试 vue
 - 2.21 我如何以 SerenityOS 谋生（英文） https://awesomekling.github.io/How-I-make-a-living-working-on-SerenityOS/
 - 3.1 看完当前尚硅谷的视频
-- 3.1 i3 中，使用命令旋转窗口库
+- [X] 3.1 i3 中，使用命令选择窗口库
