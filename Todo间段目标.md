@@ -26,3 +26,4 @@
 - 2.21 我如何以 SerenityOS 谋生（英文） https://awesomekling.github.io/How-I-make-a-living-working-on-SerenityOS/
 - 3.1 看完当前尚硅谷的视频
 - [X] 3.1 i3 中，使用命令选择窗口库
+- 3.4 学习用视频语言讲故事 (先讲周星驰的喜剧之王，用各种方式演绎)
