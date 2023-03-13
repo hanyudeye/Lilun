@@ -19,6 +19,7 @@ NVM_SYMLINK     C:\Program Files\nodejs
 - nvm list available (windows) 列出所有安装的版本
 - nvm list-remote (linux/mac)
 - nvm list  列出本地安装好了的版本
+- nvm install 10.5.1 安装某个版本
 - nvm use 10.5.1 当前文件夹指定node 的版本
 - nvm alias default 10.5.1 系统全局使用某个版本
 

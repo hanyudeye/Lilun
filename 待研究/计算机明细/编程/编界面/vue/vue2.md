@@ -5,7 +5,6 @@ https://github.com/sg552/happy_book_vuejs.git
 
 # Vue2 (构建视图)
 
-
 当前的web页面分为2种，
 
 - 1. 传统页面，特点是 一个个页面独立加载所有资源然后进行渲染，但在手机端很慢。

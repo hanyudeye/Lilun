@@ -44,3 +44,9 @@ https://v2rayshare.com/
 - 复述小故事 （费曼学习法）
 - https://uinika.github.io/Linux/Command/ 做视频
 - https://linux.cn/
+- 安装 wsl 在别的盘
+
+;激活WindowsTerminal.exe
+#z::Active("WindowsTerminal.exe")
+;激活okular.exe
+#o::Active("okular.exe")
