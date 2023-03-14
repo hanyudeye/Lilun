@@ -45,3 +45,9 @@ https://v2rayshare.com/
 - https://uinika.github.io/Linux/Command/ 做视频
 - https://linux.cn/
 - !文档都在  github 看，还有安装目录插件
+- 把重心放在 转载 ticket youtube 的短视频上
+
+- 感人 翻译 touching moving  impressiveness   impressive  
+- 法语  Effective remuer l'âme
+- 日语 麗しさ  感动する．感动させる じんと
+- 中韩  감동시키다； 감격시키다 감명을 주다
