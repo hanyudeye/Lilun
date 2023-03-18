@@ -46,6 +46,7 @@ https://v2rayshare.com/
 - https://linux.cn/
 - !文档都在  github 看，还有安装目录插件
 - 把重心放在 转载 ticket youtube 的短视频上
+- windows 剪切板
 
 - 感人 翻译 touching moving  impressiveness   impressive  
 - 法语  Effective remuer l'âme
