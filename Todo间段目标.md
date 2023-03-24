@@ -58,6 +58,7 @@ B站是最容易有收益的，门槛很低，随便发点视频 坚持到电磁
 B占和知乎的优点是允许加外链
 国内现在自媒体不好做了，以前做的人少，单价高，真后悔以前没有坚持做，本来一个月也有几百零花钱的，而且还可以搬视频做，现在都要原创，收益还很低
 
+<<<<<<< HEAD
 原淘宝npm域名即将停止解析，请切换至新域名
 http://npm.taobao.org => http://npmmirror.com
 http://registry.npm.taobao.org => http://registry.npmmirror.com
@@ -65,3 +66,5 @@ http://registry.npm.taobao.org => http://registry.npmmirror.com
 bilibili
 https://search.bilibili.com/all?keyword=
 https://www.douyin.com/search/
+=======
+>>>>>>> 45abd65c278570a605d38b1130a1b437dfb081a0
