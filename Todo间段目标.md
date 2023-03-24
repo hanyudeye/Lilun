@@ -17,6 +17,7 @@ https://v2rayshare.com/
 - 多交朋友
 - 不看书，要读书
 - 不要用自己的一知半解挑战别人的工作职业
+- 有1万粉丝后，广告主会自动找你 (社交粉丝的威力)
 
 - 做菜的视频可以先发起来
 - https://github.com/hardphp/tp6-vue-admin 研究这个源码
