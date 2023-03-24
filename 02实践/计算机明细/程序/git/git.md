@@ -100,7 +100,7 @@
 4、git fetch 获取远程仓库中所有的分支到本地
 
 ### 忽略已加入到版本库中的文件
-![](images/2022-11-15-21-16-57.png)
+
 1、git update-index --assume-unchanged file 忽略单个文件
 2、git rm -r --cached 文件/文件夹名字 (. 忽略全部文件)
 
