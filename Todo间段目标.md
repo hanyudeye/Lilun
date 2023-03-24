@@ -47,13 +47,21 @@ https://v2rayshare.com/
 - !文档都在  github 看，还有安装目录插件
 - 把重心放在 转载 ticket youtube 的短视频上
 - windows 剪切板
-
+- https://docs.kernel.org/
 - 感人 翻译 touching moving  impressiveness   impressive  
 - 法语  Effective remuer l'âme
 - 日语 麗しさ  感动する．感动させる じんと
 - 中韩  감동시키다； 감격시키다 감명을 주다
 
 B站是最容易有收益的，门槛很低，随便发点视频 坚持到电磁力3级就可以开通收益。说B站容易原因是 不管你发什么视频 发的时候你选‘自制“就算你是原创，就有收益。比如你发一首歌的MV，这很显然不是原创，但是一样有收益。
-j
+
 B占和知乎的优点是允许加外链
 国内现在自媒体不好做了，以前做的人少，单价高，真后悔以前没有坚持做，本来一个月也有几百零花钱的，而且还可以搬视频做，现在都要原创，收益还很低
+
+原淘宝npm域名即将停止解析，请切换至新域名
+http://npm.taobao.org => http://npmmirror.com
+http://registry.npm.taobao.org => http://registry.npmmirror.com
+
+bilibili
+https://search.bilibili.com/all?keyword=
+https://www.douyin.com/search/
