@@ -189,3 +189,11 @@ git fetch 命令用于从另一个存储库下载对象和引用，在 vs code �
 
 * Prettier - Code formatter：格式化代码
 * Vetur - 管理好你的 Vue 代码
+
+## 自动换行
+
+点击菜单栏 View--> Toggle Word Wrap 选项
+
+或者直接 快捷键 : alt + Z
+
+MacOS 快捷键：option + Z
