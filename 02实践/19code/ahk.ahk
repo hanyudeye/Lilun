@@ -1,6 +1,10 @@
 ; 测试ahk脚本
 
-
+```
+Numpad0 & Numpad1::
+MsgBox You pressed Numpad1 while holding down Numpad0.
+Return
+```
 ; 使用 hotkey (Alt+~) 在同类窗口切换
 
 \::

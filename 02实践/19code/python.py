@@ -27,3 +27,16 @@ import os
 
 # 网络处理
 
+
+# 正则表达式处理
+import re
+
+p=re.compile('ab*',re.IGNORECASE)
+# print(p)
+
+m=p.search('tempABcdef ab abc')
+print(m) 
+print(m.group()) 
+print(m.start()) 
+print(m.end()) 
+print(m.span()) 
