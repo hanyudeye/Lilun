@@ -6,68 +6,17 @@ theme: jekyll-theme-cayman
 
 https://www.kancloud.cn/manual/thinkphp6_0/1037479
 
-- 用于 开发  **网页** 的 网站软件
-- 作为一个 服务器程序，响应客户端的请求
-- 每个请求作为单独的控制器，调用方法处理
-
-## 安装
-
-```shell
- composer create-project topthink/think tp 
- cd tp  
- composer require topthink/think-multi-app 
- composer require topthink/think-view  
-
- 开启调试 .env
- APP_DEBUG=true
-
- php think run -p 80 
-```
-
-- 更新  composer update topthink/framework
-- 安装开发版 composer create-project topthink/think=6.0.x-dev tp
-
 ## 软件配置config 
 
-### 多应用配制 
-
-- public/index.php (前台)
-- public/admin.php (后台)
-
-``` php
-// $http->name()用于设置当前入口文件绑定的应用
-$response = $http->name('api')->run();
-```
-
-目录结构
-- F:\www\thinkphp\tp6\app\api\controller\Index.php
-
-### 环境变量配制 
-
-think\facade\Env
-
-```
-Env::get('database.username');
-```
-### 通用配制文件 
+- 获取环境变量 Env::get('database.username');
+- 通用配制
 think\facade\Config;
-
 ```
  Config::get('app.app_name');
  Config::has('route.route_rule_merge');
 ```
  
 ## 路由配制 
-
-### 打开路由开关
-
-路由地址不能跨 应用 (除非采用重定向路由) 
-    
-```
-// 关闭应用的路由功能
-'with_route' =>false,
-```
-
 ### 路由定义
 
 ```
@@ -97,40 +46,6 @@ Route::redirect('blog/:id', 'http://blog.thinkphp.cn/read/:id', 302);
 Route::view('hello/:name', 'index/hello');
 ```
 
-### 资源路由
-
-## 网站执行  (控制器)
-
-> 使 URL 文本解析成代码
-
-### 控制器定义
-
-渲染输出
-> halt('输出测试');
-
-### 资源控制器
-
-资源控制器可以让你轻松的创建RESTFul资源控制器，可以通过命令行生成需要的资源控制器，例如生成index应用的Blog资源控制器使用：
-
-``` sh
-$ php think make:controller index@Blog
-```
-
-或者使用完整的命名空间生成
-``` sh
-$ php think make:controller app\index\controller\Blog
-```
-
-如果只是用于接口开发，可以使用
-```sh
-$ php think make:controller index@Blog --api
-```
-
-然后你只需要为资源控制器注册一个资源路由：
-``` php
-Route::resource('blog', 'Blog');
-```
-
 ## 模型操作 
 ``` php
 //指定主键
@@ -153,19 +68,6 @@ protected $schema = [
 ## 视图输出 
 
 ``` php
-// 模板变量赋值
-View::assign('name','ThinkPHP');
-View::assign('email','thinkphp@qq.com');
-// 或者批量赋值
-View::assign([
-'name' => 'ThinkPHP',
-'email' => 'thinkphp@qq.com'
-]);
-// 模板输出
-return View::fetch('index');
-```
-
-``` php
 return view('index', [
 'name' => 'ThinkPHP',
 'email' => 'thinkphp@qq.com'
@@ -175,10 +77,7 @@ return view('index', [
 ## 处理请求
 
 ### 请求对象
-助手函数
 ``` php
-<?php
-
 namespace app\index\controller;
 
 class Index
@@ -404,7 +303,9 @@ public function upload(){
 具体用法可以参考验证章节的内置规则-> 上传验证。
 
 ## thinkphp6解决 CORS 跨域
+
 在 app/middleware.php中添加
+
 ``` php
 \think\middleware\AllowCrossDomain::class
 ```
