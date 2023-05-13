@@ -3,7 +3,6 @@ public class 大家好{
         打印("大家好");
     }
 
-
     private static void 打印(String 输出){
         System.out.println(输出);
     }
