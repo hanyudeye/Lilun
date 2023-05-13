@@ -6,37 +6,6 @@ theme: jekyll-theme-cayman
 
 ## Bootstrap (靴带)
 
-- 样式
-
-### 引入资源
-
-- bootstrap 使用 类选择器 定义 元素块的 样式
-- 元素的样式 默认已定义好，我们只需学习 需要使用的类 
-
-```html
-<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
-
-<!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
-
-<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
-```
-
-#### 移动设备优先
-
-```html
-<meta name="viewport" content="width=device-width, initial-scale=1">
-```
-
-设置视口[窗口](viewport)对象的 user-scalable=no 属性,禁用缩放。
-用户只能滚动屏幕，不能双指缩放。 
-```html
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-```
-
-
 ### 容器 (最外层页面的包装)
 
 1. container  居中
