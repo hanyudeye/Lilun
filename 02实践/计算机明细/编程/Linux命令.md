@@ -48,3 +48,37 @@
 
 ## tar 
 打包文件夹
+
+## 切换ip 地址
+ 192.168.31.100/24
+
+wlx1cbfce955c41
+
+要配置静态 IP 代替 DHCP，使用 vi 或 nano 编辑器编辑 netplan 配置文件并添加以下内容。
+
+```
+$ sudo vi 00-installer-config.yaml
+# This is the network config written by 'subiquity'
+network:
+renderer: networkd
+ethernets:
+ens33:
+addresses:
+- 192.168.1.247/24
+nameservers:
+addresses: [4.2.2.2, 8.8.8.8]
+routes:
+- to: default
+via: 192.168.1.1
+version: 2
+```
+
+要是上述修改生效，请使用以下 netplan 命令应用这些更改：
+
+$ sudo netplan apply
+运行以下 IP 命令查看接口上的 IP 地址：
+
+$ ip addr show ens33
+要查看默认路由，请运行：
+
+$ ip route show
