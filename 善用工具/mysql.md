@@ -1,22 +1,7 @@
-## 什么是 **关系型** 数据库
+# 什么是 **关系型** 数据库
+就是表结构数据
 
-> 按 **行** 存取数据
-> 每**行** 是数据所对应的关系(属性)
-> 存取数据使用 sql(结构化查询语法)
-
-## 安装程序
-mysqld 默认监听 3306 网络端口
-
-
-配置文件 /etc/mysql/my.cnf
-
-``` cnf
-max_connections = 10
-log-slow-queries
-long_query_time = 5
-```
-
-## 客户机 mysql
+# mysql 工具的使用
 
 ``` sql
 /* 连接数据库 */
@@ -39,7 +24,6 @@ GRANT ALL ON db1.*TO'kerry'@'localhost'IDENTIFIED BY'beck123';
 FLUSH PRIVILEGES
 ```
 
-## SQL语句和函数
 
 ```sql
 
@@ -70,10 +54,6 @@ update books set author="xli" where book_id=13;
 
 ```
 
-
-## 用户账号与安全
-
-## 事件、存储过程、触发器，自定义函数
 
 
 
