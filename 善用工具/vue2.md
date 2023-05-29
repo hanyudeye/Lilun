@@ -19,7 +19,7 @@ new Vue({
   el: ".app1",
   data: {
     name: "aming",
-  },
+  ,
   methods: {},
   created: function () {
     console.log("Vue instance has been created");
