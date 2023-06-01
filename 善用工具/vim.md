@@ -71,3 +71,24 @@ Plug 'vim-airline/vim-airline-themes'
 - 括号，引号成对编辑的插件 vim-surround 插件
 - 快速浏览代码插件 vim-tagbar
 - 文件格式化的插件 lbdchd/neoformat
+
+
+vimPlug 插件：https://github.com/junegunn/vim-plug
+.vimrc 配置文件
+" Vim Plugin
+call plug#begin('~/.vim/plugged')
+Plug 'morhetz/gruvbox' 
+Plug 'preservim/nerdtree'
+Plug 'vim-airline/vim-airline'
+call plug#end() 
+
+let mapleader = ";"
+nnoremap <Leader>q :q<CR>
+nnoremap <Leader>w :w<CR>
+nnoremap <Leader>g :NERDTreeToggle<CR>
+nnoremap <Leader>f :NERDTreeFind<CR>
+
+set clipboard=unnamedplus    " 使用系统剪切版 -> Vim
+set clipboard=unnamed      " Vim -> 系统剪切版
+colorscheme gruvbox
+set nu
