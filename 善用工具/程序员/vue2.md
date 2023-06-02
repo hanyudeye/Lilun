@@ -2,89 +2,9 @@ https://github.com/hardphp/tp6-vue-admin.git
 https://github.com/icarusion/vue-book
 https://github.com/sg552/happy_book_vuejs.git
 
+## 开发模式的演化(前后端分离)
 
-# Vue2 (构建视图)
-
-当前的web页面分为2种，
-
-- 1. 传统页面，特点是 一个个页面独立加载所有资源然后进行渲染，但在手机端很慢。
-- 2. 单页应用, 特点是 点击链接，不是整页刷新，而是局部刷新，用的技术是 ajax(异步请求)
-
-- jQuery 流行后，ajax 请求非常方便
-
-``` js
-jQuery.get("http://url?par=1",function(data){});
-```
-
-- 现在的移动开发 ，web 端 使用 SPA H5 框架，框架包含，路由，历史记录，事件处理，组件等功能
-
-## 安装vue
-
-```
-$ npm install vue vue-cli -g
-```
-
-`-g` 表示这个包安装后可以被全局使用。 
-
-### 创建vue项目
-
-创建一个基于 webpack 模板的新项目:
-
-```
-$ vue init webpack my-project
-```
-如果网络不好，进行离线下载到本地用户目录下的.vue-templates目录下
-https://github.com/vuejs-templates/webpack
-
-![](images/2023-02-10-15-46-55.png)
-
-```
-vue init webpack vuedemo --offline
-```
-
-安装依赖:
-
-```
-$ cd my-project
-$ cnpm install
-```
-
-以默认端口来运行：
-
-```
-$ npm run dev
-```
-
-## 开发模式的演化
-### 传统MVC的缺点
-
-- 1. 前端开发中的依赖开发环境
-- 2. 前后端职责纠缠不清
-- 3. 对前端发挥的局限性
-- MVVM 把视图中的数据 与 单独的数据进行双向绑定
-### 前端MVC的产生(前后端分离) -> nodejs全栈
-
-
-- assets 文件夹
-
-用到的图片都可以放在这里。
-
-- components
-
-用到的"视图"和"组件"所在的文件夹。（最最核心）
-
-- router/index.js  
-
-路由文件。 定义了各个页面对应的url. 
-
-- App.vue
-
-如果index.html 是一级页面模板的话，这个App.vue就是二级页面模板。
-所有的其他vuejs页面，都作为该模板的 一部分被渲染出来。
-
-- main.js
-
-没有实际的业务逻辑，但是为了支撑整个vuejs框架，存在很必要。
+ 前后端的分离，有助于大项目的团队协助，就不用做全栈了。
 
 ## 对象
 
@@ -99,7 +19,7 @@ new Vue({
   el: ".app1",
   data: {
     name: "aming",
-  },
+  ,
   methods: {},
   created: function () {
     console.log("Vue instance has been created");

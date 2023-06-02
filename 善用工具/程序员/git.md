@@ -1,13 +1,10 @@
 ## 什么是 git?
 
- 文件历史记录
-- 存储新历史 (历史中切换)
+ 文件仓库(存储文件变化历史)
 
 
 ## 分支操作
 1、git branch 创建分支
-假如有个开发版一直在开发，到有个稳定时刻，创建一个稳定版，继续开发，再有稳定的就再创建。
-
 
 2、git branch -b 创建并切换到新建的分支上
 
@@ -96,8 +93,11 @@
 ### git创建项目仓库
 
 1、git init 初始化
+
 2、git remote add origin url 关联远程仓库
+
 3、git pull
+
 4、git fetch 获取远程仓库中所有的分支到本地
 
 ### 忽略已加入到版本库中的文件
@@ -114,11 +114,10 @@ git update-index --no-assume-unchanged file
 git config --global credential.helper store
 
 ## 初始化配置
-
-```
 git config --global user.email XX
+
 git config --global user.name XX
-```
+
 ## 创建 ssh key
 
 ssh-keygen -t rsa -C XX 
@@ -143,8 +142,10 @@ git config --global core.autocrlf input
 ```
 
 ## question
+
 ### git 取消对文件的跟踪
 git rm 
+
 ### git 排除入库的文件
 对于已入库的文件，取消状态跟踪
 命令：git update-index –assume-unchanged FILENAME 路径+文件名
@@ -161,8 +162,8 @@ git rm
 - [热门](https://github.com/trending)
 - [专题](https://github.com/topics)
 
-搜索
-``` 
+## 搜索
+
 优秀项目  Awesome + 关键字  
 stars: fork
 qt in:name：表示在项目名称中搜索 qt 关键字
@@ -172,9 +173,10 @@ qt in:USERNAME：表示在 USERNAME 中搜索 qt 关键字
 qt in:ORGNAME：表示在组织或机构名中搜索 qt 关键字
 size:>=5000 Qt ：搜索大小超过 5M 的包含 Qt 关键字项目
 language:C++ location:china 搜索国内的开发者，语言限定为 C++
-``` 
+
+
 后缀
-```
+
 stars:>20 extension:el language:elisp
-```
+
 

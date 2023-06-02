@@ -4,34 +4,14 @@ permalink: thinkphp5.html
 theme: jekyll-theme-cayman
 ---
 
-- 程序框架
-- 入口(启动) -> 转到应用 -> 判断模块 -> 调用控制器(功能) -> 执行操作 -> 连接模型 -> 视图组装 -> 响应输出
 
-## 程序配置类
+内容服务提供者需要有一套应用能灵活地返回  用户 请求的数据
 
-``` php
-use think\facade\Config;
-// 设置配置参数
-Config::set([
-    'type'      =>  'file',
-    'prefix'    =>  'think'
-],'cache');
-Config::set($config);
-// 读取二级配置参数
-echo Config::get('user.type');
-  //获取所有配置内容，返回的是个Array
- dump(Config::get());
- //获取app中的配置内容，返回的是个Array
- dump(Config::get('app.'));
- //获取app中的配置内容，返回的是个Array
- dump(Config::pull('app'));
- //获取app中的debug中的配置内容
- dump(Config::get('app.app_debug'));
- //判断template下的type项是否存在，返回true或者false
-dump(Config::has('template.type'));
-```
+ 入口(请求) -> 转到应用 -> 判断模块 -> 调用控制器 -> 执行操作 -> 连接模型 -> 视图组装 -> 响应输出
 
-助手函数
+
+## 配置
+
 ``` php
  // 获取配置
     dump(config('database.hostname'));
@@ -193,6 +173,7 @@ input('get.id/d');
 input('post.name/s');
 input('post.ids/a');
 ```
+
 | 修饰符 | 作用                 |
 | ------ | -------------------- |
 | s      | 强制转换为字符串类型 |
@@ -235,7 +216,9 @@ echo $info['user-agent'];
 ## 数据库
 
 ### 查询构造器 (非原生写法)
+
 #### 查询数据
+
 ##### 基本查询
 查询一个数据使用find，查询数据集使用 select;
 ``` php
@@ -311,6 +294,7 @@ Db::table('think_user')->chunk(100, function($users) {
 },'create_time', 'desc');
 ```
 ##### JSON类型数据查询
+
 ```php
 // 查询JSON类型字段 （info字段为json类型）
 Db::table('think_user')->where('info$.email','thinkphp@qq.com')->find();
