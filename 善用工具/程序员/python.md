@@ -1,6 +1,5 @@
 ## 类型转换
 
-- list(s)  转列表
 - set(s)  转集合(无重复，排序随机)
 - dict(d) d 必须是一个序列 (key,value)元组。
 - frozenset(s)  转换为不可变集合
