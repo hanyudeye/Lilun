@@ -3,7 +3,6 @@
 - 编辑模式 
 - 查找 / 或 ?
 - 替换 %s/my/you/g, 表示把文件中所有的my替换成you
-
 - buffer ，tab ,window
 - 分割窗口，竖切  :vsp FILE 横切 :sp FILE
 - 编辑文件 :e FILE
@@ -21,17 +20,18 @@
 ## 映射
 
 - (1) 基本映射，在normal模式下
-
 使用map就可以实现映射。比如
+
 ```
 :nmap <space> viw 就是按下空格选择整个单词
 :nmap <c-d> dd 可以使用ctrl+d执行dd删除一行
 ```
 
 - (2) 在normal/visual/insert模式下都可以定义映射，
+
 使用nmap/vmap/imap定义的映射只在normal/visual/insert分别有效
 
- - 将ESC键映射为两次j键                                      
+将ESC键映射为两次j键                                      
 
 ```
 inoremap jj <Esc>
@@ -39,7 +39,6 @@ inoremap jj <Esc>
 ## 插件
 
 ### 安装插件管理器 vim-plug
-
 
 - 安装 [vim-plug](https://github.com/junegunn/vim-plug)
 
@@ -52,7 +51,6 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 修改 .vimrc 文件
 
 在编辑完.vimrc文件后，我们只需要输入:source ~/.vimrc就可以开始安装插件，再输入:PlugInstall可以查看插件的安装进度
-
 
 #### 界面美化插件
 
