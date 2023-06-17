@@ -1,5 +1,5 @@
 ---
-title: 界面布局语法
+title: 富文本编写布局语法
 permalink: .html
 theme: jekyll-theme-cayman
 ---
