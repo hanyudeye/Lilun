@@ -3,7 +3,7 @@ title: Todo间段实践
 permalink: todo.html
 theme: jekyll-theme-cayman
 ---
-
+- 我的人生是研究电路，计算机，软件，互联网，然后还有其他兴趣。
 - 每天想一个小灵感
 - 不打无准备的仗，也要迅速出击
 - 互联网创业需要哪些技能
