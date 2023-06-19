@@ -1,5 +1,6 @@
 
-### nvm
+# nvm
+> 软件安装器
 
 NVM, 全名为"Node Version Manager", 是非常好用的Node版本管理器。 
 
