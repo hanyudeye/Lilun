@@ -103,3 +103,24 @@ docker ps
 ```
 
 以上是Docker的详细教程，希望对你有所帮助！
+
+# 配置国内地址
+
+1. 修改配置文件
+/etc/docker/daemon.json
+
+```
+# 加入以下配置项
+{
+    "registry-mirrors": [
+        "https://dockerproxy.com",
+        "https://hub-mirror.c.163.com",
+        "https://mirror.baidubce.com",
+        "https://ccr.ccs.tencentyun.com"
+    ]
+}
+```
+
+2. 查看是否成功
+
+sudo docker info
