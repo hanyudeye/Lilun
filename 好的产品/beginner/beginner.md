@@ -8,3 +8,8 @@ a small plea 一个小的请求
 If you are an open source project maintainer,give this a shot. Add the label first-timers-only to your project so people can find it here.
 如果你是一个开源项目的维护者，试一试。将标签 first-timers-only
 添加到您的项目中，以便人们可以在此处找到它。
+
+digital human
+数字人
+
+a collection of resources on closed people: full body recontruction,head reconstruction 
