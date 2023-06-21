@@ -11,43 +11,39 @@ categories: ['技术']
 
 <!--more-->
 
-文件管理
-- tree  
-- ls
+# 文件管理器
+- tree  用树状图的形式 显示 磁盘文件  
+- ls 显示当前目录下的文件 
+- mkdir  创建目录
+- file  查看文件信息
 
-创建目录
-- mkdir 
+ 压缩打包文件
+- tar 
+- zip
 
-查看文件信息
-- file
 
-adduser 添加用户
-设置用户密码
-passwd 管理员名称
-
-添加到管理组
-gpasswd -a 管理员名称 sudo
+# 登陆用户管理器
+- adduser 创建一个登陆用户
+- passwd 设置用户密码 
+- gpasswd -a 管理员名称 sudo 添加到管理组
 
 配置管理权限
 sudo visudo 
 管理员名称 ALL=(ALL:ALL) ALL
 
-显示网络连接、路由表、接口统计、伪装连接、多播成员信息。
-- netstat
-- netstat -tcp
+# 计算机设备管理
 
-测试到目标主机的网络是否畅通
-- ping 
-
- 控制内存
 - free 查看内存使用情况
+- mount 存储挂在
 
- 控制外部存储
-- mount
 
- 压缩打包文件
-- tar 
-- zip
+# 网络管理器(计算机外交管理器)
+
+>网络可以 获取 远程的计算机资源，就像获取本机的一样
+
+- netstat 显示网面的计算机，网络连接、路由表、接口统计、伪装连接、多播成员信息。
+- netstat -tcp
+- ping  查看外面的计算机在不在线
 
 ssh 通过网路管理计算机
 

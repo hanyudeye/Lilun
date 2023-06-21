@@ -4,16 +4,12 @@ permalink: docker.html
 theme: jekyll-theme-cayman
 ---
 
-Docker: 集装箱，应用容器（集装箱）
+Docker: 集装箱，应用容器（集装箱），环境打包工具
 
 
-Docker是一种用于构建、打包、分发和运行应用程序的平台。使用Docker可以将应用程序和所需的依赖项打包为一个可移植的容器，从而保证应用程序在不同环境中的一致性。以下是Docker的详细教程：
+Docker是一种用于构建、打包、分发和运行应用程序的平台。使用Docker可以将应用程序和所需的依赖项打包为一个可移植的容器，从而保证应用程序在不同环境中的一致性。
 
-### 安装Docker
-
-在开始使用Docker之前，需要先安装Docker。可以通过以下链接下载并安装适合你的操作系统版本的Docker：https://www.docker.com/get-started
-
-### 创建Docker容器
+## 创建Docker容器
 
 在使用Docker之前，需要先创建一个Docker容器。Docker容器是一个轻量级、独立的运行环境，其中包含应用程序及其依赖项。
 
@@ -124,3 +120,8 @@ docker ps
 2. 查看是否成功
 
 sudo docker info
+
+# 在线网站手动拉去
+
+- https://hub.daocloud.io/
+- docker pull https://hub.daocloud.io/hello-world
