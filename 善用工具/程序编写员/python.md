@@ -1,7 +1,18 @@
+---
+layout: default
+toc: false
+title: python程序设计
+date:  2023-06-20T14:49:57+08:00
+categories: ['技术','编程语言']
+---
+
+# 对象
+
+计算机中的对象，都可以用 中文，或外文 描述。或编程语言 Python。
 
 
 
-## 类型转换
+## 把对象转换成别的类别
 
 - set(s)  转集合(无重复，排序随机)
 - dict(d) d 必须是一个序列 (key,value)元组。
