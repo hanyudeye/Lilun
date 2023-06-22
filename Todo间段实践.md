@@ -16,10 +16,10 @@ theme: jekyll-theme-cayman
 
 # 工作台
 - chatgpt 语料分析
-- 细胞培养肉上市了，据说味道很好，环境污染少 [培养肉](https://www.npr.org/sections/health-shots/2022/11/14/1136186819/cultivated-cultured-meat-heathy-climate-change)
-- AI 教堂，AI胜任宗教活动，心理活动，可进行辅导
 # 储备库
 
+- 6.21 细胞培养肉上市了，据说味道很好，环境污染少 [培养肉](https://www.npr.org/sections/health-shots/2022/11/14/1136186819/cultivated-cultured-meat-heathy-climate-change)
+- 6.21 AI 教堂，AI胜任宗教活动，心理活动，可进行辅导
 - 6.18 扔垃圾
 - 6.18 烧晚饭
 - 6.18按摩眼睛
