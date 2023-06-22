@@ -1,15 +1,25 @@
-## TOOD 任务
+---
+title: Todo间段实践
+permalink: todo.html
+theme: jekyll-theme-cayman
+---
 - 我的人生是研究电路，计算机，软件，互联网，然后还有其他兴趣。
+- 每天想一个小灵感
+- 不打无准备的仗，也要迅速出击
+- 互联网创业需要哪些技能
 - 还有 16年退休，就可以写小说，创作，玩
 - 脸皮厚吃个够 脸皮薄吃不着
-- TODO 精通Python
-- 想想怎么创业
-- 互联网创业需要哪些技能
-- 不打无准备的仗，也要迅速出击
+- 立刻能完成的放在收集箱，重复的
 
 
 # 收集箱
 
 # 工作台
-
+- chatgpt 语料分析
+- 细胞培养肉上市了，据说味道很好，环境污染少 [培养肉](https://www.npr.org/sections/health-shots/2022/11/14/1136186819/cultivated-cultured-meat-heathy-climate-change)
+- AI 教堂，AI胜任宗教活动，心理活动，可进行辅导
 # 储备库
+
+- 6.18 扔垃圾
+- 6.18 烧晚饭
+- 6.18按摩眼睛

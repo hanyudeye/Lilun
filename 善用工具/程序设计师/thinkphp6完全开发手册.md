@@ -2,14 +2,18 @@
 title: ThinkPHP6.0完全开发手册
 permalink: thinkphp6.html
 theme: jekyll-theme-cayman
+description: 网络资源管理工具
 ---
 
 https://www.kancloud.cn/manual/thinkphp6_0/1037479
 
-## 软件配置config 
 
+
+## 对工具的配置文件config 
+think\facade\Env;
 - 获取环境变量 Env::get('database.username');
 - 通用配制
+
 think\facade\Config;
 ```
  Config::get('app.app_name');
@@ -172,8 +176,7 @@ echo $info['user-agent'];
 
 ## 具体响应
 
-大多数情况,我们不需要关注 Response 对象本身,只需要在控制器的操作方法中返回数据即可
-> 使用 return  返回响应类型的数据 return json($data);
+使用 return  返回响应类型的数据 return json($data);
 
 | 输出类型     | 快捷方法 | 对应Response类           |
 | ------------ | -------- | ------------------------ |
@@ -215,7 +218,7 @@ return download('image.jpg', 'my')->expire(300);
 }
 ```
 
-## 数据库(管理员)
+## 数据库管理
 
 ### 删除数据
 ``` php
