@@ -7,9 +7,15 @@ description: 网络资源管理工具
 
 https://www.kancloud.cn/manual/thinkphp6_0/1037479
 
+# 安装编码包
+composer create-project topthink/think  // 默认是最新的
 
+# 对象的显示
 
-## 对工具的配置文件config 
+- echo 显示基础数据,不能显示数组
+- print_r 显示对象
+
+# 配置环境config 
 think\facade\Env;
 - 获取环境变量 Env::get('database.username');
 - 通用配制
@@ -20,8 +26,9 @@ think\facade\Config;
  Config::has('route.route_rule_merge');
 ```
  
-## 路由配制 
-### 路由定义
+# 配置路由 (优化资源的访问 url)
+
+## 路由定义
 
 ```
 Route::get('new/<id>','News/read'); // 定义GET请求路由规则
@@ -69,7 +76,7 @@ protected $schema = [
 'update_time' => 'datetime',
 ];
 ```
-## 视图输出 
+# 视图输出 
 
 ``` php
 return view('index', [
@@ -78,9 +85,9 @@ return view('index', [
 ]);
 
 ```
-## 处理请求
+# 处理请求
 
-### 请求对象
+## 获取请求参数
 ``` php
 namespace app\index\controller;
 
@@ -92,7 +99,7 @@ class Index
     }
 }
 ```
-### 请求信息
+## 获取请求信息
 
 ``` php
 use think\facade\Request;
