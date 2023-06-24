@@ -1,55 +1,74 @@
-## webpack
+---
+title: webpack
+permalink: webpack.html
+theme: jekyll-theme-cayman
+---
 
-- 传统的web，js/css/png 等文件结构复杂，需要有个工具统一管理，压缩，模块化规范化。
-- 安装
+Webpack 是一个web文件打包工具，提高程序的执行效率（加载与运行）
 
-```
-$ npm install --save-dev webpack
-```
+1. 安装Webpack
 
-## 安装vuejs
-
-要同时安装 `vue`和 `vue-cli`这两个node package.
-
-运行下面这个命令：
+首先，你需要安装Webpack。你可以使用npm（Node.js包管理器）来安装Webpack。在命令行中运行以下命令：
 
 ```
-$ npm install vue vue-cli -g
+npm install webpack webpack-cli --save-dev
 ```
 
-`-g` 表示这个包安装后可以被全局使用。 
+这将安装Webpack和Webpack命令行工具。
 
-## 运行 vue
+2. 创建Webpack配置文件
 
-创建一个基于 webpack 模板的新项目:
+在项目根目录下创建一个名为webpack.config.js的文件。这个文件是Webpack的配置文件，它告诉Webpack如何打包你的应用程序。
 
-```
-$ vue init webpack my-project
-```
-
-注意： 我们使用Vue, 都是在 `webpack` 这个大前提下使用的。
-
-安装依赖:
+以下是一个简单的Webpack配置文件示例：
 
 ```
-$ cd my-project
-$ cnpm install
+const path = require('path');
+
+module.exports = {
+  entry: './src/index.js',
+  output: {
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist')
+  }
+};
 ```
 
-在本地，以默认端口来运行：
+这个配置文件告诉Webpack将src目录下的index.js文件作为应用程序的入口点，并将打包后的文件输出到dist目录下的bundle.js文件中。
+
+- 查找入口文件index ，打包到 dist下的bundle 文件 
+
+3. 创建JavaScript文件
+
+在src目录下创建一个名为index.js的JavaScript文件。这个文件将作为你的应用程序的入口点。
+
+以下是一个简单的JavaScript文件示例：
 
 ```
-$ npm run dev
+function greet(name) {
+  console.log(`Hello, ${name}!`);
+}
+
+greet('World');
 ```
 
+这个JavaScript文件定义了一个greet函数，它将一个名字作为参数，并在控制台中打印出一条问候语。
 
-## Webpack 脚本指令用法
+4. 打包JavaScript文件
 
+现在，你可以使用Webpack来打包你的JavaScript文件了。在命令行中运行以下命令：
 
-- `webpack` 直接打包输出
-- `webpack serve` 启动开发服务器，内存编译打包没有输出
+```
+npx webpack
+```
 
-我们将 `Webpack` 输出的文件叫做 `bundle` (捆，束)。
+这将使用Webpack默认配置文件（webpack.config.js）来打包你的JavaScript文件。
+
+5. 运行应用程序
+
+现在，你已经成功地将JavaScript文件打包成一个文件。你可以在浏览器中打开dist目录下的bundle.js文件，或者在HTML文件中引用它，以运行你的应用程序。
+
+以上是一个简单的Webpack教程，帮助你了解如何使用Webpack构建JavaScript应用程序。当然，Webpack还有很多高级功能，如代码拆分、代码优化等，你可以在Webpack官方文档中了解更多。
 
 ## webpack
 
@@ -58,7 +77,7 @@ $ npm run dev
 - 编译 (开发模式)  npx webpack  ./src/main.js --mode=development
 - 生产模式 npx webpack ./src/main.js --mode=production
 
-## 配置文件  webpack.config.js
+## 配置webpack.config.js
 采用 Common.js 模块化规范
 
 ``` js
