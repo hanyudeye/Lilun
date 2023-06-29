@@ -1,8 +1,11 @@
 ---
-title: http
+title: http沟通协议
 permalink: .html
 theme: jekyll-theme-cayman
 --- 
+
+这种沟通，不会像我们平时说 一堆话，他只有几个指令(获取get,删除delete，添加put)，面向资源一样的东西。
+
 
 HTTP（超文本传输协议）是在互联网上用于传输数据的一种协议。它被用于在Web浏览器和服务器之间传输HTML、CSS和JavaScript等数据。
 
