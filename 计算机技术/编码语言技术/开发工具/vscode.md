@@ -57,7 +57,7 @@ AD 翻页
 - vue language features(volar)
 - vue vscode snippets
 - Code Spell Checker
-=======
+
 ### Vue 扩展  vue language features
 
 ### Auto Close Tag 自动闭合标签
@@ -272,6 +272,7 @@ MacOS 快捷键：option + Z
     "editor.minimap.enabled": false,
     "editor.fontFamily": "monospace,Consolas, 'Courier New', ",
     "explorer.confirmDelete": false,
+    //配置在终端运行
     "code-runner.runInTerminal": true,
     "redhat.telemetry.enabled": true,
     //终端颜色配置
