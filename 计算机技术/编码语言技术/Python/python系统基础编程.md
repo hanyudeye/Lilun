@@ -1,0 +1,232 @@
+---
+layout: default
+toc: false
+title: python系统基础编码
+date:  2023-06-20T14:49:57+08:00
+categories: ['技术','编程语言']
+---
+
+- 编程就是在计算机中创建工具或使用工具
+
+# 对象和群
+
+- 数字，文字 
+- [数字群,数字] ,(鹅群，鸡群)
+- 列表  append ,pop
+
+# 对象转换工具
+
+- set(s)  对象转集合对象(无重复，排序随机)
+- dict(d) 字典创建函数,默认为{},使用dict函数时,d 必须是一个序列(key,value)元组。
+- my_dict = dict([('apple', 1), ('banana', 2), ('orange', 3)])
+- frozenset(s)  转换为不可变集合
+- chr(x) 将一个整数转换为一个字符
+- ord(c) 将一个字符转换为它的整数值 (与上面互逆)
+- unichr(x) 将一个整数转换为 Unicode 字符
+- hex(x) 将一个整数转换为一个十六进制字符串
+- oct(x) 将一个整数转换为一个八进制字符串
+
+
+# 对象库
+
+## IO对象
+- print 打印机
+- input 键盘读入机
+- 
+## 系统对象
+
+    - 显示模块搜索路径  sys.path
+    - 显示加载的模块 print(sys.modules)
+    - 路径合理化 os.path.normpath
+    - 绝对路径 abspath
+    - 运行程序 os.system('python helloshell.py')
+    - 把进程赋予变量 output = os.popen('python helloshell.py').read()
+    - 环境变量 os.environ
+    - 运行程序 os.system, os.popen, os.execv, os.spawnv
+    - 进程处理  os.fork, os.pipe, os.waitpid, os.kill
+    - 文件描述  os.open, os.read, os.write
+    - 文件处理 os.remove, os.rename, os.mkfifo, os.mkdir, os.rmdir
+    - 管理员工具 os.getcwd, os.chdir, os.chmod, os.getpid, os.listdir, os.access
+    - 移植工具 os.sep, os.pathsep, os.curdir, os.path.split, os.path.join
+    - 路径名称工具 os.path.exists('path'), os.path.isdir('path'), os.path.getsize('path')
+
+## 数学运算
+### math
+    - pi
+    - floor 地板
+    - trunc 截断
+### random
+    - random
+## 字符串和文本处理 
+### odecs 
+# 进程
+### 创建进程
+    Process([group [, target [, name [, args [, kwargs]]]]])
+    target 表示调用对象
+    args 表示调用对象的位置参数元组
+    kwargs 表示调用对象的字典
+    name 为别名
+    group 实质上不使用
+
+    下面看一个创建函数并将其作为多个进程的例子：
+
+    ``` python
+      #!/usr/bin/env python3
+      import multiprocessing
+      import time
+
+
+      def worker(interval, name):
+          print(name + '【start】')
+          time.sleep(interval)
+          print(name + '【end】')
+
+      if __name__ == "__main__":
+          p1 = multiprocessing.Process(target=worker, args=(2, '两点水 1'))
+          p2 = multiprocessing.Process(target=worker, args=(3, '两点水 2'))
+          p3 = multiprocessing.Process(target=worker, args=(4, '两点水 3'))
+
+          p1.start()
+          p2.start()
+          p3.start()
+
+          print("The number of CPU is:" + str(multiprocessing.cpu_count()))
+          for p in multiprocessing.active_children():
+              print("child   p.name:" + p.name + "\tp.id" + str(p.pid))
+              print("END!!!!!!!!!!!!!!!!!")
+    ```
+
+### 把进程创建成类
+    当然我们也可以把进程创建成一个类，如下面的例子，当进程 p 调用 start() 时，自
+    动调用 run() 方法。
+
+    ``` python
+      import multiprocessing
+      import time
+
+
+      class ClockProcess(multiprocessing.Process):
+          def __init__(self, interval):
+              multiprocessing.Process.__init__(self)
+              self.interval = interval
+
+          def run(self):
+              n = 5
+              while n > 0:
+                  print("当前时间: {0}".format(time.ctime()))
+                  time.sleep(self.interval)
+                  n -= 1
+
+      if __name__ == '__main__':
+          p = ClockProcess(3)
+          p.start()
+    ```
+
+### daemon 属性
+
+    想知道 daemon 属性有什么用，看下下面两个例子吧，一个加了 daemon 属性，一个没有加，对比输出的结果：
+
+    没有加 deamon 属性的例子：
+
+    ``` python
+      import multiprocessing
+      import time
+
+
+      def worker(interval):
+          print('工作开始时间：{0}'.format(time.ctime()))
+          time.sleep(interval)
+          print('工作结果时间：{0}'.format(time.ctime()))
+
+
+      if __name__ == '__main__':
+          p = multiprocessing.Process(target=worker, args=(3,))
+          p.start()
+          print('【EMD】')
+
+    ```
+    输出结果：
+
+    ```txt
+    【EMD】
+    工作开始时间：Mon Oct  9 17:47:06 2017
+    工作结果时间：Mon Oct  9 17:47:09 2017
+    ```
+
+    在上面示例中，进程 p 添加 daemon 属性：
+
+    ```python
+
+    import multiprocessing
+    import time
+
+
+    def worker(interval):
+    print('工作开始时间：{0}'.format(time.ctime()))
+    time.sleep(interval)
+    print('工作结果时间：{0}'.format(time.ctime()))
+
+
+    if __name__ == '__main__':
+    p = multiprocessing.Process(target=worker, args=(3,))
+    p.daemon = True
+    p.start()
+    print('【EMD】')
+    ```
+
+    输出结果：
+
+    ```txt
+    【EMD】
+    ```
+
+
+    根据输出结果可见，如果在子进程中添加了 daemon 属性，那么当主进程结束的时候，子
+    进程也会跟着结束。所以没有打印子进程的信息。
+## 网络编程与套接字
+### 网路编程基础 
+### asynchat
+### asynncore
+### select
+### socket
+#### 地址族
+#### 套接字类型
+#### 寻址
+#### 函数
+#### 异常
+#### 示例
+### ssl
+### SocketServer
+## Internet 编程
+### ftplib
+### http
+#### http.client
+#### http.server
+#### http.cookie
+#### http.cookiejar
+### smtplib
+### urllib
+### xmlrpc
+## Web 编程
+### cgi
+### cgitb
+### wsgiref
+### webbrowser
+## Internet 数据处理与编码
+### base64
+### binascii
+### csv
+### email
+### hashlib
+### hmac
+### HtMLParser
+### json
+### mimetypes
+### quopri
+### xml
+## 其它库
+### Python 服务
+### 国际化
+### 多媒体
+## 扩展与嵌入
+### 扩展模块
