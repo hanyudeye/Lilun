@@ -35,9 +35,10 @@ theme: jekyll-theme-cayman
 5. 简单的密码生成器：这是一个简单的密码生成器，适合初学者学习如何使用Python和随机数生成器创建一个基本的应用程序。
 
 # 工作台
-- chatgpt 语料分析
+- [DOING] 设置小说，在 blog 写小说
 # 储备库
 
+- chatgpt 语料分析
 - 6.21 细胞培养肉上市了，据说味道很好，环境污染少 [培养肉](https://www.npr.org/sections/health-shots/2022/11/14/1136186819/cultivated-cultured-meat-heathy-climate-change)
 - 6.21 AI 教堂，AI胜任宗教活动，心理活动，可进行辅导
 - 6.18 扔垃圾
