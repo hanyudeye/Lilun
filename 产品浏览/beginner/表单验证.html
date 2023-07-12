@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>表单验证示例</title>
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h2>表单验证示例</h2>
+
+    <form id="myForm" onsubmit="return validateForm()">
+        <label for="name">姓名：</label>
+        <input type="text" id="name" name="name" required>
+        <br>
+        <label for="email">邮箱：</label>
+        <input type="email" id="email" name="email" required>
+        <br>
+        <label for="password">密码：</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+        <input type="submit" value="提交">
+    </form>
+
+    <script>
+        function validateForm() {
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+
+            var errorMessages = [];
+
+            if (name === "") {
+                errorMessages.push("姓名是必填字段。");
+            }
+
+            if (email === "") {
+                errorMessages.push("邮箱是必填字段。");
+            } else if (!validateEmail(email)) {
+                errorMessages.push("邮箱格式不正确。");
+            }
+
+            if (password === "") {
+                errorMessages.push("密码是必填字段。");
+            }
+
+            if (errorMessages.length > 0) {
+                var errorDiv = document.getElementById("errorDiv");
+                errorDiv.innerHTML = "";
+
+                for (var i = 0; i < errorMessages.length; i++) {
+                    var errorMessage = errorMessages[i];
+                    var errorP = document.createElement("p");
+                    errorP.className = "error";
+                    errorP.textContent = errorMessage;
+                    errorDiv.appendChild(errorP);
+                }
+
+                return false;
+            }
+
+            return true;
+        }
+
+        function validateEmail(email) {
+            // 简单的电子邮件格式验证
+            var emailRegex = /\S+@\S+\.\S+/;
+            return emailRegex.test(email);
+        }
+    </script>
+</body>
+</html>
