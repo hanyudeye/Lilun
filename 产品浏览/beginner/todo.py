@@ -9,7 +9,7 @@
 
 
 # 用python做一个命令行 待办事项列表应用程序 ，允许用户添加、删除和标记完成任务，读取 用户目录下 .todo文件，a命令添加，d 命令删除。
-
+#!d:\Program Files\Python\python.exe
 import os
 
 TODO_FILE = os.path.expanduser("~/.todo")
