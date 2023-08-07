@@ -84,6 +84,9 @@ M-x customize-group in a separate file ~/.emacs.d/custom.el.
 
 
 ## 在ubuntu 中使用emacs
+
+
+
 2022年了搜了一堆网站，最终发现解决这个问题有好几个细节很多热门的答案都没有讲清楚，我的系统是Debian, 首先你要确定你有zh_CN.utf8这个locale,那些答案的设定才有意义
 
 locale -a | grep -i zh_CN
