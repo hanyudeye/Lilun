@@ -5,53 +5,9 @@ description: 定义显示元素的外观
 theme: jekyll-theme-cayman
 ---
 
-## CSS
+## 选择器
 
-> css 是用来定义显示元素的外观,语法简单,由外观属性:具体描述值组成 
-
-
-- 纵向对齐: align-items   
-- 横向对齐
--  justify-content (单行)
--  横向对齐 align-content( 多行 )
-
-2. 元素
-扩展: flex-grow
-收缩: flex-shrink
-基础长度: flex-basis
-
-
- ### 使 width ,height 包含 padding
-```css
--webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -ms-box-sizing: border-box;
-  -o-box-sizing: border-box;
-  box-sizing: border-box;
-  ```
-### 定位
-
-- 静态坐标 static  (文档流坐标，默认) 设置了偏移，不影响元素所在位置
-- 相对坐标 relative   (相对文档流坐标，设置偏移后，元素会偏移，但其原有的文档流位置保留)
-- 绝对坐标 absolute (会脱离文档流，其它元素的位置会变化)
-- 固定坐标 fixed (同样会脱离文档流)
-
-## 元素块选择器 
-> 增强某样式的权重  !important
-
-### 标签选择器
-### 属性选择器 
-
-| 代码                                 | 说明                          |
-| ------------------------------------ | ----------------------------- |
-| [attribute="value"]                  | attribute值是value            |
-| [attribute~="value"]                 | 有一个是value                 |
-| [attribute          &#124;= "value"] | 是value或以value-开头的字符串 |
-| [attribute^="value"]                 | 最前是value                   |
-| [attribute$="value"]                 | 最后是value                   |
-| [attribute*="value"]                 | value出现过至少一次           |
-
-### 位置选择器 
+### 位置选择器
 
 | 符号  | 说明                               |
 | ----- | ---------------------------------- |
@@ -78,11 +34,11 @@ theme: jekyll-theme-cayman
 | :nth-child         | 第几个，从1开始 :nth-child(an+b)或 :nth-child(n) |
 | :not()             | 排除                                             |
 
- 
+
 ## 单位
 
 ### 颜色
-1.  使用颜色的名字表示特定颜色  red , yellow  
+1.  使用颜色的名字表示特定颜色  red , yellow
 2.  rgb(0,100,100) 用十进制的 rgb 混色模式 (255的色值)
 3.  \#ffffff 用十六进制的 rgb 混色模式
 4.  hsl(0,100%,50%) 用色相(0-360)，饱和度，明度的混色模式表示
