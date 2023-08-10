@@ -85,7 +85,13 @@ M-x customize-group in a separate file ~/.emacs.d/custom.el.
 
 ## 在ubuntu 中使用emacs
 
+<<<<<<< HEAD
 系统是Debian, 首先确定你有zh_CN.utf8这个locale
+=======
+
+
+2022年了搜了一堆网站，最终发现解决这个问题有好几个细节很多热门的答案都没有讲清楚，我的系统是Debian, 首先你要确定你有zh_CN.utf8这个locale,那些答案的设定才有意义
+>>>>>>> f097a315fa217216771f094906c4573ca5ed45c8
 
 locale -a | grep -i zh_CN
 如果没有，下面的命令安装
