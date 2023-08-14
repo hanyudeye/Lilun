@@ -179,4 +179,51 @@ language:C++ location:china 搜索国内的开发者，语言限定为 C++
 
 stars:>20 extension:el language:elisp
 
+# submodule
 
+实际上 Git 工具的 submodule 功能就是建立了当前项目与子模块之间的依赖关系：子模块路径、子模块的远程仓库、子模块的版本号。
+
+
+另一个有用的场景是：当项目依赖并跟踪一个开源的第三方库时，将第三方库设置为submodule。
+
+超级好，简单粗暴，清晰明了！
+除了submodule，还有个方法我个人感觉还可以的，就是mklink（windows是mklink，linux不知道叫啥），就是等于把子模块复制一份到主模块中，两边所有的修改都会自动同步。 mklink /d/j sub-module ..\sub-module\
+
+嗯！实际使用中软链接确实更方便省事~ 只要使用项目的所有人都知道应该怎么链就可以。Linux 是 ln -s /path/to/src /path/to/dst
+
+## 使用流程
+
+假定我们有两个项目：project-main 和 project-sub-1，其中 project-main 表示主项目，而 project-sub-1 表示子模块项目。
+
+其中 project-main 的远程仓库地址为 https://github.com/username/project-main.git，而 project-sub-1 的远程仓库地址为 https://github.com/username/project-sub-1.git。
+
+接下来，我们希望在 project-main 中添加 project-sub-1 ，而又保持 project-sub-1 自身独立的版本控制。
+
+
+
+1.创建 submodule
+使用 git submodule add <submodule_url> 命令可以在项目中创建一个子模块。
+
+2.获取 submodule
+上述步骤在创建子模块的过程中，会自动将相关代码克隆到对应路径，但对于后续使用者而言，对于主项目使用普通的 clone 操作并不会拉取到子模块中的实际代码。
+
+使用以下命令进行克隆，完成后 project-main/project-sub-1 文件夹是空的：
+
+cd /path/to/temp
+git clone https://github.com/username/project-main.git
+
+
+如果希望子模块代码也获取到，一种方式是在克隆主项目的时候带上参数 --recurse-submodules，这样会递归地将项目中所有子模块的代码拉取。
+
+cd /path/to/temp2
+git clone https://github.com/username/project-main.git --recurse-submodules
+
+另外一种可行的方式是，在当前主项目中执行：
+
+git submodule init
+git submodule update
+
+4.删除子模块
+
+git submodule deinit project-sub-1
+git rm project-sub-1
