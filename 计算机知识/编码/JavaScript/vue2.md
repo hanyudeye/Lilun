@@ -77,9 +77,10 @@ new Vue({
       Not A/B/C
     </div>
 ```
+
 #### 循环
 ``` html
-<li v-for="site in sites">
+<li v-for="(site,index) in sites">
       {{ site.name }}
     </li>
 ```
