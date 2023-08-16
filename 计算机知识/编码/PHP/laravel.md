@@ -3,7 +3,7 @@ title: laravel
 permalink: .html
 theme: jekyll-theme-cayman
 ---
-
+    
 https://learnku.com/docs/laravel/9.x/installation/12200
 
 ## 基础功能
