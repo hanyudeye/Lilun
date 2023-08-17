@@ -83,21 +83,16 @@ M-x customize-group in a separate file ~/.emacs.d/custom.el.
 ```
 
 
-## 在ubuntu 中使用emacs
+## 在ubuntu 环境中，emacs 使用中文
 
-<<<<<<< HEAD
 系统是Debian, 首先确定你有zh_CN.utf8这个locale
-=======
-
-
-2022年了搜了一堆网站，最终发现解决这个问题有好几个细节很多热门的答案都没有讲清楚，我的系统是Debian, 首先你要确定你有zh_CN.utf8这个locale,那些答案的设定才有意义
->>>>>>> f097a315fa217216771f094906c4573ca5ed45c8
 
 locale -a | grep -i zh_CN
 如果没有，下面的命令安装
 
 sudo apt install -y locales
 dpkg-reconfigure locales 
+
 弹出的图形界面直接选 all, 装完之后用之前的命令验证一下能找到 zh_CN.utf8 了 下面的命令行启动支持中文
 
 LC_CTYPE="zh_CN.utf8" emacs
@@ -124,20 +119,4 @@ TryExec=/usr/bin/my_emacs
 Exec=/usr/bin/my_emacs
 这样点击图标启动就也能支持中文了。 更多 .desktop 文件的细节，google linux freedesktop desktop file entry key
 
-
-## 如何在spacemacs中快速导航项目
-
-在Spacemacs中，你可以使用一些快捷键和功能来快速导航项目。以下是一些常用的方法：
-
-1. **使用Projectile插件**：Spacemacs内置了Projectile插件，它可以帮助你管理和导航项目。你可以使用`SPC p`作为前缀键来执行一系列与项目相关的操作。例如，`SPC p f`可以用于查找文件，`SPC p p`可以切换到不同的项目，`SPC p b`可以列出项目中的缓冲区等。
-
-2. **使用文件导航器**：Spacemacs支持多个文件导航器，如NeoTree和Treemacs。你可以使用`SPC f t`来打开NeoTree，或者使用`SPC f T`来打开Treemacs。这些导航器可以显示项目的目录结构，让你快速浏览和打开文件。
-
-3. **使用搜索功能**：Spacemacs内置了强大的搜索功能。你可以使用`SPC s p`来搜索项目中的文件，使用`SPC s P`来搜索项目中的内容。这些搜索功能可以帮助你快速找到你需要的文件或代码片段。
-
-4. **使用跳转命令**：Spacemacs提供了一些跳转命令，可以让你在项目中快速导航。例如，你可以使用`SPC j j`来跳转到一个特定的文件，使用`SPC j l`来跳转到一个特定的行，使用`SPC j s`来跳转到一个特定的符号等。
-
-5. **使用快速打开功能**：Spacemacs有一个快速打开功能，可以让你快速打开最近浏览过的文件。你可以使用`SPC f f`来打开最近的文件，使用`SPC f r`来打开最近的项目。
-
-这些方法可以帮助你在Spacemacs中快速导航项目。根据你的个人偏好和项目需求，选择适合你的方式来提高效率。
 
