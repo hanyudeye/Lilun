@@ -11,6 +11,7 @@ https://github.com/sg552/happy_book_vuejs.git
 
 Vue.js是一款轻量级、易上手的JavaScript框架，它可以帮助开发人员快速构建交互式Web应用程序。
 
+
 ## 对象
 
 - el (用来绑定模板 )
@@ -77,9 +78,10 @@ new Vue({
       Not A/B/C
     </div>
 ```
+
 #### 循环
 ``` html
-<li v-for="site in sites">
+<li v-for="(site,index) in sites">
       {{ site.name }}
     </li>
 ```
