@@ -27,14 +27,14 @@ Vue 关注 MVC 模式中的视图，做的是 视图中的数据监控，通过 
 - Vue Server Render: Vue.js 的服务器端渲染(SSR)
 
 ### npm
-- 安装
-``` sh
-# 最新版
-$ npm init vue@latest
-```
-- npm install
-- npm run dev
-- npm run build
+
+
+- npm init vue@latest  -g  全局安装
+- vue create project 安装项目
+- cd project 进入项目
+- npm install  更新包
+- npm run dev 运行
+- npm run build  构建
 
 # 声明式渲染
 
