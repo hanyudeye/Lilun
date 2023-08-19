@@ -3,7 +3,6 @@ title: Note
 permalink: todo.html
 theme: jekyll-theme-cayman
 ---
-https://v2rayshare.com/wp-content/uploads/2023/08/20230810.txt
 
 - 我的人生是研究电路，计算机，软件，互联网，然后还有其他兴趣。
 - 还有 16年退休，就可以写小说，创作，玩，[时间有点长，财务自由 可以马上退休]
