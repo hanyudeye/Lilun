@@ -32,3 +32,9 @@
 
 ** Editing
 
+* Layer
+** Agenda
+
+  需要一个清单表格文件, org-agenda-file-to-front 导入清单文件到 清单列表. 
+
+  然后可以 查看 清单代办事项 org-agenda-list
