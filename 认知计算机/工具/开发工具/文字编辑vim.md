@@ -1,3 +1,12 @@
+---
+layout: default
+toc: false
+title: 文字编辑vim
+date:  2023-09-02T07:14:00+08:00
+categories: ['vim']
+---
+
+
 ## VIM
 - normal 模式 (控制模式)
 - 编辑模式 
@@ -8,6 +17,7 @@
 - 分割窗口，竖切  :vsp FILE 横切 :sp FILE
 - 编辑文件 :e FILE
 
+<!--more-->
 
 
 ## 配置 ~/.vimrc
