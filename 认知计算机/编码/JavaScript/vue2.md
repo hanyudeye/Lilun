@@ -78,7 +78,7 @@ new Vue({
 
 #### 循环
 ``` html
-<li v-for="(site,index) in sites">
+<li v-for="(site,index) in sites" v-bind:key="index">
       {{ site.name }}
     </li>
 ```

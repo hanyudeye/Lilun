@@ -4,11 +4,13 @@ permalink: thinkphp5.html
 theme: jekyll-theme-cayman
 ---
 
+## 简介
 
-内容服务提供者需要有一套应用能灵活地返回  用户 请求的数据
+ThinkPHP是 网页内容 服务框架。
 
- 入口(请求) -> 转到应用 -> 判断模块 -> 调用控制器 -> 执行操作 -> 连接模型 -> 视图组装 -> 响应输出
+行为：入口(请求) -> 转到应用 -> 判断模块 -> 调用控制器 -> 执行操作 -> 连接模型 -> 视图组装 -> 响应输出
 
+<!--more-->
 
 ## 配置
 
@@ -94,6 +96,7 @@ $request->pathinfo('index/index/hello');
 ```
 
 ### 输入变量
+
 可以通过 Request 对象完成对全局输入变量的检测、获取和安全过滤。支持包括 $_GET、$_POST、$_REQUEST、$_SERVER、$_SESSION、$_COOKIE、$_ENV 等系统变量，以及文件上传的信息。
 
 #### 检测变量是否设置
