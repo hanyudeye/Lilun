@@ -142,7 +142,7 @@ vm.$watch('counter', function(nval, oval) {
 <div v-bind:class="[errorClass ,isActive ? activeClass : '']"></div>
 ```
 
-##### style #####
+##### style 
 
 ``` html
 <div v-bind:style="{ color: activeColor, fontSize: fontSize + 'px' }">菜鸟教程</div>
@@ -151,7 +151,7 @@ vm.$watch('counter', function(nval, oval) {
 ```
 
 ### 事件 ###
-#### 事件修饰符 ####
+#### 事件修饰符
 
 ``` html
 <!-- 阻止单击事件冒泡 -->
@@ -171,7 +171,7 @@ vm.$watch('counter', function(nval, oval) {
 <a v-on:click.once="doThis"></a>
 ``` 
 
-#### 按键修饰符 ####
+#### 按键修饰符
 
 ``` html
 <!-- 只有在 keyCode 是 13 时调用 vm.submit() -->
@@ -211,7 +211,7 @@ vm.$watch('counter', function(nval, oval) {
 <input v-model.lazy="msg" >
 ```
 
-#### .number ####
+#### .number
 
 如果想自动将用户的输入值转为 Number 类型（如果原值的转换结果为 NaN 则返回原值），可以添加一个修饰符 number 给 v-model 来处理输入值：
 ``` html
@@ -219,7 +219,7 @@ vm.$watch('counter', function(nval, oval) {
 ```
 这通常很有用，因为在 type="number" 时 HTML 中输入的值也总是会返回字符串类型。
 
-#### .trim ####
+#### .trim 
 
 如果要自动过滤用户输入的首尾空格，可以添加 trim 修饰符到 v-model 上过滤输入：
 ``` html
@@ -268,4 +268,3 @@ Vue.component('buttonclicked', {
 ## vue-router 页面跳转
 
 - 安装  npm install vue-router --save-dev
-
