@@ -1,11 +1,21 @@
-# 关系型数据
+---
+layout: default
+toc: false
+title: 使用 MySql 进行 数据整理
+date:  2023-09-01T09:47:31+08:00
+categories: ['sql']
+---
 
-就是表
 
-# mysql 工具的使用
+MySql 其实就是一组快递柜，要整理的数据一个个放在快递柜里面，节约空间，也方便查找。
+
+> 通过柜子的序列编号查找
+ 
+
+# 工具的使用
 
 ``` sql
-/* 连接数据库 */
+/* 连接数据库，打开 网络资源  柜子 */
 mysql> mysql -h192.168.206.100 -uroot -p12345678; /*u与root可以不加空格*/
 ```
 
@@ -24,7 +34,7 @@ GRANT ALL ON db1.*TO'kerry'@'localhost'IDENTIFIED BY'beck123';
 /* 更新数据库信息 */
 FLUSH PRIVILEGES
 ```
-
+# 数据库操作
 
 ```sql
 
@@ -54,7 +64,5 @@ add column genre ENUM ('novel','poetry','drama');
 update books set author="xli" where book_id=13;
 
 ```
-
-
 
 

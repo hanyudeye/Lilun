@@ -16,6 +16,7 @@ composer create-project topthink/think  // 默认是最新的
 - print_r 显示对象
 
 # 配置环境config 
+
 think\facade\Env;
 - 获取环境变量 Env::get('database.username');
 - 通用配制
