@@ -1,3 +1,11 @@
+---
+layout: default
+toc: false
+title: android开发用法
+date:  2023-08-31T19:36:53+08:00
+categories: ['android']
+---
+
 # android
 教程 http://c.biancheng.net/android/
 ## 安装

@@ -1,0 +1,43 @@
+---
+layout: default
+toc: false
+title: 资源
+date:  2023-09-04T10:25:57+08:00
+categories: ['']
+---
+
+## 项目
+
+- 细胞培养肉上市了，据说味道很好，环境污染少 [培养肉](https://www.npr.org/sections/health-shots/2022/11/14/1136186819/cultivated-cultured-meat-heathy-climate-change)
+- AI 教堂，AI胜任宗教活动，心理活动，可进行辅导
+
+## v2rayshare
+
+https://v2rayshare.com/wp-content/uploads/2023/08/20230816.txt
+
+## 命令行翻译
+
+ translate-shell
+ ```
+$ sudo apt install translate-shell
+```
+ alias 简化中文翻译命令
+每次英-汉的时候，都需要输入trans :zh 才会翻译成中文，默认翻译为英文，比较烦，所以，直接添加一个alias
+
+在~/.bashrc中添加下面一句话：```alias fanyi='trans :zh'
+
+然后执行 source ~/.bashrc
+
+就可以愉快的玩耍了 ->
+fanyi "figure out how it works"
+
+Brief输出翻译结果
+注意到，在我们执行翻译的时候，会输出一大串的东西，甚至中文都给我们注音了。。但是我只是向得到一个 translate -> 翻译 这样的输出..
+翻一下参数，trans指令提供了 -b参数:
+-b, -brief
+Brief mode.
+
+## 文字识别
+
+微信
+

@@ -14,6 +14,8 @@ git 是一个资源仓库备份工具，可以备份仓库到网络服务器。
 - git remote add origin url 关联远程仓库
 - git pull
 - git fetch 获取远程仓库中所有的分支到本地
+- git branch --set-upstream-to=origin/<branch> master
+
 
 
 

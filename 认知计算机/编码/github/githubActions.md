@@ -86,3 +86,12 @@ jobs:
           remote_key: ${{ secrets.MY_UBUNTU_RSA_PRIVATE_KEY }}
 
           ```
+
+
+# hugo githubaction
+
+## 创建您的工作流程
+
+创建 .github/workflows/gh-pages.yml，第一次部署，要使用 
+GITHUB_TOKEN
+

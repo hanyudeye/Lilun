@@ -532,3 +532,7 @@ MacOS 快捷键：option + Z
     },
     "minapp-vscode.disableAutoConfig": true,
 }
+
+# Vscode 如何一次打开多个项目
+
+可以使用 vscode 提供的工作区 ( workspace )的功能

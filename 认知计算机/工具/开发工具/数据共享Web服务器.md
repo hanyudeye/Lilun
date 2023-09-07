@@ -18,7 +18,21 @@ DocumentRoot "/www"  # 设置站点根目录
  RewriteRule ^(.*)$ index.php?s=/$1 [QSA,PT,L]
 </IfModule>
 ```
-
+### 设置目录可访问，避免 403 
+```
+<Directory /home/wuming/www/>
+	Options Indexes FollowSymLinks
+	AllowOverride None
+	Require all granted
+</Directory>
+```
+### 设置站点
+```
+<VirtualHost *:80>
+	ServerName hello.bb
+	DocumentRoot  /home/wuming/www/hello
+</VirtualHost>
+```
 
 ## Nginx 配置
 
