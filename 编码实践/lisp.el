@@ -1,1 +1,0 @@
-(getenv "LC_CTYPE")
