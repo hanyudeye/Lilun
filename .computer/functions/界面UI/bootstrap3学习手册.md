@@ -6,16 +6,14 @@ theme: jekyll-theme-cayman
 
 ## Bootstrap (靴带)
 
-### 容器 (最外层页面的包装)
-
+### 排版区块
+    
 1. container  居中
-2. container-fluid 100%宽度
+2. container-fluid 平铺
 
-### 栅格 (创建网格布局)
+### 栅格细排
 
 栅格系统使用一系列行(row)与列(column)来创建页面布局，下面是一些原理:
-- 行 必须包含在 容器中(.contianer 或 .container-fluid) 中
-- 内容需放在 列中
 - 通过为列设置 padding 属性，从而创建列与列之间的间隔。
 - 跨列通过 .col-xs-4 这种形式指定 (有4个列长)
 - 如果一行 大于12列，会换行
@@ -40,7 +38,7 @@ theme: jekyll-theme-cayman
 </div>
 <div class="container">....
 ```
-##### 统一列高 clearfix 
+##### 统一列高 clearfix
 列高度不统一时使用
 
 ``` html
@@ -63,7 +61,7 @@ theme: jekyll-theme-cayman
 </div>
 ```
 
-### 排版
+### 样式
 
 - 默认样式
 font-size:14px ,line-height:1.428 ，`<p>`的边框为10px
@@ -80,10 +78,9 @@ h1-h6 或者 .h1-.h6 都可以作为标题
 
 - text-justify     设定文本对齐,段落中超出屏幕部分文字自动换行 
 - text-nowrap      段落中超出屏幕部分不换行           
-- text-lowercase   设定文本小写                 
+- text-lowercase   设定文本小写
 - text-uppercase   设定文本大写                 
 - text-capitalize  设定单词首字母大写              
-
 
 
 ``` html
@@ -315,6 +312,10 @@ footer 用于表明引用来源，cite用于倾斜footer 中的内容
         <li><a href="">菜单</a></li>
     </ul>
 ```
+- nav-tabs
+- nav-pills 药丸式
+- nav-stacked 堆式
+- 
 
 ### 字体图标(Glyphicons)
 用法
@@ -750,7 +751,7 @@ $(function () { $('#collapseFour').collapse({
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
         <li data-target="#myCarousel" data-slide-to="1"></li>
         <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>   
+    </ol>
     <!-- 轮播（Carousel）项目 -->
     <div class="carousel-inner">
         <div class="item active">
