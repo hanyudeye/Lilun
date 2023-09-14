@@ -1,3 +1,8 @@
+
+# Node.js 默认提供 npm 包管理器，Corepack 为您提供 Yarn 和 pnpm，而无需安装它们。
+
+corepack enable
+
 # npx
 
 npx是npm5.2.0及以上版本中提供的一个命令行工具，它可以帮助你在不全局安装包的情况下执行包中的命令。下面是一个简单的npx教程，帮助你了解如何使用npx。
