@@ -11,7 +11,7 @@ https://github.com/sg552/happy_book_vuejs.git
 ## 对象
 
 - el (用来绑定模板 )
-- data
+  - data
 - methods
 - 生命周期 created mounted(元素挂载时执行) updated,beforeDestory,destoryed
 
