@@ -1,0 +1,40 @@
+
+
+* Core Pillars
+  
+易用，文档方便，快捷键方便，操作统一的编辑器程序。
+
+* 主要功能
+
+  - 拥有 vim 那样多模式的编辑功能
+  - 屏幕大，隐藏工具栏，菜单
+  - 自己配置也方便，更新方便
+  - *Very active and helpful community* on =Gitter= and =IRC=
+  (via Gitter IRC bridge)
+
+
+* 配置Binding keys
+  
+#+BEGIN_SRC emacs-lisp
+  (spacemacs/set-leader-keys "C-]" 'forward-char)
+  (spacemacs/set-leader-keys-for-major-mode 'emacs-lisp-mode "C-]" 'forward-char)
+#+END_SRC
+
+* GUI Elements
+
+* Layouts and workspaces
+
+* Commands
+
+** Navigating 导航
+
+** Search
+
+** Editing
+
+* Layer
+** Agenda
+
+  需要一个清单表格文件, org-agenda-file-to-front 导入清单文件到 清单列表. 
+
+  然后可以 查看 清单代办事项 org-agenda-list
